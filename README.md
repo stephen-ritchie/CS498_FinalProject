@@ -2,8 +2,6 @@
 
 ## Basic Overview
 A plugin for Jenkins to extend the capabilities of the built-in email service so that a customer will have more control over what types of emails are sent, when they are sent, and to whom they are sent.
-## Table of Contents
-* [Installing](#Installing)
 ## Installing
 ## Key Features
 ## Examples
