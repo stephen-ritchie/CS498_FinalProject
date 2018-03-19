@@ -3,3 +3,7 @@
 ## Basic Overview
 ## Installing
 ## Authors
+Atanas Golev
+Grace Oparinde
+Joshua Ray
+Stephen Ritchie
