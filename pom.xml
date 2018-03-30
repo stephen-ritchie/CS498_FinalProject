@@ -10,7 +10,7 @@
   <artifactId>mailer</artifactId>
   <packaging>hpi</packaging>
   <version>1.21-SNAPSHOT</version>
-  <name>CS498 | Custom Mail Plugin</name>
+  <name>Jenkins Mailer Plugin</name>
   <description>This plugin allows you to configure email notifications for build results</description>
   
   <url>https://wiki.jenkins-ci.org/display/JENKINS/Mailer</url>
