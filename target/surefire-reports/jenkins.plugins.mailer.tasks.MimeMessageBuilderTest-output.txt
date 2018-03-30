@@ -1,0 +1,261 @@
+Mar 19, 2018 7:25:20 PM org.eclipse.jetty.util.log.Log initialized
+INFO: Logging initialized @1915ms
+Picking up existing exploded jenkins.war at /Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test
+Mar 19, 2018 7:25:23 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.2.12.v20150709
+Mar 19, 2018 7:25:24 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
+Mar 19, 2018 7:25:24 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@74bf1791{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,AVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:25:24 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@106cc338{HTTP/1.1}{localhost:60639}
+Mar 19, 2018 7:25:24 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @5552ms
+Mar 19, 2018 7:25:24 PM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:60639/jenkins/
+Mar 19, 2018 7:25:25 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Mar 19, 2018 7:25:41 PM hudson.PluginManager$1$3$1 isDuplicate
+INFO: Ignoring /var/folders/zj/zp0_dv8933g7qd7d3ggrrnj40000gn/T/hudson187202173710145657tmp/mailer.jpi because /var/folders/zj/zp0_dv8933g7qd7d3ggrrnj40000gn/T/hudson187202173710145657tmp/the.jpl is already loaded
+Mar 19, 2018 7:26:09 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Mar 19, 2018 7:26:10 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Mar 19, 2018 7:26:10 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Mar 19, 2018 7:26:10 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Mar 19, 2018 7:26:15 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Mar 19, 2018 7:26:20 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 60653
+Mar 19, 2018 7:26:20 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Mar 19, 2018 7:26:20 PM hudson.UDPBroadcastThread run
+WARNING: UDP handling problem
+java.net.SocketException: Can't assign requested address
+	at java.net.PlainDatagramSocketImpl.join(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.join(AbstractPlainDatagramSocketImpl.java:178)
+	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
+	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
+
+Mar 19, 2018 7:26:20 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.2.12.v20150709
+Mar 19, 2018 7:26:20 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.s.ServletContextHandler@40499e4f{/,null,AVAILABLE}
+Mar 19, 2018 7:26:20 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@35e1f0ec{HTTP/1.1}{0.0.0.0:60655}
+Mar 19, 2018 7:26:20 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @61597ms
+=== Starting test_send(jenkins.plugins.mailer.tasks.MimeMessageBuilderTest)
+Mar 19, 2018 7:26:20 PM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@106cc338{HTTP/1.1}{localhost:0}
+Mar 19, 2018 7:26:20 PM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@74bf1791{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,UNAVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
+Mar 19, 2018 7:26:20 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.2.12.v20150709
+Mar 19, 2018 7:26:20 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
+Mar 19, 2018 7:26:20 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@5ddabb18{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,AVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:26:20 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@58e6d4b8{HTTP/1.1}{localhost:60656}
+Mar 19, 2018 7:26:20 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @62001ms
+Mar 19, 2018 7:26:20 PM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:60656/jenkins/
+Mar 19, 2018 7:26:20 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Mar 19, 2018 7:26:20 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Mar 19, 2018 7:26:20 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Mar 19, 2018 7:26:20 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Mar 19, 2018 7:26:20 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Mar 19, 2018 7:26:21 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Mar 19, 2018 7:26:21 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 60661
+Mar 19, 2018 7:26:21 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Mar 19, 2018 7:26:21 PM hudson.UDPBroadcastThread run
+WARNING: UDP handling problem
+java.net.SocketException: Can't assign requested address
+	at java.net.PlainDatagramSocketImpl.join(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.join(AbstractPlainDatagramSocketImpl.java:178)
+	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
+	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
+
+=== Starting test_charset_iso_8859_1(jenkins.plugins.mailer.tasks.MimeMessageBuilderTest)
+Mar 19, 2018 7:26:21 PM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@58e6d4b8{HTTP/1.1}{localhost:0}
+Mar 19, 2018 7:26:21 PM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@5ddabb18{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,UNAVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:26:21 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.2.12.v20150709
+Mar 19, 2018 7:26:22 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
+Mar 19, 2018 7:26:22 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@743cb8e0{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,AVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:26:22 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@649725e3{HTTP/1.1}{localhost:60663}
+Mar 19, 2018 7:26:22 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @63152ms
+Mar 19, 2018 7:26:22 PM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:60663/jenkins/
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Mar 19, 2018 7:26:22 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 60664
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Mar 19, 2018 7:26:22 PM hudson.UDPBroadcastThread run
+WARNING: UDP handling problem
+java.net.SocketException: Can't assign requested address
+	at java.net.PlainDatagramSocketImpl.join(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.join(AbstractPlainDatagramSocketImpl.java:178)
+	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
+	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
+
+=== Starting test_charset_utf8(jenkins.plugins.mailer.tasks.MimeMessageBuilderTest)
+Mar 19, 2018 7:26:22 PM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@649725e3{HTTP/1.1}{localhost:0}
+Mar 19, 2018 7:26:22 PM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@743cb8e0{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,UNAVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:26:22 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.2.12.v20150709
+Mar 19, 2018 7:26:22 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
+Mar 19, 2018 7:26:22 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@32cb636e{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,AVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:26:22 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@6a1d204a{HTTP/1.1}{localhost:60666}
+Mar 19, 2018 7:26:22 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @64103ms
+Mar 19, 2018 7:26:22 PM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:60666/jenkins/
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Mar 19, 2018 7:26:22 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Mar 19, 2018 7:26:23 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Mar 19, 2018 7:26:23 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 60668
+Mar 19, 2018 7:26:23 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Mar 19, 2018 7:26:23 PM hudson.UDPBroadcastThread run
+WARNING: UDP handling problem
+java.net.SocketException: Can't assign requested address
+	at java.net.PlainDatagramSocketImpl.join(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.join(AbstractPlainDatagramSocketImpl.java:178)
+	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
+	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
+
+=== Starting test_addRecipients_tokenizer(jenkins.plugins.mailer.tasks.MimeMessageBuilderTest)
+Mar 19, 2018 7:26:23 PM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@6a1d204a{HTTP/1.1}{localhost:0}
+Mar 19, 2018 7:26:23 PM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@32cb636e{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,UNAVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:26:23 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.2.12.v20150709
+Mar 19, 2018 7:26:23 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
+Mar 19, 2018 7:26:23 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@3b9d6699{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,AVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:26:23 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@22c86919{HTTP/1.1}{localhost:60670}
+Mar 19, 2018 7:26:23 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @65003ms
+Mar 19, 2018 7:26:23 PM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:60670/jenkins/
+Mar 19, 2018 7:26:23 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Mar 19, 2018 7:26:23 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Mar 19, 2018 7:26:23 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Mar 19, 2018 7:26:23 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Mar 19, 2018 7:26:23 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Mar 19, 2018 7:26:24 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Mar 19, 2018 7:26:24 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 60671
+Mar 19, 2018 7:26:24 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Mar 19, 2018 7:26:24 PM hudson.UDPBroadcastThread run
+WARNING: UDP handling problem
+java.net.SocketException: Can't assign requested address
+	at java.net.PlainDatagramSocketImpl.join(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.join(AbstractPlainDatagramSocketImpl.java:178)
+	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
+	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
+
+=== Starting test_construction(jenkins.plugins.mailer.tasks.MimeMessageBuilderTest)
+Mar 19, 2018 7:26:24 PM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@22c86919{HTTP/1.1}{localhost:0}
+Mar 19, 2018 7:26:24 PM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@3b9d6699{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,UNAVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:26:24 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.2.12.v20150709
+Mar 19, 2018 7:26:24 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
+Mar 19, 2018 7:26:24 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@452e26d0{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,AVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:26:24 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@7689ddef{HTTP/1.1}{localhost:60673}
+Mar 19, 2018 7:26:24 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @66062ms
+Mar 19, 2018 7:26:24 PM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:60673/jenkins/
+Mar 19, 2018 7:26:24 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Mar 19, 2018 7:26:24 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Mar 19, 2018 7:26:24 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Mar 19, 2018 7:26:24 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Mar 19, 2018 7:26:24 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Mar 19, 2018 7:26:25 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Mar 19, 2018 7:26:25 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 60674
+Mar 19, 2018 7:26:25 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Mar 19, 2018 7:26:25 PM hudson.UDPBroadcastThread run
+WARNING: UDP handling problem
+java.net.SocketException: Can't assign requested address
+	at java.net.PlainDatagramSocketImpl.join(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.join(AbstractPlainDatagramSocketImpl.java:178)
+	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
+	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
+
+=== Starting testMultipleReplyToAddress(jenkins.plugins.mailer.tasks.MimeMessageBuilderTest)
+Mar 19, 2018 7:26:25 PM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@7689ddef{HTTP/1.1}{localhost:0}
+Mar 19, 2018 7:26:25 PM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@452e26d0{/jenkins,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,UNAVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}

@@ -1,0 +1,4 @@
+hudson.cli
+hudson.tasks
+jenkins.plugins.mailer.tasks
+jenkins.plugins.mailer.tasks.i18n

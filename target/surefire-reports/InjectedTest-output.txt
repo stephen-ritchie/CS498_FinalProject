@@ -1,0 +1,78 @@
+Mar 19, 2018 7:25:32 PM org.eclipse.jetty.util.log.Log initialized
+INFO: Logging initialized @14114ms
+Picking up existing exploded jenkins.war at /Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test
+Mar 19, 2018 7:25:37 PM org.eclipse.jetty.server.handler.ContextHandler setContextPath
+WARNING: Empty contextPath
+Mar 19, 2018 7:25:37 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.2.12.v20150709
+Mar 19, 2018 7:25:37 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+INFO: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+Mar 19, 2018 7:25:37 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@6dd20ec9{/,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,AVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:25:37 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@27502e5c{HTTP/1.1}{localhost:60641}
+Mar 19, 2018 7:25:37 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @19098ms
+Mar 19, 2018 7:25:38 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started initialization
+Mar 19, 2018 7:25:50 PM hudson.PluginManager$1$3$1 isDuplicate
+INFO: Ignoring /var/folders/zj/zp0_dv8933g7qd7d3ggrrnj40000gn/T/hudson7165698910678165575tmp/mailer.jpi because /var/folders/zj/zp0_dv8933g7qd7d3ggrrnj40000gn/T/hudson7165698910678165575tmp/the.jpl is already loaded
+Mar 19, 2018 7:26:24 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Listed all plugins
+Mar 19, 2018 7:26:24 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Prepared all plugins
+Mar 19, 2018 7:26:24 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Started all plugins
+Mar 19, 2018 7:26:24 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Augmented all extensions
+Mar 19, 2018 7:26:29 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Loaded all jobs
+Mar 19, 2018 7:26:31 PM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 60676
+Mar 19, 2018 7:26:31 PM jenkins.InitReactorRunner$1 onAttained
+INFO: Completed initialization
+Mar 19, 2018 7:26:31 PM hudson.UDPBroadcastThread run
+WARNING: UDP handling problem
+java.net.SocketException: Can't assign requested address
+	at java.net.PlainDatagramSocketImpl.join(Native Method)
+	at java.net.AbstractPlainDatagramSocketImpl.join(AbstractPlainDatagramSocketImpl.java:178)
+	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
+	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
+
+Mar 19, 2018 7:26:31 PM org.eclipse.jetty.server.Server doStart
+INFO: jetty-9.2.12.v20150709
+Mar 19, 2018 7:26:31 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.s.ServletContextHandler@35e689a0{/,null,AVAILABLE}
+Mar 19, 2018 7:26:31 PM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@1cc93da4{HTTP/1.1}{0.0.0.0:60678}
+Mar 19, 2018 7:26:31 PM org.eclipse.jetty.server.Server doStart
+INFO: Started @72947ms
+Mar 19, 2018 7:26:35 PM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@27502e5c{HTTP/1.1}{localhost:0}
+Mar 19, 2018 7:26:35 PM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@6dd20ec9{/,file:/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test/,UNAVAILABLE}{/Users/Stephen/Desktop/mailer-plugin-master/target/jenkins-for-test}
+Mar 19, 2018 7:26:35 PM hudson.TcpSlaveAgentListener shutdown
+WARNING: Failed to close down TCP port
+java.io.IOException: No such file or directory
+	at sun.nio.ch.NativeThread.signal(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.implCloseSelectableChannel(ServerSocketChannelImpl.java:292)
+	at java.nio.channels.spi.AbstractSelectableChannel.implCloseChannel(AbstractSelectableChannel.java:234)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at hudson.TcpSlaveAgentListener.shutdown(TcpSlaveAgentListener.java:119)
+	at jenkins.model.Jenkins.cleanUp(Jenkins.java:2820)
+	at org.jvnet.hudson.test.HudsonTestCase.tearDown(HudsonTestCase.java:422)
+	at org.jvnet.hudson.test.JellyTestSuiteBuilder$JellyTestSuite.tearDown(JellyTestSuiteBuilder.java:148)
+	at org.jvnet.hudson.test.junit.GroupedTest.run(GroupedTest.java:53)
+	at junit.framework.TestSuite.runTest(TestSuite.java:252)
+	at junit.framework.TestSuite.run(TestSuite.java:247)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:86)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+
+WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
+WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
