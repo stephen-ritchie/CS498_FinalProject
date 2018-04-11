@@ -6,13 +6,13 @@
     <version>2.19</version>
     <relativePath />
   </parent>
-  
+
   <artifactId>mailer</artifactId>
   <packaging>hpi</packaging>
   <version>1.21-SNAPSHOT</version>
-  <name>Jenkins Mailer Plugin</name>
-  <description>This plugin allows you to configure email notifications for build results</description>
-  
+  <name>CS 498 | Mailer Plugin</name>
+  <description>This plugin is an extension of the mailer plugin that allows for finer tuning of email notification configurations.</description>
+
   <url>https://wiki.jenkins-ci.org/display/JENKINS/Mailer</url>
   <licenses>
     <license>
