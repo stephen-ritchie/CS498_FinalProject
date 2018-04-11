@@ -17,6 +17,9 @@ For this I'd say we have a function that just check the datetime each time a bui
 - [ ] Congratulations to team when code coverage reaches 100%<br>
 So each time a 'build' runs it looks like we can run our own shell scripts.  If this is the case, we could have gcov get run each time, and if we figure out how to get jenkins to read the output from the console we can get access to the code coverage.
 ## Installing
+[Setting up the Dummy JUnit Jenkins Build](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Setting-up-the-Dummy-JUnit-Jenkins-Build)
+
+[Packaging up a plugin](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Packaging-up-a-plugin)
 ## Examples
 ## Contributors
 Atanas Golev<br>
