@@ -1,16 +1,17 @@
 Manifest-Version: 1.0
 Plugin-Class: hudson.tasks.PluginImpl
 Group-Id: org.jenkins-ci.plugins
-Short-Name: mailer
-Long-Name: Jenkins Mailer Plugin
+Short-Name: CS498_Group3
+Long-Name: CS 498 | Email Notifications
 Url: https://wiki.jenkins-ci.org/display/JENKINS/Mailer
-Plugin-Version: 1.21-SNAPSHOT (private-03/19/2018 19:25-Stephen)
+Plugin-Version: 0.6
 Hudson-Version: 1.625.3
 Jenkins-Version: 1.625.3
 Plugin-Dependencies: display-url-api:1.0
 Plugin-Developers: 
-Libraries: /Users/Stephen/Desktop/mailer-plugin-master/src/main/resour
- ces,/Users/Stephen/Desktop/mailer-plugin-master/target/classes
-Resource-Path: /Users/Stephen/Desktop/mailer-plugin-master/src/main/we
- bapp
+Libraries: /Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/s
+ rc/main/resources,/Users/Stephen/Documents/GitHub/CS498_FinalProject/
+ Plugin/target/classes
+Resource-Path: /Users/Stephen/Documents/GitHub/CS498_FinalProject/Plug
+ in/src/main/webapp
 

@@ -27,8 +27,14 @@ THE SOFTWARE.
   <f:entry field="recipients" title="${%Recipients}" description="${%description}">
     <f:textbox />
   </f:entry>
+  <f:entry field="relevantDevelopers" title="${%Relevant Developers}" description="${%description}">
+    <f:textbox />
+  </f:entry>
   <f:entry field="notifyEveryUnstableBuild" title="">
     <f:checkbox title="${%Send e-mail for every unstable build}" default="true" />
+  </f:entry>
+  <f:entry field="relevantOnly" title="">
+    <f:checkbox title="${%Send e-mail only to relevant developers}" />
   </f:entry>
   <f:entry field="sendToIndividuals" title="">
     <f:checkbox title="${%Send separate e-mails to individuals who broke the build}" />
@@ -36,13 +42,16 @@ THE SOFTWARE.
   <f:entry field="notify50Percent" title="">
     <f:checkbox title="${%Notify all individuals when a build fails by more than 50 percent}" />
   </f:entry>
-  <f:entry field="progressReport" title="">
-    <f:checkbox title="${%Send a weekly report out every Friday afternoon}" />
+  <f:entry field="notifyLineChange" title="">
+    <f:checkbox title="${%Send e-mail if line numbers are changed}" />
   </f:entry>
-  <f:entry field="codeCoverage" title="">
-    <f:checkbox title="${%Each time a build changes notify all individuals of the new code coverage}" />
+  <f:entry field="notifyCoverageChange" title="">
+    <f:checkbox title="${%Send e-mail if code coverage changes}" />
   </f:entry>
-  <f:entry field="fullCodeCoverage" title="">
-    <f:checkbox title="${%Notify everyone when code coverage reaches 100 percent}" />
+  <f:entry field="congratulateTeam" title="">
+    <f:checkbox title="${%Congratulate team when code coverage is 100%}" />
+  </f:entry>
+  <f:entry field="weeklyProgressReport" title="">
+    <f:checkbox title="${%Send a progress report at the end of each week}" />
   </f:entry>
 </j:jelly>

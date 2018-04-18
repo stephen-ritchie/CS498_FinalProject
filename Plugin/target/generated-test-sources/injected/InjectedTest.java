@@ -7,11 +7,11 @@ import java.util.*;
 public class InjectedTest extends junit.framework.TestCase {
   public static junit.framework.Test suite() throws Exception {
     Map parameters = new HashMap();
-    parameters.put("basedir","/Users/Stephen/Desktop/mailer-plugin-master");
-    parameters.put("artifactId","mailer");
+    parameters.put("basedir","/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin");
+    parameters.put("artifactId","CS498_Group3");
     parameters.put("packaging","hpi");
-    parameters.put("outputDirectory","/Users/Stephen/Desktop/mailer-plugin-master/target/classes");
-    parameters.put("testOutputDirectory","/Users/Stephen/Desktop/mailer-plugin-master/target/test-classes");
+    parameters.put("outputDirectory","/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/classes");
+    parameters.put("testOutputDirectory","/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/test-classes");
     parameters.put("requirePI","true");
     return org.jvnet.hudson.test.PluginAutomaticTestBuilder.build(parameters);
   }
