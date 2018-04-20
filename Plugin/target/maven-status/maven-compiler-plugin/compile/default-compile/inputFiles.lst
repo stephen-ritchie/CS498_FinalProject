@@ -1,0 +1,10 @@
+/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/src/main/java/jenkins/plugins/mailer/tasks/MimeMessageBuilder.java
+/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/src/main/java/hudson/tasks/MailSender.java
+/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/src/main/java/jenkins/plugins/mailer/tasks/MailAddressFilterDescriptor.java
+/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/src/main/java/hudson/tasks/MailAddressResolver.java
+/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/src/main/java/hudson/tasks/Mailer.java
+/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/src/main/java/hudson/tasks/MailMessageIdAction.java
+/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/generated-sources/localizer/jenkins/plugins/mailer/tasks/i18n/Messages.java
+/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/src/main/java/jenkins/plugins/mailer/tasks/MailAddressFilter.java
+/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/src/main/java/hudson/tasks/PluginImpl.java
+/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/src/main/java/hudson/cli/MailCommand.java
