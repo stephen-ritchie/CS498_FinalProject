@@ -68,7 +68,8 @@ public class MimeMessageBuilder {
     private static final Logger LOGGER = Logger.getLogger(MimeMessageBuilder.class.getName());
 
     private String charset = "UTF-8";
-    private String mimeType = "text/plain";
+    //private String mimeType = "text/plain";
+    private String mimeType = "text/html";
     private TaskListener listener;
     private String defaultSuffix;
     private String from;
@@ -259,6 +260,7 @@ public class MimeMessageBuilder {
     }
 
     private String contentType() {
+        //return String.format("%s; charset=%s", mimeType, MimeUtility.quote(charset, HeaderTokenizer.MIME));
         return String.format("%s; charset=%s", mimeType, MimeUtility.quote(charset, HeaderTokenizer.MIME));
     }
 

@@ -1,35 +1,35 @@
-Apr 20, 2018 10:56:49 PM org.eclipse.jetty.util.log.Log initialized
-INFO: Logging initialized @3290ms
+Apr 21, 2018 1:18:44 AM org.eclipse.jetty.util.log.Log initialized
+INFO: Logging initialized @2547ms
 Exploding /Users/Stephen/.m2/repository/org/jenkins-ci/main/jenkins-war/1.625.3/jenkins-war-1.625.3-war-for-test.jar into /Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx
-Apr 20, 2018 10:57:06 PM org.eclipse.jetty.server.Server doStart
+Apr 21, 2018 1:18:59 AM org.eclipse.jetty.server.Server doStart
 INFO: jetty-9.2.12.v20150709
-Apr 20, 2018 10:57:07 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+Apr 21, 2018 1:19:00 AM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
 INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
-Apr 20, 2018 10:57:07 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+Apr 21, 2018 1:19:00 AM org.eclipse.jetty.server.handler.ContextHandler doStart
 INFO: Started o.e.j.w.WebAppContext@5443d039{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
-Apr 20, 2018 10:57:07 PM org.eclipse.jetty.server.AbstractConnector doStart
-INFO: Started ServerConnector@6cc1c958{HTTP/1.1}{localhost:50748}
-Apr 20, 2018 10:57:07 PM org.eclipse.jetty.server.Server doStart
-INFO: Started @21667ms
-Apr 20, 2018 10:57:07 PM org.jvnet.hudson.test.JenkinsRule createWebServer
-INFO: Running on http://localhost:50748/jenkins/
-Apr 20, 2018 10:57:08 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:19:01 AM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@30544c0a{HTTP/1.1}{localhost:59550}
+Apr 21, 2018 1:19:01 AM org.eclipse.jetty.server.Server doStart
+INFO: Started @19214ms
+Apr 21, 2018 1:19:01 AM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:59550/jenkins/
+Apr 21, 2018 1:19:01 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started initialization
-Apr 20, 2018 10:58:03 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:19:53 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Listed all plugins
-Apr 20, 2018 10:58:03 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:19:53 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Prepared all plugins
-Apr 20, 2018 10:58:03 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:19:53 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started all plugins
-Apr 20, 2018 10:58:03 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:19:53 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Augmented all extensions
-Apr 20, 2018 10:58:10 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:00 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Loaded all jobs
-Apr 20, 2018 10:58:16 PM org.jenkinsci.main.modules.sshd.SSHD start
-INFO: Started SSHD at port 50781
-Apr 20, 2018 10:58:16 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:05 AM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 59574
+Apr 21, 2018 1:20:05 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Completed initialization
-Apr 20, 2018 10:58:16 PM hudson.UDPBroadcastThread run
+Apr 21, 2018 1:20:05 AM hudson.UDPBroadcastThread run
 WARNING: UDP handling problem
 java.net.SocketException: Can't assign requested address
 	at java.net.PlainDatagramSocketImpl.join(Native Method)
@@ -37,56 +37,85 @@ java.net.SocketException: Can't assign requested address
 	at java.net.MulticastSocket.joinGroup(MulticastSocket.java:323)
 	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
 
-Apr 20, 2018 10:58:16 PM org.eclipse.jetty.server.Server doStart
+Apr 21, 2018 1:20:05 AM org.eclipse.jetty.server.Server doStart
 INFO: jetty-9.2.12.v20150709
-Apr 20, 2018 10:58:16 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+Apr 21, 2018 1:20:05 AM org.eclipse.jetty.server.handler.ContextHandler doStart
 INFO: Started o.e.j.s.ServletContextHandler@3234f74e{/,null,AVAILABLE}
-Apr 20, 2018 10:58:16 PM org.eclipse.jetty.server.AbstractConnector doStart
-INFO: Started ServerConnector@557a1e2d{HTTP/1.1}{0.0.0.0:50783}
-Apr 20, 2018 10:58:16 PM org.eclipse.jetty.server.Server doStart
-INFO: Started @90671ms
+Apr 21, 2018 1:20:05 AM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@557a1e2d{HTTP/1.1}{0.0.0.0:59576}
+Apr 21, 2018 1:20:05 AM org.eclipse.jetty.server.Server doStart
+INFO: Started @83990ms
 === Starting testMessageText(hudson.tasks.MailerTest)
-Apr 20, 2018 10:58:17 PM hudson.model.Run execute
+Apr 21, 2018 1:20:06 AM hudson.model.Run execute
 INFO: test0 #1 main build action completed: FAILURE
-Apr 20, 2018 10:58:17 PM hudson.model.Run execute
+Apr 21, 2018 1:20:06 AM hudson.model.Run execute
 INFO: test0 #2 main build action completed: UNSTABLE
-Apr 20, 2018 10:58:17 PM hudson.model.Run execute
+Apr 21, 2018 1:20:06 AM hudson.model.Run execute
 INFO: test0 #3 main build action completed: SUCCESS
-Apr 20, 2018 10:58:17 PM org.eclipse.jetty.server.AbstractConnector doStop
-INFO: Stopped ServerConnector@6cc1c958{HTTP/1.1}{localhost:0}
-Apr 20, 2018 10:58:17 PM org.eclipse.jetty.server.handler.ContextHandler doStop
+Apr 21, 2018 1:20:06 AM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@30544c0a{HTTP/1.1}{localhost:0}
+Apr 21, 2018 1:20:06 AM org.eclipse.jetty.server.handler.ContextHandler doStop
 INFO: Stopped o.e.j.w.WebAppContext@5443d039{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:20:06 AM hudson.TcpSlaveAgentListener shutdown
+WARNING: Failed to close down TCP port
+java.io.IOException: No such file or directory
+	at sun.nio.ch.NativeThread.signal(Native Method)
+	at sun.nio.ch.ServerSocketChannelImpl.implCloseSelectableChannel(ServerSocketChannelImpl.java:292)
+	at java.nio.channels.spi.AbstractSelectableChannel.implCloseChannel(AbstractSelectableChannel.java:234)
+	at java.nio.channels.spi.AbstractInterruptibleChannel.close(AbstractInterruptibleChannel.java:115)
+	at hudson.TcpSlaveAgentListener.shutdown(TcpSlaveAgentListener.java:119)
+	at jenkins.model.Jenkins.cleanUp(Jenkins.java:2820)
+	at org.jvnet.hudson.test.JenkinsRule.after(JenkinsRule.java:478)
+	at org.jvnet.hudson.test.JenkinsRule$2.evaluate(JenkinsRule.java:549)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:367)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeWithRerun(JUnit4Provider.java:274)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:238)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:161)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:290)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
+
 WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
 WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
-Apr 20, 2018 10:58:18 PM org.eclipse.jetty.server.Server doStart
+Apr 21, 2018 1:20:07 AM org.eclipse.jetty.server.Server doStart
 INFO: jetty-9.2.12.v20150709
-Apr 20, 2018 10:58:18 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+Apr 21, 2018 1:20:07 AM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
 INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
-Apr 20, 2018 10:58:18 PM org.eclipse.jetty.server.handler.ContextHandler doStart
-INFO: Started o.e.j.w.WebAppContext@77192705{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
-Apr 20, 2018 10:58:18 PM org.eclipse.jetty.server.AbstractConnector doStart
-INFO: Started ServerConnector@625e134e{HTTP/1.1}{localhost:50784}
-Apr 20, 2018 10:58:18 PM org.eclipse.jetty.server.Server doStart
-INFO: Started @92103ms
-Apr 20, 2018 10:58:18 PM org.jvnet.hudson.test.JenkinsRule createWebServer
-INFO: Running on http://localhost:50784/jenkins/
-Apr 20, 2018 10:58:18 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:07 AM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@226642a5{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:20:07 AM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@72bd06ca{HTTP/1.1}{localhost:59577}
+Apr 21, 2018 1:20:07 AM org.eclipse.jetty.server.Server doStart
+INFO: Started @85306ms
+Apr 21, 2018 1:20:07 AM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:59577/jenkins/
+Apr 21, 2018 1:20:07 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started initialization
-Apr 20, 2018 10:58:18 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:07 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Listed all plugins
-Apr 20, 2018 10:58:18 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:07 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Prepared all plugins
-Apr 20, 2018 10:58:18 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:07 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started all plugins
-Apr 20, 2018 10:58:18 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:07 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Augmented all extensions
-Apr 20, 2018 10:58:18 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:07 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Loaded all jobs
-Apr 20, 2018 10:58:20 PM org.jenkinsci.main.modules.sshd.SSHD start
-INFO: Started SSHD at port 50788
-Apr 20, 2018 10:58:20 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:08 AM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 59582
+Apr 21, 2018 1:20:08 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Completed initialization
-Apr 20, 2018 10:58:20 PM hudson.UDPBroadcastThread run
+Apr 21, 2018 1:20:08 AM hudson.UDPBroadcastThread run
 WARNING: UDP handling problem
 java.net.SocketException: Can't assign requested address
 	at java.net.PlainDatagramSocketImpl.join(Native Method)
@@ -95,10 +124,10 @@ java.net.SocketException: Can't assign requested address
 	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
 
 === Starting testGlobalConfigRoundtrip(hudson.tasks.MailerTest)
-Apr 20, 2018 10:59:01 PM org.eclipse.jetty.server.AbstractConnector doStop
-INFO: Stopped ServerConnector@625e134e{HTTP/1.1}{localhost:0}
-Apr 20, 2018 10:59:01 PM org.eclipse.jetty.server.handler.ContextHandler doStop
-INFO: Stopped o.e.j.w.WebAppContext@77192705{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:20:48 AM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@72bd06ca{HTTP/1.1}{localhost:0}
+Apr 21, 2018 1:20:48 AM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@226642a5{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
 WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
 WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
 WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
@@ -111,35 +140,35 @@ WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release()
 WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
 WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
 WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
-Apr 20, 2018 10:59:01 PM org.eclipse.jetty.server.Server doStart
+Apr 21, 2018 1:20:48 AM org.eclipse.jetty.server.Server doStart
 INFO: jetty-9.2.12.v20150709
-Apr 20, 2018 10:59:01 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+Apr 21, 2018 1:20:48 AM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
 INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
-Apr 20, 2018 10:59:01 PM org.eclipse.jetty.server.handler.ContextHandler doStart
-INFO: Started o.e.j.w.WebAppContext@56b1e527{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
-Apr 20, 2018 10:59:01 PM org.eclipse.jetty.server.AbstractConnector doStart
-INFO: Started ServerConnector@664db2ca{HTTP/1.1}{localhost:50815}
-Apr 20, 2018 10:59:01 PM org.eclipse.jetty.server.Server doStart
-INFO: Started @135237ms
-Apr 20, 2018 10:59:01 PM org.jvnet.hudson.test.JenkinsRule createWebServer
-INFO: Running on http://localhost:50815/jenkins/
-Apr 20, 2018 10:59:01 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:48 AM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@68c34db2{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:20:48 AM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@1491cd6c{HTTP/1.1}{localhost:59623}
+Apr 21, 2018 1:20:48 AM org.eclipse.jetty.server.Server doStart
+INFO: Started @126875ms
+Apr 21, 2018 1:20:48 AM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:59623/jenkins/
+Apr 21, 2018 1:20:48 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started initialization
-Apr 20, 2018 10:59:01 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:48 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Listed all plugins
-Apr 20, 2018 10:59:01 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:48 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Prepared all plugins
-Apr 20, 2018 10:59:01 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:48 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started all plugins
-Apr 20, 2018 10:59:01 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:48 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Augmented all extensions
-Apr 20, 2018 10:59:01 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:48 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Loaded all jobs
-Apr 20, 2018 10:59:02 PM org.jenkinsci.main.modules.sshd.SSHD start
-INFO: Started SSHD at port 50816
-Apr 20, 2018 10:59:02 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:49 AM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 59624
+Apr 21, 2018 1:20:49 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Completed initialization
-Apr 20, 2018 10:59:02 PM hudson.UDPBroadcastThread run
+Apr 21, 2018 1:20:49 AM hudson.UDPBroadcastThread run
 WARNING: UDP handling problem
 java.net.SocketException: Can't assign requested address
 	at java.net.PlainDatagramSocketImpl.join(Native Method)
@@ -148,41 +177,41 @@ java.net.SocketException: Can't assign requested address
 	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
 
 === Starting testSenderAddress(hudson.tasks.MailerTest)
-Apr 20, 2018 10:59:02 PM hudson.model.Run execute
+Apr 21, 2018 1:20:49 AM hudson.model.Run execute
 INFO: test0 #1 main build action completed: FAILURE
-Apr 20, 2018 10:59:02 PM org.eclipse.jetty.server.AbstractConnector doStop
-INFO: Stopped ServerConnector@664db2ca{HTTP/1.1}{localhost:0}
-Apr 20, 2018 10:59:02 PM org.eclipse.jetty.server.handler.ContextHandler doStop
-INFO: Stopped o.e.j.w.WebAppContext@56b1e527{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
-Apr 20, 2018 10:59:02 PM org.eclipse.jetty.server.Server doStart
+Apr 21, 2018 1:20:49 AM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@1491cd6c{HTTP/1.1}{localhost:0}
+Apr 21, 2018 1:20:49 AM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@68c34db2{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:20:49 AM org.eclipse.jetty.server.Server doStart
 INFO: jetty-9.2.12.v20150709
-Apr 20, 2018 10:59:02 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+Apr 21, 2018 1:20:49 AM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
 INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
-Apr 20, 2018 10:59:02 PM org.eclipse.jetty.server.handler.ContextHandler doStart
+Apr 21, 2018 1:20:49 AM org.eclipse.jetty.server.handler.ContextHandler doStart
 INFO: Started o.e.j.w.WebAppContext@3afca2c{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
-Apr 20, 2018 10:59:02 PM org.eclipse.jetty.server.AbstractConnector doStart
-INFO: Started ServerConnector@3a209918{HTTP/1.1}{localhost:50818}
-Apr 20, 2018 10:59:02 PM org.eclipse.jetty.server.Server doStart
-INFO: Started @136390ms
-Apr 20, 2018 10:59:02 PM org.jvnet.hudson.test.JenkinsRule createWebServer
-INFO: Running on http://localhost:50818/jenkins/
-Apr 20, 2018 10:59:02 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:49 AM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@3a209918{HTTP/1.1}{localhost:59626}
+Apr 21, 2018 1:20:49 AM org.eclipse.jetty.server.Server doStart
+INFO: Started @127847ms
+Apr 21, 2018 1:20:49 AM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:59626/jenkins/
+Apr 21, 2018 1:20:49 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started initialization
-Apr 20, 2018 10:59:02 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:49 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Listed all plugins
-Apr 20, 2018 10:59:02 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:49 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Prepared all plugins
-Apr 20, 2018 10:59:02 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:49 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started all plugins
-Apr 20, 2018 10:59:02 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:49 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Augmented all extensions
-Apr 20, 2018 10:59:02 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:49 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Loaded all jobs
-Apr 20, 2018 10:59:02 PM org.jenkinsci.main.modules.sshd.SSHD start
-INFO: Started SSHD at port 50819
-Apr 20, 2018 10:59:02 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:50 AM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 59627
+Apr 21, 2018 1:20:50 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Completed initialization
-Apr 20, 2018 10:59:02 PM hudson.UDPBroadcastThread run
+Apr 21, 2018 1:20:50 AM hudson.UDPBroadcastThread run
 WARNING: UDP handling problem
 java.net.SocketException: Can't assign requested address
 	at java.net.PlainDatagramSocketImpl.join(Native Method)
@@ -191,55 +220,55 @@ java.net.SocketException: Can't assign requested address
 	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
 
 === Starting testNotifyEveryUnstableBuild(hudson.tasks.MailerTest)
-Apr 20, 2018 10:59:03 PM hudson.model.Run execute
+Apr 21, 2018 1:20:50 AM hudson.model.Run execute
 INFO: test0 #1 main build action completed: FAILURE
-Apr 20, 2018 10:59:03 PM hudson.model.Run execute
+Apr 21, 2018 1:20:50 AM hudson.model.Run execute
 INFO: test0 #2 main build action completed: FAILURE
-Apr 20, 2018 10:59:03 PM hudson.model.Run execute
+Apr 21, 2018 1:20:50 AM hudson.model.Run execute
 INFO: test0 #3 main build action completed: UNSTABLE
-Apr 20, 2018 10:59:03 PM hudson.model.Run execute
+Apr 21, 2018 1:20:50 AM hudson.model.Run execute
 INFO: test0 #4 main build action completed: UNSTABLE
-Apr 20, 2018 10:59:03 PM hudson.model.Run execute
+Apr 21, 2018 1:20:50 AM hudson.model.Run execute
 INFO: test0 #5 main build action completed: SUCCESS
-Apr 20, 2018 10:59:03 PM hudson.model.Run execute
+Apr 21, 2018 1:20:50 AM hudson.model.Run execute
 INFO: test0 #6 main build action completed: SUCCESS
-Apr 20, 2018 10:59:03 PM hudson.model.Run execute
+Apr 21, 2018 1:20:50 AM hudson.model.Run execute
 INFO: test0 #7 main build action completed: UNSTABLE
-Apr 20, 2018 10:59:03 PM hudson.model.Run execute
+Apr 21, 2018 1:20:50 AM hudson.model.Run execute
 INFO: test0 #8 main build action completed: FAILURE
-Apr 20, 2018 10:59:03 PM org.eclipse.jetty.server.AbstractConnector doStop
+Apr 21, 2018 1:20:50 AM org.eclipse.jetty.server.AbstractConnector doStop
 INFO: Stopped ServerConnector@3a209918{HTTP/1.1}{localhost:0}
-Apr 20, 2018 10:59:03 PM org.eclipse.jetty.server.handler.ContextHandler doStop
+Apr 21, 2018 1:20:50 AM org.eclipse.jetty.server.handler.ContextHandler doStop
 INFO: Stopped o.e.j.w.WebAppContext@3afca2c{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
-Apr 20, 2018 10:59:03 PM org.eclipse.jetty.server.Server doStart
+Apr 21, 2018 1:20:50 AM org.eclipse.jetty.server.Server doStart
 INFO: jetty-9.2.12.v20150709
-Apr 20, 2018 10:59:03 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+Apr 21, 2018 1:20:51 AM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
 INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
-Apr 20, 2018 10:59:03 PM org.eclipse.jetty.server.handler.ContextHandler doStart
-INFO: Started o.e.j.w.WebAppContext@b7d2d51{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
-Apr 20, 2018 10:59:03 PM org.eclipse.jetty.server.AbstractConnector doStart
-INFO: Started ServerConnector@66b0e207{HTTP/1.1}{localhost:50821}
-Apr 20, 2018 10:59:03 PM org.eclipse.jetty.server.Server doStart
-INFO: Started @137585ms
-Apr 20, 2018 10:59:03 PM org.jvnet.hudson.test.JenkinsRule createWebServer
-INFO: Running on http://localhost:50821/jenkins/
-Apr 20, 2018 10:59:03 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:51 AM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@4c5406b{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:20:51 AM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@5d601832{HTTP/1.1}{localhost:59629}
+Apr 21, 2018 1:20:51 AM org.eclipse.jetty.server.Server doStart
+INFO: Started @129182ms
+Apr 21, 2018 1:20:51 AM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:59629/jenkins/
+Apr 21, 2018 1:20:51 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started initialization
-Apr 20, 2018 10:59:03 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:51 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Listed all plugins
-Apr 20, 2018 10:59:03 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:51 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Prepared all plugins
-Apr 20, 2018 10:59:03 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:51 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started all plugins
-Apr 20, 2018 10:59:03 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:51 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Augmented all extensions
-Apr 20, 2018 10:59:03 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:51 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Loaded all jobs
-Apr 20, 2018 10:59:04 PM org.jenkinsci.main.modules.sshd.SSHD start
-INFO: Started SSHD at port 50822
-Apr 20, 2018 10:59:04 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:20:51 AM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 59630
+Apr 21, 2018 1:20:51 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Completed initialization
-Apr 20, 2018 10:59:04 PM hudson.UDPBroadcastThread run
+Apr 21, 2018 1:20:51 AM hudson.UDPBroadcastThread run
 WARNING: UDP handling problem
 java.net.SocketException: Can't assign requested address
 	at java.net.PlainDatagramSocketImpl.join(Native Method)
@@ -248,43 +277,43 @@ java.net.SocketException: Can't assign requested address
 	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
 
 === Starting testConfigRoundtrip(hudson.tasks.MailerTest)
-Apr 20, 2018 10:59:28 PM org.eclipse.jetty.server.AbstractConnector doStop
-INFO: Stopped ServerConnector@66b0e207{HTTP/1.1}{localhost:0}
-Apr 20, 2018 10:59:28 PM org.eclipse.jetty.server.handler.ContextHandler doStop
-INFO: Stopped o.e.j.w.WebAppContext@b7d2d51{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:21:15 AM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@5d601832{HTTP/1.1}{localhost:0}
+Apr 21, 2018 1:21:15 AM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@4c5406b{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
 WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
 WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
 WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
 WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
-Apr 20, 2018 10:59:28 PM org.eclipse.jetty.server.Server doStart
+Apr 21, 2018 1:21:15 AM org.eclipse.jetty.server.Server doStart
 INFO: jetty-9.2.12.v20150709
-Apr 20, 2018 10:59:28 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+Apr 21, 2018 1:21:15 AM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
 INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
-Apr 20, 2018 10:59:28 PM org.eclipse.jetty.server.handler.ContextHandler doStart
-INFO: Started o.e.j.w.WebAppContext@3dcbbbc{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
-Apr 20, 2018 10:59:28 PM org.eclipse.jetty.server.AbstractConnector doStart
-INFO: Started ServerConnector@7e1fb22c{HTTP/1.1}{localhost:50841}
-Apr 20, 2018 10:59:28 PM org.eclipse.jetty.server.Server doStart
-INFO: Started @162271ms
-Apr 20, 2018 10:59:28 PM org.jvnet.hudson.test.JenkinsRule createWebServer
-INFO: Running on http://localhost:50841/jenkins/
-Apr 20, 2018 10:59:28 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:15 AM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@38fc34fd{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:21:15 AM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@740ee00f{HTTP/1.1}{localhost:59636}
+Apr 21, 2018 1:21:15 AM org.eclipse.jetty.server.Server doStart
+INFO: Started @154116ms
+Apr 21, 2018 1:21:15 AM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:59636/jenkins/
+Apr 21, 2018 1:21:15 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started initialization
-Apr 20, 2018 10:59:28 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:15 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Listed all plugins
-Apr 20, 2018 10:59:28 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:15 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Prepared all plugins
-Apr 20, 2018 10:59:28 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:15 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started all plugins
-Apr 20, 2018 10:59:28 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:15 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Augmented all extensions
-Apr 20, 2018 10:59:28 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:16 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Loaded all jobs
-Apr 20, 2018 10:59:29 PM org.jenkinsci.main.modules.sshd.SSHD start
-INFO: Started SSHD at port 50842
-Apr 20, 2018 10:59:29 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:16 AM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 59637
+Apr 21, 2018 1:21:16 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Completed initialization
-Apr 20, 2018 10:59:29 PM hudson.UDPBroadcastThread run
+Apr 21, 2018 1:21:16 AM hudson.UDPBroadcastThread run
 WARNING: UDP handling problem
 java.net.SocketException: Can't assign requested address
 	at java.net.PlainDatagramSocketImpl.join(Native Method)
@@ -293,41 +322,41 @@ java.net.SocketException: Can't assign requested address
 	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
 
 === Starting testHudsonUrlCompatibility(hudson.tasks.MailerTest)
-Apr 20, 2018 10:59:40 PM org.eclipse.jetty.server.AbstractConnector doStop
-INFO: Stopped ServerConnector@7e1fb22c{HTTP/1.1}{localhost:0}
-Apr 20, 2018 10:59:40 PM org.eclipse.jetty.server.handler.ContextHandler doStop
-INFO: Stopped o.e.j.w.WebAppContext@3dcbbbc{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:21:27 AM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@740ee00f{HTTP/1.1}{localhost:0}
+Apr 21, 2018 1:21:27 AM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@38fc34fd{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
 WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
 WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.
-Apr 20, 2018 10:59:41 PM org.eclipse.jetty.server.Server doStart
+Apr 21, 2018 1:21:27 AM org.eclipse.jetty.server.Server doStart
 INFO: jetty-9.2.12.v20150709
-Apr 20, 2018 10:59:41 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+Apr 21, 2018 1:21:27 AM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
 INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
-Apr 20, 2018 10:59:41 PM org.eclipse.jetty.server.handler.ContextHandler doStart
-INFO: Started o.e.j.w.WebAppContext@233789d9{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
-Apr 20, 2018 10:59:41 PM org.eclipse.jetty.server.AbstractConnector doStart
-INFO: Started ServerConnector@6e612122{HTTP/1.1}{localhost:50849}
-Apr 20, 2018 10:59:41 PM org.eclipse.jetty.server.Server doStart
-INFO: Started @175017ms
-Apr 20, 2018 10:59:41 PM org.jvnet.hudson.test.JenkinsRule createWebServer
-INFO: Running on http://localhost:50849/jenkins/
-Apr 20, 2018 10:59:41 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:27 AM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@6e612122{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:21:27 AM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@16745abd{HTTP/1.1}{localhost:59653}
+Apr 21, 2018 1:21:27 AM org.eclipse.jetty.server.Server doStart
+INFO: Started @165868ms
+Apr 21, 2018 1:21:27 AM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:59653/jenkins/
+Apr 21, 2018 1:21:27 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started initialization
-Apr 20, 2018 10:59:41 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:27 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Listed all plugins
-Apr 20, 2018 10:59:41 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:27 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Prepared all plugins
-Apr 20, 2018 10:59:41 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:27 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started all plugins
-Apr 20, 2018 10:59:41 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:27 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Augmented all extensions
-Apr 20, 2018 10:59:41 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:27 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Loaded all jobs
-Apr 20, 2018 10:59:41 PM org.jenkinsci.main.modules.sshd.SSHD start
-INFO: Started SSHD at port 50850
-Apr 20, 2018 10:59:41 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:28 AM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 59654
+Apr 21, 2018 1:21:28 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Completed initialization
-Apr 20, 2018 10:59:41 PM hudson.UDPBroadcastThread run
+Apr 21, 2018 1:21:28 AM hudson.UDPBroadcastThread run
 WARNING: UDP handling problem
 java.net.SocketException: Can't assign requested address
 	at java.net.PlainDatagramSocketImpl.join(Native Method)
@@ -336,59 +365,59 @@ java.net.SocketException: Can't assign requested address
 	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
 
 === Starting testNotNotifyEveryUnstableBuild(hudson.tasks.MailerTest)
-Apr 20, 2018 10:59:41 PM hudson.model.Run execute
+Apr 21, 2018 1:21:28 AM hudson.model.Run execute
 INFO: test0 #1 main build action completed: SUCCESS
-Apr 20, 2018 10:59:41 PM hudson.model.Run execute
+Apr 21, 2018 1:21:28 AM hudson.model.Run execute
 INFO: test0 #2 main build action completed: SUCCESS
-Apr 20, 2018 10:59:41 PM hudson.model.Run execute
+Apr 21, 2018 1:21:28 AM hudson.model.Run execute
 INFO: test0 #3 main build action completed: UNSTABLE
-Apr 20, 2018 10:59:41 PM hudson.model.Run execute
+Apr 21, 2018 1:21:28 AM hudson.model.Run execute
 INFO: test0 #4 main build action completed: UNSTABLE
-Apr 20, 2018 10:59:41 PM hudson.model.Run execute
+Apr 21, 2018 1:21:28 AM hudson.model.Run execute
 INFO: test0 #5 main build action completed: SUCCESS
-Apr 20, 2018 10:59:41 PM hudson.model.Run execute
+Apr 21, 2018 1:21:28 AM hudson.model.Run execute
 INFO: test0 #6 main build action completed: SUCCESS
-Apr 20, 2018 10:59:41 PM hudson.model.Run execute
+Apr 21, 2018 1:21:28 AM hudson.model.Run execute
 INFO: test0 #7 main build action completed: UNSTABLE
-Apr 20, 2018 10:59:41 PM hudson.model.Run execute
+Apr 21, 2018 1:21:28 AM hudson.model.Run execute
 INFO: test0 #8 main build action completed: UNSTABLE
-Apr 20, 2018 10:59:41 PM hudson.model.Run execute
+Apr 21, 2018 1:21:28 AM hudson.model.Run execute
 INFO: test0 #9 main build action completed: FAILURE
-Apr 20, 2018 10:59:41 PM hudson.model.Run execute
+Apr 21, 2018 1:21:28 AM hudson.model.Run execute
 INFO: test0 #10 main build action completed: FAILURE
-Apr 20, 2018 10:59:41 PM org.eclipse.jetty.server.AbstractConnector doStop
-INFO: Stopped ServerConnector@6e612122{HTTP/1.1}{localhost:0}
-Apr 20, 2018 10:59:41 PM org.eclipse.jetty.server.handler.ContextHandler doStop
-INFO: Stopped o.e.j.w.WebAppContext@233789d9{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
-Apr 20, 2018 10:59:42 PM org.eclipse.jetty.server.Server doStart
+Apr 21, 2018 1:21:28 AM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@16745abd{HTTP/1.1}{localhost:0}
+Apr 21, 2018 1:21:28 AM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@6e612122{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:21:28 AM org.eclipse.jetty.server.Server doStart
 INFO: jetty-9.2.12.v20150709
-Apr 20, 2018 10:59:42 PM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
+Apr 21, 2018 1:21:28 AM org.eclipse.jetty.webapp.StandardDescriptorProcessor visitServlet
 INFO: NO JSP Support for /jenkins, did not find org.eclipse.jetty.jsp.JettyJspServlet
-Apr 20, 2018 10:59:42 PM org.eclipse.jetty.server.handler.ContextHandler doStart
-INFO: Started o.e.j.w.WebAppContext@7d0333c8{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
-Apr 20, 2018 10:59:42 PM org.eclipse.jetty.server.AbstractConnector doStart
-INFO: Started ServerConnector@3673e211{HTTP/1.1}{localhost:50852}
-Apr 20, 2018 10:59:42 PM org.eclipse.jetty.server.Server doStart
-INFO: Started @176073ms
-Apr 20, 2018 10:59:42 PM org.jvnet.hudson.test.JenkinsRule createWebServer
-INFO: Running on http://localhost:50852/jenkins/
-Apr 20, 2018 10:59:42 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:28 AM org.eclipse.jetty.server.handler.ContextHandler doStart
+INFO: Started o.e.j.w.WebAppContext@3673e211{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,AVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:21:28 AM org.eclipse.jetty.server.AbstractConnector doStart
+INFO: Started ServerConnector@50d6c8fc{HTTP/1.1}{localhost:59656}
+Apr 21, 2018 1:21:28 AM org.eclipse.jetty.server.Server doStart
+INFO: Started @166967ms
+Apr 21, 2018 1:21:28 AM org.jvnet.hudson.test.JenkinsRule createWebServer
+INFO: Running on http://localhost:59656/jenkins/
+Apr 21, 2018 1:21:28 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started initialization
-Apr 20, 2018 10:59:42 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:28 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Listed all plugins
-Apr 20, 2018 10:59:42 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:28 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Prepared all plugins
-Apr 20, 2018 10:59:42 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:28 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Started all plugins
-Apr 20, 2018 10:59:42 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:28 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Augmented all extensions
-Apr 20, 2018 10:59:42 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:28 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Loaded all jobs
-Apr 20, 2018 10:59:42 PM org.jenkinsci.main.modules.sshd.SSHD start
-INFO: Started SSHD at port 50853
-Apr 20, 2018 10:59:42 PM jenkins.InitReactorRunner$1 onAttained
+Apr 21, 2018 1:21:29 AM org.jenkinsci.main.modules.sshd.SSHD start
+INFO: Started SSHD at port 59657
+Apr 21, 2018 1:21:29 AM jenkins.InitReactorRunner$1 onAttained
 INFO: Completed initialization
-Apr 20, 2018 10:59:42 PM hudson.UDPBroadcastThread run
+Apr 21, 2018 1:21:29 AM hudson.UDPBroadcastThread run
 WARNING: UDP handling problem
 java.net.SocketException: Can't assign requested address
 	at java.net.PlainDatagramSocketImpl.join(Native Method)
@@ -397,21 +426,21 @@ java.net.SocketException: Can't assign requested address
 	at hudson.UDPBroadcastThread.run(UDPBroadcastThread.java:77)
 
 === Starting testNotifyCulprits(hudson.tasks.MailerTest)
-Apr 20, 2018 10:59:43 PM hudson.model.Run execute
+Apr 21, 2018 1:21:29 AM hudson.model.Run execute
 INFO: test0 #1 main build action completed: SUCCESS
-Apr 20, 2018 10:59:43 PM hudson.model.Run execute
+Apr 21, 2018 1:21:29 AM hudson.model.Run execute
 INFO: test0 #2 main build action completed: SUCCESS
-Apr 20, 2018 10:59:43 PM hudson.model.Run execute
+Apr 21, 2018 1:21:29 AM hudson.model.Run execute
 INFO: test0 #3 main build action completed: UNSTABLE
-Apr 20, 2018 10:59:43 PM hudson.model.Run execute
+Apr 21, 2018 1:21:29 AM hudson.model.Run execute
 INFO: test0 #4 main build action completed: UNSTABLE
-Apr 20, 2018 10:59:43 PM hudson.model.Run execute
+Apr 21, 2018 1:21:29 AM hudson.model.Run execute
 INFO: test0 #5 main build action completed: SUCCESS
-Apr 20, 2018 10:59:43 PM hudson.model.Run execute
+Apr 21, 2018 1:21:29 AM hudson.model.Run execute
 INFO: test0 #6 main build action completed: FAILURE
-Apr 20, 2018 10:59:43 PM org.eclipse.jetty.server.AbstractConnector doStop
-INFO: Stopped ServerConnector@3673e211{HTTP/1.1}{localhost:0}
-Apr 20, 2018 10:59:43 PM org.eclipse.jetty.server.handler.ContextHandler doStop
-INFO: Stopped o.e.j.w.WebAppContext@7d0333c8{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
+Apr 21, 2018 1:21:29 AM org.eclipse.jetty.server.AbstractConnector doStop
+INFO: Stopped ServerConnector@50d6c8fc{HTTP/1.1}{localhost:0}
+Apr 21, 2018 1:21:29 AM org.eclipse.jetty.server.handler.ContextHandler doStop
+INFO: Stopped o.e.j.w.WebAppContext@3673e211{/jenkins,file:/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx/,UNAVAILABLE}{/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin/target/jenkins-for-testx}
 WARN: The method class org.apache.commons.logging.impl.SLF4JLogFactory#release() was invoked.
 WARN: Please see http://www.slf4j.org/codes.html#release for an explanation.

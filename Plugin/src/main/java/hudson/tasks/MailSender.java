@@ -305,7 +305,9 @@ public class MailSender {
     }
 
     private void appendUrl(String url, StringBuilder buf) {
-        buf.append("This should be in the header\n");
+        buf.append("============================================================\n");
+        buf.append("CS 498 Email Notification\n");
+        buf.append("============================================================\n");
         buf.append(Messages.MailSender_Link(url)).append("\n\n");
     }
 
@@ -340,7 +342,9 @@ public class MailSender {
             buf.append('\n');
         }
 
-        buf.append("------------------------------------------\n");
+
+        buf.append(getSubject(build, "Build Name: "));
+        buf.append("\n----------------------------------------------------------\n");
 
         try {
             // Restrict max log size to avoid sending enormous logs over email.
