@@ -318,9 +318,6 @@ public class MailSender {
     // ** Stephen Code - END ***************************************************
 
     private void appendUrl(String url, StringBuilder buf) {
-        buf.append("============================================================\n");
-        buf.append("CS 498 Email Notification\n");
-        buf.append("============================================================\n");
         buf.append(Messages.MailSender_Link(url)).append("\n\n");
     }
 
@@ -333,6 +330,53 @@ public class MailSender {
         msg.setSubject(getSubject(build, Messages.MailSender_FailureMail_Subject()),charset); // setting the subject
 
         StringBuilder buf = new StringBuilder();
+
+        // ** Stephen Code - START *********************************************
+        buf.append("============================================================\n");
+        buf.append("CS 498 Email Notification for ");
+        buf.append(getSubject(build, " "));
+        buf.append("\n============================================================\n");
+        buf.append("PROJECT AT A GLANCE\n");
+        //----------------------------------------------------------------------
+        // Figuring out the percentage of JUnit tests that failed
+        //----------------------------------------------------------------------
+        buf.append("* JUnit Fail Percentage: ");
+        try {
+          // Building URL to directory that contains JUnit report
+          String baseUrl = Mailer.descriptor().getUrl();
+          String workspaceUrl = baseUrl + Util.encode(build.getParent().getUrl()) + "ws/";
+          String filename = workspaceUrl + "/target/surefire-reports/uky.cs498.AppTest.txt";
+
+          // Opening URL into stream...replicating behavior as if it's being opened as a file
+          URL oracle = new URL(filename);
+          BufferedReader b = new BufferedReader(new InputStreamReader(oracle.openStream()));
+          String readLine = "";
+
+          // Reading through file line by line.
+          while ((readLine = b.readLine()) != null) {
+
+              // Looking for the specific line of the report file we want
+              int targetLine = readLine.indexOf("Tests run:"); // using indexOf to see if the current line is the one wanted
+          		if (targetLine != -1) {
+          			String[] data = readLine.split(","); // breaking up line into array - it will always be comma delimited for each category
+          			int testsRun = Integer.parseInt(data[0].substring(11)); // parsing string to get the integer value of the number of tests run
+          			int testsFailed = Integer.parseInt(data[1].substring(11)); // parsing string to get the integer value of the number of tests that failed
+          			float failurePercentage = ((float)testsFailed/testsRun) * 100; // determing percentage of tests failed
+
+                buf.append(failurePercentage); // adding failure percentage to email
+
+                if (failurePercentage > 50){
+                  buf.append("   WARNING! Over 50 percent of JUnit tests failed!");
+                }
+          		}
+          }
+        } catch (IOException e) {
+            buf.append("Report file could not be found");
+        }
+
+        buf.append("\n\n");
+        // ** Stephen Code - END ***********************************************
+
         appendBuildUrl(build, buf);
 
         boolean firstChange = true;
@@ -355,13 +399,8 @@ public class MailSender {
             buf.append('\n');
         }
 
-        buf.append("PROJECT AT A GLANCE\n");
-        int testFailurePercentage = 10;
-        if (testFailurePercentage > 50){
-          buf.append("WARNING! Over 50 percent of test cases failed!");
-        }
-        buf.append(getSubject(build, "Build Name: "));
-        buf.append("\n----------------------------------------------------------\n");
+
+        buf.append("----------------------------------------------------------\n");
 
         try {
             // Restrict max log size to avoid sending enormous logs over email.
@@ -417,40 +456,8 @@ public class MailSender {
         buf.append('\n');
 
         // ** Stephen Code - START *********************************************
-        try {
-          String baseUrl = Mailer.descriptor().getUrl();
-          String workspaceUrl = baseUrl + Util.encode(build.getParent().getUrl()) + "ws/";
-          String filename = workspaceUrl + "/target/surefire-reports/uky.cs498.AppTest.txt";
-          URL oracle = new URL(filename);
-          BufferedReader b = new BufferedReader(new InputStreamReader(oracle.openStream()));
-          String readLine = "";
-          while ((readLine = b.readLine()) != null) {
-          		int targetLine = readLine.indexOf("Tests run:");
-          		if (targetLine != -1) {
-          			//System.out.println(readLine);
-          			//System.out.println(targetLine);
-          			String[] data = readLine.split(",");
-          	        //System.out.println(Arrays.toString(data));
-          			int testsRun = Integer.parseInt(data[0].substring(11));
-          			//int testsFailed = Integer.parseInt(data[1].substring(11));
-          			int testsFailed = 2;
-          			float failurePercentage = ((float)testsFailed/testsRun) * 100;
-
-          			//System.out.println("Tests Run:" + testsRun);
-          			//System.out.println("Failures :" + testsFailed);
-          			//System.out.println("Fail Percentage:" + failurePercentage);
-                buf.append("Fail Percentage:" + failurePercentage);
-
-          		}
-          }
-        } catch (IOException e) {
-            //e.printStackTrace();
-            buf.append("Could not find file");
-        }
-        // ** Stephen Code - END ***********************************************
-
-
         buf.append("Disclaimer: This email message sent with the help of the Jenkins Mailer plugin.");
+        // ** Stephen Code - END ***********************************************
 
         msg.setText(buf.toString(),charset);
 
