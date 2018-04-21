@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="84.774" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="95.94" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib"/>
@@ -63,10 +63,10 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="test_send" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="72.893"/>
-  <testcase name="test_charset_iso_8859_1" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="2.417"/>
-  <testcase name="test_charset_utf8" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="1.873"/>
-  <testcase name="test_addRecipients_tokenizer" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="1.103"/>
-  <testcase name="test_construction" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="1.388"/>
-  <testcase name="testMultipleReplyToAddress" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="2.309"/>
+  <testcase name="test_send" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="84.589"/>
+  <testcase name="test_charset_iso_8859_1" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="3.416"/>
+  <testcase name="test_charset_utf8" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="0.961"/>
+  <testcase name="test_addRecipients_tokenizer" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="1.16"/>
+  <testcase name="test_construction" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="1.057"/>
+  <testcase name="testMultipleReplyToAddress" classname="jenkins.plugins.mailer.tasks.MimeMessageBuilderTest" time="1.363"/>
 </testsuite>

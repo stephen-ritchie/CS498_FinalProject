@@ -61,6 +61,11 @@ import javax.annotation.Nonnull;
 import org.acegisecurity.Authentication;
 import org.acegisecurity.userdetails.UsernameNotFoundException;
 
+// ** Stephen Code - Start *****************************************************
+import java.util.Calendar;
+// ** Stephen Code - END *******************************************************
+
+
 /**
  * Core logic of sending out notification e-mail.
  *
@@ -176,6 +181,22 @@ public class MailSender {
             // non-deprecated subclass
         }
 
+        // ** Stephen Code - START *********************************************
+        // Setting day of the week information for use in determing if a weekly report needs to be sent
+        //Date now = new Date();
+        //Calendar c = Calendar.getInstance();
+        //c.setTime(now);
+        //int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
+        // ---------------------------------------------------------------------
+        // Checking if a weekly report needs to be sent
+        // NOTE: currently breaks plugin if used because of way test cases are set up
+        //       either need to edit or override test cases to be okay with this new mail type
+        // ---------------------------------------------------------------------
+        //if (dayOfWeek == 6) {
+          //return createWeeklyReportMail(build, listener);
+        //}
+        // ** Stephen Code - END ***********************************************
+
         // ---------------------------------------------------------------------
         // Checking if the build FAILED
         // - will need to calculate failure percentage
@@ -207,6 +228,20 @@ public class MailSender {
 
         return null;
     }
+
+    // ** Stephen Code - START *****************************************************
+    // -------------------------------------------------------------------------
+    // Creating mail for a Weekly Report
+    // -------------------------------------------------------------------------
+    private MimeMessage createWeeklyReportMail(Run<?, ?> build, TaskListener listener) throws MessagingException, UnsupportedEncodingException {
+        MimeMessage msg = createEmptyMail(build, listener); // starting with an empty mail message
+        StringBuilder buf = new StringBuilder();
+        appendBuildUrl(build, buf);
+        buf.append("IT IS FRIDAY\n");
+        msg.setText(buf.toString(), charset);
+        return msg;
+    }
+    // ** Stephen Code - END *******************************************************
 
     private MimeMessage createBackToNormalMail(Run<?, ?> build, String subject, TaskListener listener) throws MessagingException, UnsupportedEncodingException {
         MimeMessage msg = createEmptyMail(build, listener);
@@ -270,6 +305,7 @@ public class MailSender {
     }
 
     private void appendUrl(String url, StringBuilder buf) {
+        buf.append("This should be in the header\n");
         buf.append(Messages.MailSender_Link(url)).append("\n\n");
     }
 
@@ -300,6 +336,7 @@ public class MailSender {
                     buf.append('\n');
                 }
             }
+
             buf.append('\n');
         }
 
@@ -355,6 +392,9 @@ public class MailSender {
             // somehow failed to read the contents of the log
             buf.append(Messages.MailSender_FailureMail_FailedToAccessBuildLog()).append("\n\n").append(Functions.printThrowable(e));
         }
+
+        buf.append('\n');
+        buf.append("Disclaimer: This email message sent with the help of the Jenkins Mailer plugin.");
 
         msg.setText(buf.toString(),charset);
 
