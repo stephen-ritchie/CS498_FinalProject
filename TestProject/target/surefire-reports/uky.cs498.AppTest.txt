@@ -1,11 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: uky.cs498.AppTest
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec <<< FAILURE!
-test1(uky.cs498.AppTest)  Time elapsed: 0.003 sec  <<< FAILURE!
-junit.framework.AssertionFailedError
-	at junit.framework.Assert.fail(Assert.java:47)
-	at junit.framework.Assert.assertTrue(Assert.java:20)
-	at junit.framework.Assert.assertTrue(Assert.java:27)
-	at uky.cs498.AppTest.test1(AppTest.java:36)
-
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec

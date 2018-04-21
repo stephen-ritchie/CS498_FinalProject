@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="InjectedTest" time="77.245" tests="61" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="InjectedTest" time="77.007" tests="61" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib"/>
@@ -63,65 +63,65 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="hudson/tasks/Mailer/global.jelly" classname="org.jvnet.hudson.test.JellyTestSuiteBuilder$JellyCheck" time="1.019"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config.jelly" classname="org.jvnet.hudson.test.JellyTestSuiteBuilder$JellyCheck" time="0.029"/>
-  <testcase name="hudson/tasks/Mailer/config.jelly" classname="org.jvnet.hudson.test.JellyTestSuiteBuilder$JellyCheck" time="0.336"/>
-  <testcase name="testCliSanity" classname="org.jvnet.hudson.test.PluginAutomaticTestBuilder$OtherTests" time="0.033"/>
-  <testcase name="testPluginActive" classname="org.jvnet.hudson.test.PluginAutomaticTestBuilder$OtherTests" time="0"/>
+  <testcase name="hudson/tasks/Mailer/global.jelly" classname="org.jvnet.hudson.test.JellyTestSuiteBuilder$JellyCheck" time="1.202"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config.jelly" classname="org.jvnet.hudson.test.JellyTestSuiteBuilder$JellyCheck" time="0.048"/>
+  <testcase name="hudson/tasks/Mailer/config.jelly" classname="org.jvnet.hudson.test.JellyTestSuiteBuilder$JellyCheck" time="0.584"/>
+  <testcase name="testCliSanity" classname="org.jvnet.hudson.test.PluginAutomaticTestBuilder$OtherTests" time="0.029"/>
+  <testcase name="testPluginActive" classname="org.jvnet.hudson.test.PluginAutomaticTestBuilder$OtherTests" time="0.001"/>
   <testcase name="org.jvnet.hudson.test.JellyTestSuiteBuilder$JellyTestSuite" classname="org.jvnet.hudson.test.junit.FailedTest" time="0"/>
   <testcase name="hudson/tasks/Mailer/global_zh_TW.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/global_pt_BR.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.005"/>
-  <testcase name="hudson/tasks/Mailer/global_de.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/config_es.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.01"/>
+  <testcase name="hudson/tasks/Mailer/global_pt_BR.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/global_de.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/config_es.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
   <testcase name="hudson/tasks/Mailer/UserProperty/config_de.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
   <testcase name="hudson/tasks/Mailer/config_zh_TW.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/config_de.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/config_de.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.002"/>
   <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_pt_BR.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config_cs.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_es.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config_sv_SE.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.002"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config_lv.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/config_pt_BR.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config_es.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/global_es.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config_cs.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.002"/>
+  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_es.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config_sv_SE.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config_lv.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/config_pt_BR.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config_es.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/global_es.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
   <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_de.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_zh_TW.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/config.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.002"/>
-  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_fr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config_nl.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/global_nl.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_zh_TW.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/config.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_fr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config_nl.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/global_nl.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
   <testcase name="hudson/tasks/Mailer/config_zh_CN.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/global_tr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/config_fr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config_nb_NO.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_ja.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config_it.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/global_tr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/config_fr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config_nb_NO.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_ja.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config_it.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
   <testcase name="hudson/tasks/Mailer/config_ja.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
   <testcase name="hudson/tasks/Mailer/UserProperty/config_tr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
   <testcase name="hudson/tasks/Mailer/global_zh_CN.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
   <testcase name="hudson/tasks/Mailer/UserProperty/config_fr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_tr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config_da.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.003"/>
+  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_tr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config_da.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
   <testcase name="hudson/tasks/Mailer/global_da.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/global_ja.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/config_ru.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config_ru.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/config_da.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/global_ja.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/config_ru.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config_ru.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/config_da.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
   <testcase name="hudson/tasks/Mailer/UserProperty/config_zh_TW.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config_pt_BR.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_ru.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config_pt_BR.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_ru.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
   <testcase name="hudson/tasks/Mailer/global_fr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_da.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/UserProperty/config_fi.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_da.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/UserProperty/config_fi.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
   <testcase name="hudson/tasks/Mailer/config_pl.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/config_nl.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
-  <testcase name="hudson/tasks/Mailer/config_bg.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/global_ru.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/config_nl.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/config_bg.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
+  <testcase name="hudson/tasks/Mailer/global_ru.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
   <testcase name="hudson/tasks/Mailer/global_ko.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="hudson/tasks/Mailer/config_tr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="hudson/tasks/Mailer/config_tr.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
   <testcase name="hudson/tasks/Mailer/UserProperty/config_zh_CN.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
   <testcase name="hudson/tasks/Mailer/UserProperty/config_ja.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
-  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_nl.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0"/>
+  <testcase name="jenkins/plugins/mailer/tasks/i18n/Messages_nl.properties" classname="org.jvnet.hudson.test.PropertiesTestSuite$PropertiesTest" time="0.001"/>
 </testsuite>

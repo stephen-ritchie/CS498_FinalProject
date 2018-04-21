@@ -40,7 +40,10 @@ THE SOFTWARE.
     <f:checkbox title="${%Send separate e-mails to individuals who broke the build}" />
   </f:entry>
   <f:entry field="notify50Percent" title="">
-    <f:checkbox title="${%Notify all individuals when a build fails by more than 50 percent}" />
+    <f:checkbox title="${%Send e-mail if more than 50% of JUnit tests fail}" />
+  </f:entry>
+  <f:entry field="showFailureLine" title="">
+    <f:checkbox title="${%If a build fails, show which line numbers caused the initial failure}" />
   </f:entry>
   <f:entry field="notifyLineChange" title="">
     <f:checkbox title="${%Send e-mail if line numbers are changed}" />
@@ -49,7 +52,7 @@ THE SOFTWARE.
     <f:checkbox title="${%Send e-mail if code coverage changes}" />
   </f:entry>
   <f:entry field="congratulateTeam" title="">
-    <f:checkbox title="${%Congratulate team when code coverage is 100%}" />
+    <f:checkbox title="${%Congratulate team if code coverage reaches 100%}" />
   </f:entry>
   <f:entry field="weeklyProgressReport" title="">
     <f:checkbox title="${%Send a progress report at the end of each week}" />
