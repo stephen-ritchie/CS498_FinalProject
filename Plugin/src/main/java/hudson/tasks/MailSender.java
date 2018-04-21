@@ -63,6 +63,13 @@ import org.acegisecurity.userdetails.UsernameNotFoundException;
 
 // ** Stephen Code - Start *****************************************************
 import java.util.Calendar;
+import java.io.BufferedReader;
+//import java.io.File;
+import java.io.FileReader;
+//import java.io.IOException;
+import java.util.Arrays;
+import java.net.*;
+import java.io.*;
 // ** Stephen Code - END *******************************************************
 
 
@@ -304,6 +311,12 @@ public class MailSender {
         }
     }
 
+    // ** Stephen Code - START *************************************************
+    /*private void getTestFailPercentage(Run<?, ?>build, StringBuilder buf) {
+
+    }*/
+    // ** Stephen Code - END ***************************************************
+
     private void appendUrl(String url, StringBuilder buf) {
         buf.append("============================================================\n");
         buf.append("CS 498 Email Notification\n");
@@ -342,7 +355,11 @@ public class MailSender {
             buf.append('\n');
         }
 
-
+        buf.append("PROJECT AT A GLANCE\n");
+        int testFailurePercentage = 10;
+        if (testFailurePercentage > 50){
+          buf.append("WARNING! Over 50 percent of test cases failed!");
+        }
         buf.append(getSubject(build, "Build Name: "));
         buf.append("\n----------------------------------------------------------\n");
 
@@ -398,6 +415,41 @@ public class MailSender {
         }
 
         buf.append('\n');
+
+        // ** Stephen Code - START *********************************************
+        try {
+          String baseUrl = Mailer.descriptor().getUrl();
+          String workspaceUrl = baseUrl + Util.encode(build.getParent().getUrl()) + "ws/";
+          String filename = workspaceUrl + "/target/surefire-reports/uky.cs498.AppTest.txt";
+          URL oracle = new URL(filename);
+          BufferedReader b = new BufferedReader(new InputStreamReader(oracle.openStream()));
+          String readLine = "";
+          while ((readLine = b.readLine()) != null) {
+          		int targetLine = readLine.indexOf("Tests run:");
+          		if (targetLine != -1) {
+          			//System.out.println(readLine);
+          			//System.out.println(targetLine);
+          			String[] data = readLine.split(",");
+          	        //System.out.println(Arrays.toString(data));
+          			int testsRun = Integer.parseInt(data[0].substring(11));
+          			//int testsFailed = Integer.parseInt(data[1].substring(11));
+          			int testsFailed = 2;
+          			float failurePercentage = ((float)testsFailed/testsRun) * 100;
+
+          			//System.out.println("Tests Run:" + testsRun);
+          			//System.out.println("Failures :" + testsFailed);
+          			//System.out.println("Fail Percentage:" + failurePercentage);
+                buf.append("Fail Percentage:" + failurePercentage);
+
+          		}
+          }
+        } catch (IOException e) {
+            //e.printStackTrace();
+            buf.append("Could not find file");
+        }
+        // ** Stephen Code - END ***********************************************
+
+
         buf.append("Disclaimer: This email message sent with the help of the Jenkins Mailer plugin.");
 
         msg.setText(buf.toString(),charset);
