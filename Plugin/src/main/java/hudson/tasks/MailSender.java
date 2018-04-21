@@ -312,14 +312,22 @@ public class MailSender {
     }
 
     // ** Stephen Code - START *************************************************
-    /*private void getTestFailPercentage(Run<?, ?>build, StringBuilder buf) {
-
-    }*/
+    //--------------------------------------------------------------------------
+    //
+    //--------------------------------------------------------------------------
+    private void appendHeader(Run<?, ?> build, StringBuilder buf) {
+        buf.append("============================================================\n");
+        buf.append("CS 498 Email Notification for ");
+        buf.append(getSubject(build, " "));
+        buf.append("\n============================================================\n");
+        buf.append("PROJECT AT A GLANCE\n");
+    }
     // ** Stephen Code - END ***************************************************
 
     private void appendUrl(String url, StringBuilder buf) {
         buf.append(Messages.MailSender_Link(url)).append("\n\n");
     }
+
 
     // -------------------------------------------------------------------------
     // Creating mail message for a FAILED build
@@ -332,11 +340,8 @@ public class MailSender {
         StringBuilder buf = new StringBuilder();
 
         // ** Stephen Code - START *********************************************
-        buf.append("============================================================\n");
-        buf.append("CS 498 Email Notification for ");
-        buf.append(getSubject(build, " "));
-        buf.append("\n============================================================\n");
-        buf.append("PROJECT AT A GLANCE\n");
+        appendHeader(build, buf);
+
         //----------------------------------------------------------------------
         // Figuring out the percentage of JUnit tests that failed
         //----------------------------------------------------------------------
@@ -365,7 +370,7 @@ public class MailSender {
 
                 buf.append(failurePercentage); // adding failure percentage to email
 
-                if (failurePercentage > 50){
+                if (failurePercentage > 0){
                   buf.append("   WARNING! Over 50 percent of JUnit tests failed!");
                 }
           		}
