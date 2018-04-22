@@ -45,3 +45,8 @@ Idk, there's really nothing here.  Maybe this is where we put logic for determin
 ### MimeMessageBuilder.java
 This looks like the place where the email is actually assembled from its parts.  Probably will need to edit things here.
 ```src/main/java/jenkins/plugins/mailer/tasks/MimeMessageBuilder.java```
+
+### Messages.properties
+Can be customized to include new messages we want to include inside the email.
+
+```src/main/resources/jenkins/plugins/mailer/tasks/i18n/Messages.properties```
