@@ -84,6 +84,13 @@ public class MailSender {
     
     //Aton code start ------------
     private String relevantDevelopers;
+    private boolean relevantOnly;
+    private boolean notify50Percent;
+    private boolean showFailureLine;
+    private boolean notifyLineChange;
+    private boolean notifyCoverageChange
+    private boolean congratulateTeam;
+    private boolean weeklyProgressReport;
     //Aton code end ------------
     
     // -------------------------------------------------------------------------
@@ -188,7 +195,7 @@ public class MailSender {
             // non-deprecated subclass
         }
 
-        // ** Stephen Code - START *********************************************
+        // ** Stephen Code - START ********************************************
         // Setting day of the week information for use in determing if a weekly report needs to be sent
         //Date now = new Date();
         //Calendar c = Calendar.getInstance();
