@@ -26,6 +26,24 @@ Install from Apache Version: 3.5.3
 ```
 
 ### Build Specific Configurations
+#### Build: Invoke top-level Maven targets
+```
+Maven Version: 3.5.3
+Goals: clean install
+```
+#### Post-build Actions: Publish JUnit test result report
+```
+Test report XMLs: **/target/surefire-reports/*.xml
+Health report amplification indicator: 1.0
+```
+#### Post-build Actions: Record JaCoCo coverage report
+```
+Path to exec files: **/**.exec
+Path to class directories: **/classes/uky/cs498
+Path to source directories: **/src/main/java/uky/cs498
+```
+#### Post-build Actions: CS498 | Email Notification
+
 ## Requirements
 This plugin was developed and tested with the software listed below.  Using untested software with this plugin may lead to unexpected or incorrect behavior.
 ```
