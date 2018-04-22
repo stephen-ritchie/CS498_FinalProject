@@ -110,7 +110,7 @@ public class MailSender {
         this.recipients = Util.fixNull(recipients);
         this.dontNotifyEveryUnstableBuild = dontNotifyEveryUnstableBuild;
         this.sendToIndividuals = sendToIndividuals;
-        this.relevantDevelopers = relevantDevelopers;
+        this.relevantDevelopers = Util.fixNull(relevantDevelopers);
         this.relevantOnly = relevantOnly;
         this.charset = charset;
         this.includeUpstreamCommitters.addAll(includeUpstreamCommitters);
