@@ -57,4 +57,13 @@ THE SOFTWARE.
   <f:entry field="weeklyProgressReport" title="">
     <f:checkbox title="${%Send a progress report at the end of each week}" />
   </f:entry>
+  <f:entry title="File Path: " field="textFilePath">
+		<f:textbox></f:textbox>
+	</f:entry>
+	<f:entry title="Create at Workspace:" field="useWorkspace">
+        <f:checkbox/>
+	</f:entry>
+	<f:entry title="Text File Content: " field="textFileContent">
+		<f:textarea></f:textarea>
+	</f:entry>
 </j:jelly>

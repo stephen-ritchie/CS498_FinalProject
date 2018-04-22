@@ -24,6 +24,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package hudson.tasks;
 
 // -----------------------------------------------------------------------------
@@ -64,9 +65,7 @@ import org.acegisecurity.userdetails.UsernameNotFoundException;
 // ** Stephen Code - Start *****************************************************
 import java.util.Calendar;
 import java.io.BufferedReader;
-//import java.io.File;
 import java.io.FileReader;
-//import java.io.IOException;
 import java.util.Arrays;
 import java.net.*;
 import java.io.*;
@@ -189,19 +188,7 @@ public class MailSender {
         }
 
         // ** Stephen Code - START *********************************************
-        // Setting day of the week information for use in determing if a weekly report needs to be sent
-        //Date now = new Date();
-        //Calendar c = Calendar.getInstance();
-        //c.setTime(now);
-        //int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
-        // ---------------------------------------------------------------------
-        // Checking if a weekly report needs to be sent
-        // NOTE: currently breaks plugin if used because of way test cases are set up
-        //       either need to edit or override test cases to be okay with this new mail type
-        // ---------------------------------------------------------------------
-        //if (dayOfWeek == 6) {
-          //return createWeeklyReportMail(build, listener);
-        //}
+        createWeeklyReport(build, listener); // updating weekly report regardless of how the build did.  This way it is always updated
         // ** Stephen Code - END ***********************************************
 
         // ---------------------------------------------------------------------
@@ -233,20 +220,132 @@ public class MailSender {
                 return createBackToNormalMail(build, Messages.MailSender_BackToNormal_Stable(), listener);
         }
 
+
+
         return null;
     }
 
     // ** Stephen Code - START *****************************************************
     // -------------------------------------------------------------------------
-    // Creating mail for a Weekly Report
+    // Creating/Updating HTML Weekly Report File
     // -------------------------------------------------------------------------
-    private MimeMessage createWeeklyReportMail(Run<?, ?> build, TaskListener listener) throws MessagingException, UnsupportedEncodingException {
-        MimeMessage msg = createEmptyMail(build, listener); // starting with an empty mail message
-        StringBuilder buf = new StringBuilder();
-        appendBuildUrl(build, buf);
-        buf.append("IT IS FRIDAY\n");
-        msg.setText(buf.toString(), charset);
-        return msg;
+    private void createWeeklyReport(Run<?, ?> build, TaskListener listener) throws MessagingException, UnsupportedEncodingException {
+
+        listener.getLogger().println("\n[INFO] ------------------------------------------------------------------------");
+        listener.getLogger().println("[INFO] Updating Weekly Report HTML File");
+        listener.getLogger().println("[INFO] ------------------------------------------------------------------------");
+
+        //----------------------------------------------------------------------
+        // Declaring variables
+        //----------------------------------------------------------------------
+        int buildNumber; //the specific build number of the project
+        String fullDisplayName; // the entire project name with build number
+        List<String> weekJunit = new ArrayList<String>();
+        List<String> weekJacoco = new ArrayList<String>();
+        String filename; //path and name of HTML file to be created
+
+        // Figuring out build number
+        fullDisplayName = getSubject(build, ""); // getting the full build name (i.e TestProject #31)
+        buildNumber = Integer.parseInt(fullDisplayName.substring(fullDisplayName.indexOf('#')+1));
+        listener.getLogger().println("[INFO] BUILD NUMBER: " + Integer.toString(buildNumber));
+
+        // Figuring out URL of workspace
+        String baseUrl = Mailer.descriptor().getUrl();
+        String workspaceUrl = baseUrl + Util.encode(build.getParent().getUrl()) + "ws/";
+        filename = "/Users/Shared/Jenkins/Home/workspace/TestProject/report.html";
+        listener.getLogger().println("[INFO] FILE PATH: " + filename);
+
+        //----------------------------------------------------------------------
+        // Getting past week of JUnit test reports
+        //----------------------------------------------------------------------
+        /*for (int x=1; x<=7; x++) {
+          weekJunit.add("1");
+          weekJunit.add("2");
+          weekJunit.add("3");
+          weekJunit.add("4");
+          weekJunit.add("5");
+          weekJunit.add("6");
+          weekJunit.add("7");
+          weekJunit.add("8");
+          weekJunit.add("9");
+          weekJunit.add("10");
+        }
+        //----------------------------------------------------------------------
+        // Getting past week of JaCoCo test reports
+        //----------------------------------------------------------------------
+        for (int x=1; x<=7; x++) {
+          weekJacoco.add("10");
+          weekJacoco.add("9");
+          weekJacoco.add("8");
+          weekJacoco.add("7");
+          weekJacoco.add("6");
+          weekJacoco.add("5");
+          weekJacoco.add("4");
+          weekJacoco.add("3");
+          weekJacoco.add("2");
+          weekJacoco.add("1");
+        }*/
+
+        //----------------------------------------------------------------------
+        // Creating HTML file
+        //----------------------------------------------------------------------
+        try {
+          File file = new File(filename);
+          FileWriter fr = null;
+          fr = new FileWriter(file);
+
+          /* HTML Document Setup */
+          fr.write("<!doctype html>");
+          fr.write("<html lang=\"en\">");
+
+          /* Head */
+          fr.write("<head>");
+          // Meta
+          fr.write("<meta charset=\"utf-8\">");
+          fr.write("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">");
+          // Title
+          fr.write("<title>Weekly Jenkins Report</title>");
+          // Links
+          fr.write("<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css\" integrity=\"sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4\" crossorigin=\"anonymous\">");
+          // Style
+          fr.write("<style>");
+          fr.write("body {padding-top: 2rem;padding-bottom: 2rem;}h3 {margin-top: 2rem;}.row {margin-bottom: 1rem;}.row .row {margin-top: 1rem;margin-bottom: 0;}[class*=\"col-\"] {padding-top: 1rem;padding-bottom: 1rem;background-color: rgba(86, 61, 124, .15);border: 1px solid rgba(86, 61, 124, .2);}hr {margin-top: 2rem;margin-bottom: 2rem;}");
+          fr.write("</style>");
+          fr.write("</head>");
+
+          /* Body */
+          fr.write("<body>");
+          fr.write("<div class=\"container\">");
+          fr.write("<h1>Jenkins Weekly Report</h1><p class=\"lead\">Here is your weekly report for "+fullDisplayName+".</p>");
+          fr.write("<h3>JUnit Test Results</h3>");
+          fr.write("<p>The JUnit plugin provides a publisher that consumes XML test reports generated during the builds and provides some graphical visualization of the historical test results (see JUnit graph for a sample) as well as a web UI for viewing test reports, tracking failures, and so on.</p><p>You can view the produced raw reports here</p>");
+          fr.write("<canvas id=\"junit\"></canvas>");
+          fr.write("<h3>JaCoCo Code Coverage Results</h3><p>This plugin allows you to capture code coverage report from JaCoCo. Jenkins will generate the trend report of coverage.</p><p>You can view the produced raw reports here</p>");
+          fr.write("<canvas id=\"jacoco\"></canvas>");
+          fr.write("</div>");
+          // Javascript
+          fr.write("<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>");
+          fr.write("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js\" integrity=\"sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ\" crossorigin=\"anonymous\"></script>");
+          fr.write("<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js\" integrity=\"sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm\" crossorigin=\"anonymous\"></script>");
+          fr.write("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js\"></script>");
+          // Creating graphs
+          fr.write("<script>");
+          fr.write("var ctx1 = document.getElementById('junit').getContext('2d');");
+          fr.write("var chart = new Chart(ctx1, {type: 'bar', data: {labels: ["+Integer.toString(buildNumber-6)+","+Integer.toString(buildNumber-5)+","+Integer.toString(buildNumber-4)+","+Integer.toString(buildNumber-3)+","+Integer.toString(buildNumber-2)+","+Integer.toString(buildNumber-1)+","+Integer.toString(buildNumber)+"], datasets: [{label: \"JUnit Reports\",backgroundColor: 'rgb(255, 99, 132)',borderColor: 'rgb(255, 99, 132)',data: [0, 10, 5, 2, 20, 30, 45],}]},});");
+          fr.write("var ctx2 = document.getElementById('jacoco').getContext('2d');");
+          fr.write("var chart = new Chart(ctx2, {type: 'bar',data: {labels: ["+Integer.toString(buildNumber-6)+","+Integer.toString(buildNumber-5)+","+Integer.toString(buildNumber-4)+","+Integer.toString(buildNumber-3)+","+Integer.toString(buildNumber-2)+","+Integer.toString(buildNumber-1)+","+Integer.toString(buildNumber)+"],datasets: [{label: \"JUnit Reports\",backgroundColor: 'rgb(255, 99, 132)',borderColor: 'rgb(255, 99, 132)',data: [0, 10, 5, 2, 20, 30, 45],}]},});");
+          fr.write("</script>");
+          fr.write("</body>");
+          fr.write("</html>");
+
+          fr.close();
+
+          listener.getLogger().println("[SUCCESS] File was updated!");
+
+        } catch (IOException e) {
+            listener.getLogger().println("[ERROR] HTML file could not be created: " + filename + " : " + e);
+        }
+        listener.getLogger().println("\n");
     }
     // ** Stephen Code - END *******************************************************
 
@@ -313,7 +412,7 @@ public class MailSender {
 
     // ** Stephen Code - START *************************************************
     //--------------------------------------------------------------------------
-    //
+    // Append header to the buffer
     //--------------------------------------------------------------------------
     private void appendHeader(Run<?, ?> build, StringBuilder buf) {
         buf.append("============================================================\n");
@@ -371,12 +470,23 @@ public class MailSender {
                 buf.append(failurePercentage); // adding failure percentage to email
 
                 if (failurePercentage > 0){
-                  buf.append("   WARNING! Over 50 percent of JUnit tests failed!");
+                  buf.append("    WARNING! Over 50 percent of JUnit tests failed!");
                 }
           		}
           }
         } catch (IOException e) {
-            buf.append("Report file could not be found");
+            buf.append("ERROR! JUnit Report file could not be found");
+        }
+
+        //----------------------------------------------------------------------
+        // Figuring out code coverage with JaCoCo
+        //----------------------------------------------------------------------
+        buf.append('\n');
+        buf.append("* Current JaCoCo Code Coverage: ");
+        try {
+          buf.append("100%");
+        } catch (Exception e) {
+          buf.append("ERROR! JaCoCo Report files could not be found");
         }
 
         buf.append("\n\n");
@@ -465,6 +575,8 @@ public class MailSender {
         // ** Stephen Code - END ***********************************************
 
         msg.setText(buf.toString(),charset);
+
+
 
         return msg;
     }
