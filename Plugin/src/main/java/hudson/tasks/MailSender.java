@@ -76,13 +76,16 @@ public class MailSender {
     // -------------------------------------------------------------------------
     // Declaring some initial variables...
     // -------------------------------------------------------------------------
-    private String recipients; // Whitespace-separated list of e-mail addresses that represent recipients.
+    private String recipients; // Whitespace-separated list of e-mail addresses that represent recipients
     private List<AbstractProject> includeUpstreamCommitters = new ArrayList<AbstractProject>();
     private boolean dontNotifyEveryUnstableBuild; // If true, only the first unstable build will be reported.
     private boolean sendToIndividuals; //If true, individuals will receive e-mails regarding who broke the build.
     private String charset; // The charset to use for the text and subject.
-
-
+    
+    //Aton code start ------------
+    private String relevantDevelopers;
+    //Aton code end ------------
+    
     // -------------------------------------------------------------------------
     // A few different constructors?
     // -------------------------------------------------------------------------
@@ -92,6 +95,10 @@ public class MailSender {
     public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String charset) {
         this(recipients,dontNotifyEveryUnstableBuild,sendToIndividuals,charset, Collections.<AbstractProject>emptyList());
     }
+    
+    //------------------
+    //This constructor used exclusively if the notify upstream commiters option is selected
+    //------------------
     public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String charset, Collection<AbstractProject> includeUpstreamCommitters) {
         this.recipients = Util.fixNull(recipients);
         this.dontNotifyEveryUnstableBuild = dontNotifyEveryUnstableBuild;
