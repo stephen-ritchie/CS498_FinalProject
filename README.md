@@ -4,13 +4,36 @@
 A plugin for Jenkins to extend the capabilities of the built-in email service so that a customer will have more control over what types of emails are sent, when they are sent, and to whom they are sent.
 
 ## Installing
-In order for this plugin to function properly the following items must be configured within Jenkins.
-* Maven 3.5.3 installed as a Global Configuration Tool
-* [JUnit Plugin](https://wiki.jenkins.io/display/JENKINS/JUnit+Plugin)
-* [Cobertura Plugin](https://wiki.jenkins.io/display/JENKINS/Cobertura+Plugin)
-## Examples
+To install this plugin upload the ```CS498_Group3.hpi``` file.  Documentation on installing a plugin in this way can be found [here](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Packaging-up-a-plugin).  There are a few configuration settings that need to be made before the plugin can properly operated, and they are outlined below.
+
+### Global Jenkins Configurations
+There are a few things that must be set within Jenkins before this plugin can work properly.
+#### SMTP Email
+This plugin requires access to a valid SMTP server to be able to sent emails.  Set this up by navigating to Jenkins -> Manage Jenkins -> Configure System -> CS 498 | Email Notifications.  The following fields are required to be filled out:
+```
+STMP server: <your email's server> (ex. Google's is smtp.gmail.com)
+[x] Use SMTP Authentication: Checked
+User Name: <youremail@whatever.com>
+Password: <your email password>
+[x] Use SSL: Checked (at least for Gmail)
+Charset: UTF-8
+```
+
+### Build Specific Configurations
+## Requirements
+This plugin was developed and tested with the software listed below.  Using untested software with this plugin may lead to unexpected or incorrect behavior.
+```
+Jenkins ver. 2.89.3
+Maven 3.5.3
+Java 1.8.0_162
+```
 ## Contributors
-Atanas Golev<br>
-Grace Oparinde<br>
-Joshua Ray<br>
-Stephen Ritchie<br>
+Stephen Ritchie
+
+Atanas Golev
+
+Grace Oparinde
+
+Joshua Ray
+
+
