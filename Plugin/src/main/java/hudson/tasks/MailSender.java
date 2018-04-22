@@ -82,7 +82,7 @@ public class MailSender {
     private boolean sendToIndividuals; //If true, individuals will receive e-mails regarding who broke the build.
     private String charset; // The charset to use for the text and subject.
     
-    //Aton code start ------------
+    // ** ------------ Aton code start ------------ **
     private String relevantDevelopers;
     private boolean relevantOnly;
     private boolean notify50Percent;
@@ -91,7 +91,7 @@ public class MailSender {
     private boolean notifyCoverageChange
     private boolean congratulateTeam;
     private boolean weeklyProgressReport;
-    //Aton code end ------------
+    // ** ------------ Aton code end ------------ **
     
     // -------------------------------------------------------------------------
     // A few different constructors?
@@ -432,7 +432,15 @@ public class MailSender {
 
         final AbstractBuild<?, ?> build = run instanceof AbstractBuild ? ((AbstractBuild<?, ?>)run) : null;
 
-        StringTokenizer tokens = new StringTokenizer(recipients);
+        // ** ------------ Aton code begin ------------ **
+        if(relevantDevelopers){
+            StringTokenizer tokens = new StringTokenizer(recipients);
+        }
+        else{
+            StringTokenizer token = new StringTokenizer(relevantDevelopers);
+        }
+         // ** ------------ Aton code end ------------ **
+        
         while (tokens.hasMoreTokens()) {
             String address = tokens.nextToken();
             if (build != null && address.startsWith("upstream-individuals:")) {
@@ -449,7 +457,7 @@ public class MailSender {
                     listener.getLogger().println("No such project exist: "+projectName);
                     continue;
                 }
-                messageBuilder.addRecipients(getCulpritsOfEmailList(up, build, listener));
+                messageBuilder.add(getCulpritsOfEmailList(up, build, listener));
             } else {
                 // ordinary address
                 messageBuilder.addRecipients(address);
