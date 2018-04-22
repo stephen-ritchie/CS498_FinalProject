@@ -2,22 +2,7 @@
 
 ## Basic Overview
 A plugin for Jenkins to extend the capabilities of the built-in email service so that a customer will have more control over what types of emails are sent, when they are sent, and to whom they are sent.
-## Key Features
-Receive email alerts on the following conditions...
-- [ ] Error percentage is over 50%
-- [ ] Anytime anyone uploads changes
-- [ ] Notified of all line numbers that have been changed since last build
-- [ ] Select projects to be notified about and ones to be muted<br>
-You can already do this in Jenkins by removing the mailer post-build action for each project.
-- [ ] Send emails to everyone or only relevant developers<br>
-May be able to edit this using MailAddressFilter.java and the isFilteredRecepient function.
-- [ ] Select percentage threshold for errors to be notified about
-- [ ] Notified of which lines numbers cause errors
-- [ ] Progress report each week<br>
-For this I'd say we have a function that just check the datetime each time a build is run.  If the datetime is what we want, it creates and sends the progress report, otherwise not worry about it.
-- [ ] Notified of how code coverage changes after each change
-- [ ] Congratulations to team when code coverage reaches 100%<br>
-So each time a 'build' runs it looks like we can run our own shell scripts.  If this is the case, we could have gcov get run each time, and if we figure out how to get jenkins to read the output from the console we can get access to the code coverage.
+
 ## Installing
 In order for this plugin to function properly the following items must be configured within Jenkins.
 * Maven 3.5.3 installed as a Global Configuration Tool
