@@ -7,9 +7,9 @@ Receive email alerts on the following conditions...
 - [ ] Error percentage is over 50%
 - [ ] Anytime anyone uploads changes
 - [ ] Notified of all line numbers that have been changed since last build
-- [ ] Select projects to be notified about and ones to be muted
+- [ ] Select projects to be notified about and ones to be muted<br>
 You can already do this in Jenkins by removing the mailer post-build action for each project.
-- [ ] Send emails to everyone or only relevant developers
+- [ ] Send emails to everyone or only relevant developers<br>
 May be able to edit this using MailAddressFilter.java and the isFilteredRecepient function.
 - [ ] Select percentage threshold for errors to be notified about
 - [ ] Notified of which lines numbers cause errors
