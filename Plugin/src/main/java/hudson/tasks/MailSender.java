@@ -83,8 +83,8 @@ public class MailSender {
     private String charset; // The charset to use for the text and subject.
     
     // ** ------------ Aton code start ------------ **
-    public String relevantDevelopers;
-    public boolean relevantOnly;
+    private String relevantDevelopers;
+    private boolean relevantOnly;
     //public boolean notify50Percent;
     //public boolean showFailureLine;
     //public boolean notifyLineChange;
