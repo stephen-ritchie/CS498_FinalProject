@@ -85,31 +85,33 @@ public class MailSender {
     // ** ------------ Aton code start ------------ **
     public String relevantDevelopers;
     public boolean relevantOnly;
-    public boolean notify50Percent;
-    public boolean showFailureLine;
-    public boolean notifyLineChange;
-    public boolean notifyCoverageChange
-    public boolean congratulateTeam;
-    public boolean weeklyProgressReport;
+    //public boolean notify50Percent;
+    //public boolean showFailureLine;
+    //public boolean notifyLineChange;
+    //public boolean notifyCoverageChange
+    //public boolean congratulateTeam;
+    //public boolean weeklyProgressReport;
     // ** ------------ Aton code end ------------ **
     
     // -------------------------------------------------------------------------
     // A few different constructors?
     // -------------------------------------------------------------------------
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals) {
-    	this(recipients, dontNotifyEveryUnstableBuild, sendToIndividuals, "UTF-8");
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly) {
+    	this(recipients, dontNotifyEveryUnstableBuild, sendToIndividuals, relevantDevelopers, relevantOnly, "UTF-8");
     }
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String charset) {
-        this(recipients,dontNotifyEveryUnstableBuild,sendToIndividuals,charset, Collections.<AbstractProject>emptyList());
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, String charset) {
+        this(recipients,dontNotifyEveryUnstableBuild,sendToIndividuals, relevantDevelopers, relevantOnly, charset, Collections.<AbstractProject>emptyList());
     }
     
     //------------------
     //This constructor used exclusively if the notify upstream commiters option is selected
     //------------------
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String charset, Collection<AbstractProject> includeUpstreamCommitters) {
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, String charset, Collection<AbstractProject> includeUpstreamCommitters) {
         this.recipients = Util.fixNull(recipients);
         this.dontNotifyEveryUnstableBuild = dontNotifyEveryUnstableBuild;
         this.sendToIndividuals = sendToIndividuals;
+        this.relevantDevelopers = relevantDevelopers;
+        this.relevantOnly = relevantOnly;
         this.charset = charset;
         this.includeUpstreamCommitters.addAll(includeUpstreamCommitters);
     }
