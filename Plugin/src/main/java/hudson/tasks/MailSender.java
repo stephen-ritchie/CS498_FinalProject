@@ -477,6 +477,11 @@ public class MailSender {
         messageBuilder.setRecipientFilter(new MimeMessageBuilder.AddressFilter() {
             @Override
             public Set<InternetAddress> apply(Set<InternetAddress> recipients) {
+                 // ** ------------ Aton code start ------------ **
+                 if(relevantOnly){
+                     return MailAddressFilter.filterRecipients(run, listener, relevantDevelopers);
+                  }
+                 // ** ------------ Aton code end ------------ **
                 return MailAddressFilter.filterRecipients(run, listener, recipients);
             }
         });
