@@ -8,7 +8,7 @@ The remainder of this document contains relevant information and documentation t
 ## Installing
 This plugin will need to be manually installed into your Jenkins server via an .hpi file.  This file can be found at ```/Plugin/target/CS498_Group3.hpi```.  Documentation on installing a plugin in this way can be found [here](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Packaging-up-a-plugin).  There are a few configuration settings that need to be made before the plugin can properly operated, and they are outlined below.
 ### Global Configurations
-For this plugin to function as expected, you must set up your email server within Jenkins as well as specifying the specific version of Maven you will want to use.  As mentioned, other versions of Maven *may* be substituted in place of what is described below.  However, unexpected behavior may occur in that case.
+The two items outlined below are Jenkins systems settings that are set at the global level, and are required for this plugin to operate correctly.  The first item to be configured is giving Jenkins access to an SMTP server, and the second item is defining a specific version of Maven to be used by Jenkins.
 #### SMTP Email
 To send an email via Jenkins authorized access to a valid SMTP server is required.  Set this up by navigating to *Jenkins -> Manage Jenkins -> Configure System -> CS 498 | Email Notifications*.  For testing of this plugin a Google gmail account was used as the SMTP server, and the specific configuration used is outlined below.
 * STMP server: <your email's server> (ex. Google's is smtp.gmail.com)
@@ -19,24 +19,22 @@ To send an email via Jenkins authorized access to a valid SMTP server is require
 * Charset: UTF-8
 
 #### Maven
-This plugin utilized ```Maven 3.5.3```. Set this up by navigating to *Jenkins -> Manage Jenkins -> Global Tool Configuration -> Maven*.  The following fields are required to be filled out:
-```
-Name: <anything> (I recommend just naming it Maven 3.5.3)
-[x] Install automatically
-Install from Apache Version: 3.5.3
-```
+Maven is a software project management and comprehension tool.  Official documentation on Maven can be found [here](https://maven.apache.org).  Because this plugin is designed to be used with Java development, Maven can be integrated into the project to assist with building, testing, and packaging source code.  This plugin was tested using Maven 3.5.3 and steps for setting this up in Jenkins are outlined below.  Alternative versions of Maven *may* be used, but plugin behavior cannot be guaranteed if another version of Maven is used.
 
+Setting up Maven within Jenkins is relatively straightforward, and can be done by navigating to *Jenkins -> Manage Jenkins -> Global Tool Configuration -> Maven*.  The following fields need to be filled out for this plugin to function as expected.
+* Name: <anything> (I recommend just naming it Maven 3.5.3)
+* Install automatically: [x] Checked
+* Install from Apache Version: 3.5.3
+  
 ### Build Specific Configurations
+Now that Jenkins has been configured at the global level we need to configure a specific build within Jenkins to use our plugin.  This boils down to setting up build actions to create all the necessary report files that our plugin is looking for.  Each time a build is initiatied, these actions will be run automatically by Jenkins.
 #### Build: Invoke top-level Maven targets
-```
-Maven Version: 3.5.3
-Goals: clean install
-```
+* Maven Version: 3.5.3
+* Goals: clean install
 #### Post-build Actions: Publish JUnit test result report
-```
-Test report XMLs: **/target/surefire-reports/*.xml
-Health report amplification indicator: 1.0
-```
+* Test report XMLs: **/target/surefire-reports/*.xml
+* Health report amplification indicator: 1.0
+
 #### Post-build Actions: Record JaCoCo coverage report
 ```
 Path to exec files: **/**.exec
