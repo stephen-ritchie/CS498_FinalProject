@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: jenkins.plugins.mailer.tasks.MimeMessageBuilderTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 111.075 sec - in jenkins.plugins.mailer.tasks.MimeMessageBuilderTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 100.099 sec - in jenkins.plugins.mailer.tasks.MimeMessageBuilderTest

@@ -103,6 +103,14 @@ public class Mailer extends Notifier implements SimpleBuildStep {
     }
     public boolean sendToIndividuals; // If true, individuals will receive e-mails regarding who broke the build.
 
+    // ** ------------ Aton code start ------------ **
+    public boolean relevantOnly;
+    public String relevantDevelopers;
+    // ** ------------ Aton code end ------------ **
+    // ** Stephen Code - START *************************************************
+    //private boolean notify50Percent;
+    // ** Stephen Code - END ***************************************************
+
     /**
      * Default Constructor.
      *
@@ -115,12 +123,18 @@ public class Mailer extends Notifier implements SimpleBuildStep {
      * @param recipients
      * @param notifyEveryUnstableBuild inverted for historical reasons.
      * @param sendToIndividuals
+     * @param relevantDevelopers
+     * @param relevantOnly
+  
      */
     @DataBoundConstructor
-    public Mailer(String recipients, boolean notifyEveryUnstableBuild, boolean sendToIndividuals) {
+    public Mailer(String recipients, boolean notifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly) {
         this.recipients = recipients;
         this.dontNotifyEveryUnstableBuild = !notifyEveryUnstableBuild;
         this.sendToIndividuals = sendToIndividuals;
+	      this.relevantDevelopers = relevantDevelopers;
+	      this.relevantOnly = relevantOnly;
+        //this. notify50Percent= notify50Percent;
     }
 
     @Override
@@ -129,9 +143,15 @@ public class Mailer extends Notifier implements SimpleBuildStep {
             listener.getLogger().println("Running mailer");
         // substitute build parameters
         EnvVars env = build.getEnvironment(listener);
-        String recip = env.expand(recipients);
 
-        new MailSender(recip, dontNotifyEveryUnstableBuild, sendToIndividuals, descriptor().getCharset()) {
+	//if(relevantOnly){
+	//	String recip = env.expand(relevantDevelopers);
+	//}
+	//else{
+        	String recip = env.expand(recipients);
+	//}
+
+        new MailSender(recip, dontNotifyEveryUnstableBuild, sendToIndividuals, relevantDevelopers, relevantOnly, descriptor().getCharset()) {
             /** Check whether a path (/-separated) will be archived. */
             @Override
             public boolean artifactMatches(String path, AbstractBuild<?,?> build) {

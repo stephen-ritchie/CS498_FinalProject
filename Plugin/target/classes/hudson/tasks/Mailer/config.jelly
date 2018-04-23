@@ -40,7 +40,7 @@ THE SOFTWARE.
     <f:checkbox title="${%Send separate e-mails to individuals who broke the build}" />
   </f:entry>
   <f:entry field="notify50Percent" title="">
-    <f:checkbox title="${%Send e-mail if more than 50% of JUnit tests fail}" />
+    <f:checkbox title="${%Include a warning if more than the JUnit target failure percentage tests fail}" />
   </f:entry>
   <f:entry field="showFailureLine" title="">
     <f:checkbox title="${%If a build fails, show which line numbers caused the initial failure}" />
