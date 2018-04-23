@@ -258,6 +258,26 @@ public class Messages {
     }
 
     /**
+     * Key {@code MailSender.failurePercentage}: {@code 50}.
+     * 
+     * @return
+     *     {@code 50}
+     */
+    public static String MailSender_failurePercentage() {
+        return holder.format("MailSender.failurePercentage");
+    }
+
+    /**
+     * Key {@code MailSender.failurePercentage}: {@code 50}.
+     * 
+     * @return
+     *     {@code 50}
+     */
+    public static Localizable _MailSender_failurePercentage() {
+        return new Localizable(holder, "MailSender.failurePercentage");
+    }
+
+    /**
      * Key {@code Mailer.TestMail.Subject}: {@code Test email #{0}}.
      * 
      * @param arg0
@@ -416,6 +436,26 @@ public class Messages {
     }
 
     /**
+     * Key {@code Mailer.DisplayName}: {@code CS498 | E-mail Notification}.
+     * 
+     * @return
+     *     {@code CS498 | E-mail Notification}
+     */
+    public static String Mailer_DisplayName() {
+        return holder.format("Mailer.DisplayName");
+    }
+
+    /**
+     * Key {@code Mailer.DisplayName}: {@code CS498 | E-mail Notification}.
+     * 
+     * @return
+     *     {@code CS498 | E-mail Notification}
+     */
+    public static Localizable _Mailer_DisplayName() {
+        return new Localizable(holder, "Mailer.DisplayName");
+    }
+
+    /**
      * Key {@code MailSender.unknown_user}: {@code Not sending mail to
      * unregistered user {0}}.
      * 
@@ -439,26 +479,6 @@ public class Messages {
      */
     public static Localizable _MailSender_unknown_user(Object arg0) {
         return new Localizable(holder, "MailSender.unknown_user", arg0);
-    }
-
-    /**
-     * Key {@code Mailer.DisplayName}: {@code CS498 | E-mail Notification}.
-     * 
-     * @return
-     *     {@code CS498 | E-mail Notification}
-     */
-    public static String Mailer_DisplayName() {
-        return holder.format("Mailer.DisplayName");
-    }
-
-    /**
-     * Key {@code Mailer.DisplayName}: {@code CS498 | E-mail Notification}.
-     * 
-     * @return
-     *     {@code CS498 | E-mail Notification}
-     */
-    public static Localizable _Mailer_DisplayName() {
-        return new Localizable(holder, "Mailer.DisplayName");
     }
 
     /**
@@ -508,6 +528,28 @@ public class Messages {
     }
 
     /**
+     * Key {@code MailSender.pathToBuilds}: {@code
+     * /Users/Shared/Jenkins/Home/jobs/TestProject/builds/}.
+     * 
+     * @return
+     *     {@code /Users/Shared/Jenkins/Home/jobs/TestProject/builds/}
+     */
+    public static String MailSender_pathToBuilds() {
+        return holder.format("MailSender.pathToBuilds");
+    }
+
+    /**
+     * Key {@code MailSender.pathToBuilds}: {@code
+     * /Users/Shared/Jenkins/Home/jobs/TestProject/builds/}.
+     * 
+     * @return
+     *     {@code /Users/Shared/Jenkins/Home/jobs/TestProject/builds/}
+     */
+    public static Localizable _MailSender_pathToBuilds() {
+        return new Localizable(holder, "MailSender.pathToBuilds");
+    }
+
+    /**
      * Key {@code MailSender.UnstableMail.ToUnStable.Subject}: {@code Jenkins
      * build became unstable:}.
      * 
@@ -527,6 +569,28 @@ public class Messages {
      */
     public static Localizable _MailSender_UnstableMail_ToUnStable_Subject() {
         return new Localizable(holder, "MailSender.UnstableMail.ToUnStable.Subject");
+    }
+
+    /**
+     * Key {@code MailSender.reportFilePath}: {@code
+     * /Users/Shared/Jenkins/Home/workspace/TestProject/report.html}.
+     * 
+     * @return
+     *     {@code /Users/Shared/Jenkins/Home/workspace/TestProject/report.html}
+     */
+    public static String MailSender_reportFilePath() {
+        return holder.format("MailSender.reportFilePath");
+    }
+
+    /**
+     * Key {@code MailSender.reportFilePath}: {@code
+     * /Users/Shared/Jenkins/Home/workspace/TestProject/report.html}.
+     * 
+     * @return
+     *     {@code /Users/Shared/Jenkins/Home/workspace/TestProject/report.html}
+     */
+    public static Localizable _MailSender_reportFilePath() {
+        return new Localizable(holder, "MailSender.reportFilePath");
     }
 
     /**

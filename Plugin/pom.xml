@@ -9,7 +9,7 @@
 
   <artifactId>CS498_Group3</artifactId>
   <packaging>hpi</packaging>
-  <version>0.22</version>
+  <version>1.0</version>
   <name>CS 498 | Email Notifications</name>
   <description>This plugin is an extension of the mailer plugin that allows for more extensive email configuration options.</description>
 

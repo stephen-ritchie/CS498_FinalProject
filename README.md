@@ -2,30 +2,62 @@
 
 ## Basic Overview
 A plugin for Jenkins to extend the capabilities of the built-in email service so that a customer will have more control over what types of emails are sent, when they are sent, and to whom they are sent.
-## Key Features
-Receive email alerts on the following conditions...
-- [ ] Error percentage is over 50%
-- [ ] Anytime anyone uploads changes
-- [ ] Notified of all line numbers that have been changed since last build
-- [ ] Select projects to be notified about and ones to be muted<br>
-You can already do this in Jenkins by removing the mailer post-build action for each project.
-- [ ] Send emails to everyone or only relevant developers<br>
-May be able to edit this using MailAddressFilter.java and the isFilteredRecepient function.
-- [ ] Select percentage threshold for errors to be notified about
-- [ ] Notified of which lines numbers cause errors
-- [ ] Progress report each week<br>
-For this I'd say we have a function that just check the datetime each time a build is run.  If the datetime is what we want, it creates and sends the progress report, otherwise not worry about it.
-- [ ] Notified of how code coverage changes after each change
-- [ ] Congratulations to team when code coverage reaches 100%<br>
-So each time a 'build' runs it looks like we can run our own shell scripts.  If this is the case, we could have gcov get run each time, and if we figure out how to get jenkins to read the output from the console we can get access to the code coverage.
+
 ## Installing
-In order for this plugin to function properly the following items must be configured within Jenkins.
-* Maven 3.5.3 installed as a Global Configuration Tool
-* [JUnit Plugin](https://wiki.jenkins.io/display/JENKINS/JUnit+Plugin)
-* [Cobertura Plugin](https://wiki.jenkins.io/display/JENKINS/Cobertura+Plugin)
-## Examples
+To install this plugin upload the ```CS498_Group3.hpi``` file.  Documentation on installing a plugin in this way can be found [here](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Packaging-up-a-plugin).  There are a few configuration settings that need to be made before the plugin can properly operated, and they are outlined below.
+### Global Jenkins Configurations
+For this plugin to function as expected, you must set up your email server within Jenkins as well as specifying the specific version of Maven you will want to use.  As mentioned, other versions of Maven *may* be substituted in place of what is described below.  However, unexpected behavior may occur in that case.
+#### SMTP Email
+This plugin requires access to a valid SMTP server to be able to sent emails.  Set this up by navigating to *Jenkins -> Manage Jenkins -> Configure System -> CS 498 | Email Notifications*.  The following fields are required to be filled out:
+```
+STMP server: <your email's server> (ex. Google's is smtp.gmail.com)
+[x] Use SMTP Authentication: Checked
+User Name: <youremail@whatever.com>
+Password: <your email password>
+[x] Use SSL: Checked (at least for Gmail)
+Charset: UTF-8
+```
+#### Maven
+This plugin utilized ```Maven 3.5.3```. Set this up by navigating to *Jenkins -> Manage Jenkins -> Global Tool Configuration -> Maven*.  The following fields are required to be filled out:
+```
+Name: <anything> (I recommend just naming it Maven 3.5.3)
+[x] Install automatically 
+Install from Apache Version: 3.5.3
+```
+
+### Build Specific Configurations
+#### Build: Invoke top-level Maven targets
+```
+Maven Version: 3.5.3
+Goals: clean install
+```
+#### Post-build Actions: Publish JUnit test result report
+```
+Test report XMLs: **/target/surefire-reports/*.xml
+Health report amplification indicator: 1.0
+```
+#### Post-build Actions: Record JaCoCo coverage report
+```
+Path to exec files: **/**.exec
+Path to class directories: **/classes/uky/cs498
+Path to source directories: **/src/main/java/uky/cs498
+```
+#### Post-build Actions: CS498 | Email Notification
+
+## Requirements
+This plugin was developed and tested with the software listed below.  Using untested software with this plugin may lead to unexpected or incorrect behavior.
+```
+Jenkins ver. 2.89.3
+Maven 3.5.3
+Java 1.8.0_162
+```
 ## Contributors
-Atanas Golev<br>
-Grace Oparinde<br>
-Joshua Ray<br>
-Stephen Ritchie<br>
+Stephen Ritchie
+
+Atanas Golev
+
+Grace Oparinde
+
+Joshua Ray
+
+
