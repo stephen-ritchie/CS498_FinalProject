@@ -5,6 +5,14 @@ Jenkin is an open source automation server which can be used to automate all sor
 
 The remainder of this document contains relevant information and documentation to get this plugin installe, configured, and working within an exisiting Jenkins server.  This plugin is designed to be used in tandem with the [JUnit Plugin](https://wiki.jenkins.io/display/JENKINS/JUnit+Plugin) for test case reporting, and the [JaCoCo Plugin](https://wiki.jenkins.io/display/JENKINS/JaCoCo+Plugin) for code coverage reporting.  While not within the scope of this project, documentation for installing and setting up these plugins is included for proper testing purposes.
 
+## Requirements
+This plugin was developed and tested with the software listed below.  Using untested software with this plugin may lead to unexpected or incorrect behavior.
+```
+Jenkins ver. 2.89.3
+Maven 3.5.3
+Java 1.8.0_162
+```
+
 ## Installing
 This plugin will need to be manually installed into your Jenkins server via an .hpi file.  This file can be found at ```/Plugin/target/CS498_Group3.hpi```.  Documentation on installing a plugin in this way can be found [here](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Packaging-up-a-plugin).  There are a few configuration settings that need to be made before the plugin can properly operated, and they are outlined below.
 ### Global Configurations
@@ -48,13 +56,8 @@ This is the UI of our actual plugin.  It is built off the UI of the default Mail
 
 <p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email.png"></p>
 
-## Requirements
-This plugin was developed and tested with the software listed below.  Using untested software with this plugin may lead to unexpected or incorrect behavior.
-```
-Jenkins ver. 2.89.3
-Maven 3.5.3
-Java 1.8.0_162
-```
+## Known Bugs
+
 ## Contributors
 Stephen Ritchie
 
