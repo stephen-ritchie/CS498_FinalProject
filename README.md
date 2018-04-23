@@ -57,6 +57,10 @@ This is the UI of our actual plugin.  It is built off the UI of the default Mail
 <p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email.png"></p>
 
 ## Known Bugs
+Jenkins has proven to be a difficult animal to tame.  Being open-source but not widely used has lead to a relatively small niche community maintaining it.  Working through this project we have found that there are many bugs and legacy support issues, many which still have not been resolved.  For example, in reading through comments in the Mailer Plugin from a contributor I found this.
+> Not really sure what's going on here... seems like it's a patch maybe?
+
+This has lead to us having a few bugs in our plugin.  Some are the result of us personally not having enough knowledge of Jenkins, but other bugs are a result of limitations or features of the Jenkins source code.  These bugs have been outlined below with their current status.
 
 ## Contributors
 Stephen Ritchie
