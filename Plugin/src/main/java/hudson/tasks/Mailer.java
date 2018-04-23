@@ -124,7 +124,7 @@ public class Mailer extends Notifier implements SimpleBuildStep {
      * @param relevantOnly
      */
     @DataBoundConstructor
-    public Mailer(String recipients, boolean notifyEveryUnstableBuild, boolean sendToIndividuals, string relevantDevelopers, boolean relevantOnly) {
+    public Mailer(String recipients, boolean notifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly) {
         this.recipients = recipients;
         this.dontNotifyEveryUnstableBuild = !notifyEveryUnstableBuild;
         this.sendToIndividuals = sendToIndividuals;
@@ -139,12 +139,12 @@ public class Mailer extends Notifier implements SimpleBuildStep {
         // substitute build parameters
         EnvVars env = build.getEnvironment(listener);
 	    
-	if(relevantOnly){
-		String recip = env.expand(relevantDevelopers);	
-	}
-	else{
+	//if(relevantOnly){
+	//	String recip = env.expand(relevantDevelopers);	
+	//}
+	//else{
         	String recip = env.expand(recipients);
-	}
+	//}
 
         new MailSender(recip, dontNotifyEveryUnstableBuild, sendToIndividuals, descriptor().getCharset()) {
             /** Check whether a path (/-separated) will be archived. */

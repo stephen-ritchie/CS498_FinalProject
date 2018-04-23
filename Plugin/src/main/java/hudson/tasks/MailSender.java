@@ -435,12 +435,12 @@ public class MailSender {
         final AbstractBuild<?, ?> build = run instanceof AbstractBuild ? ((AbstractBuild<?, ?>)run) : null;
 
         // ** ------------ Aton code begin ------------ **
+        StringTokenizer tokens = new StringTokenizer(recipients);
+
         if(relevantOnly){
-            StringTokenizer tokens = new StringTokenizer(recipients);
+            tokens = new StringTokenizer(relevantDevelopers);
         }
-        else{
-            StringTokenizer tokens = new StringTokenizer(relevantDevelopers);
-        }
+
          // ** ------------ Aton code end ------------ **
         
         while (tokens.hasMoreTokens()) {
