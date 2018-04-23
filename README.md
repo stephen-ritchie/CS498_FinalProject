@@ -36,18 +36,17 @@ As mentioned above, Maven is used for software project management and comprehens
 #### Post-build Actions: Publish JUnit test result report
 After the build has run, Jenkins has the ability to initiatiate post build actions.  One of these actions is to publish the results of the JUnit tests. You will want to configure this build option as shown below.
 
-_Note: Our plugin opens JUnit report files on its own on the backend, so this step is not strictly required.  However, it helps visualize JUnit in the Jenkins browser, and it helpful to have._
-
-
 <p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/junit.png"></p>
 
 #### Post-build Actions: Record JaCoCo coverage report
-```
-Path to exec files: **/**.exec
-Path to class directories: **/classes/uky/cs498
-Path to source directories: **/src/main/java/uky/cs498
-```
+The final report that our plugin analyzes is code coverage via JaCoCo.  The JaCoCo plugin runs code coverage on a build, and publishes the results as a set of navigatable HTML files.  You will want to configure this build option as shown below.
+
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/jacoco.png"></p>
+
 #### Post-build Actions: CS498 | Email Notification
+This is the UI of our actual plugin.  It is built off the UI of the default Mailer Plugin, but has been extended with extra inputs and options.  As shown below, some additonal UI elements are a text input for Relevant Developers and additional checkbox options for emails.  This pane can be configured as you wish, but an example is shown below.
+
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email.png"></p>
 
 ## Requirements
 This plugin was developed and tested with the software listed below.  Using untested software with this plugin may lead to unexpected or incorrect behavior.
