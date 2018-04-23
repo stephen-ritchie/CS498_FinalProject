@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: hudson.tasks.MailerTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 199.978 sec - in hudson.tasks.MailerTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 192.431 sec - in hudson.tasks.MailerTest

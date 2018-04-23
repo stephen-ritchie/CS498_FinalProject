@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="hudson.tasks.MailerTest" time="199.978" tests="8" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="hudson.tasks.MailerTest" time="192.431" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib"/>
@@ -64,12 +64,12 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="testMessageText" classname="hudson.tasks.MailerTest" time="100.602"/>
-  <testcase name="testGlobalConfigRoundtrip" classname="hudson.tasks.MailerTest" time="48.586"/>
-  <testcase name="testSenderAddress" classname="hudson.tasks.MailerTest" time="1.724"/>
-  <testcase name="testNotifyEveryUnstableBuild" classname="hudson.tasks.MailerTest" time="1.633"/>
-  <testcase name="testConfigRoundtrip" classname="hudson.tasks.MailerTest" time="27.523"/>
-  <testcase name="testHudsonUrlCompatibility" classname="hudson.tasks.MailerTest" time="12.545"/>
-  <testcase name="testNotNotifyEveryUnstableBuild" classname="hudson.tasks.MailerTest" time="1.349"/>
-  <testcase name="testNotifyCulprits" classname="hudson.tasks.MailerTest" time="2.129"/>
+  <testcase name="testMessageText" classname="hudson.tasks.MailerTest" time="99.796"/>
+  <testcase name="testGlobalConfigRoundtrip" classname="hudson.tasks.MailerTest" time="40.839"/>
+  <testcase name="testSenderAddress" classname="hudson.tasks.MailerTest" time="1.213"/>
+  <testcase name="testNotifyEveryUnstableBuild" classname="hudson.tasks.MailerTest" time="1.969"/>
+  <testcase name="testConfigRoundtrip" classname="hudson.tasks.MailerTest" time="27.135"/>
+  <testcase name="testHudsonUrlCompatibility" classname="hudson.tasks.MailerTest" time="13.655"/>
+  <testcase name="testNotNotifyEveryUnstableBuild" classname="hudson.tasks.MailerTest" time="1.442"/>
+  <testcase name="testNotifyCulprits" classname="hudson.tasks.MailerTest" time="1.548"/>
 </testsuite>
