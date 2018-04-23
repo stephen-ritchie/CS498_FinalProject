@@ -6,7 +6,7 @@ A plugin for Jenkins to extend the capabilities of the built-in email service so
 ## Installing
 To install this plugin upload the ```CS498_Group3.hpi``` file.  Documentation on installing a plugin in this way can be found [here](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Packaging-up-a-plugin).  There are a few configuration settings that need to be made before the plugin can properly operated, and they are outlined below.
 ### Global Jenkins Configurations
-There are a few things that must be set within Jenkins before this plugin can work properly.
+For this plugin to function as expected, you must set up your email server within Jenkins as well as specifying the specific version of Maven you will want to use.  As mentioned, other versions of Maven *may* be substituted in place of what is described below.  However, unexpected behavior may occur in that case.
 #### SMTP Email
 This plugin requires access to a valid SMTP server to be able to sent emails.  Set this up by navigating to *Jenkins -> Manage Jenkins -> Configure System -> CS 498 | Email Notifications*.  The following fields are required to be filled out:
 ```
