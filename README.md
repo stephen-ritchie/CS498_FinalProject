@@ -1,6 +1,6 @@
 <p align="center"><img width=12.5% src="https://wiki.jenkins.io/download/attachments/2916393/logo.png?version=1&modificationDate=1302753947000&api=v2"></p>
 
-## Basic Overview
+## Basic Overview hello
 A plugin for Jenkins to extend the capabilities of the built-in email service so that a customer will have more control over what types of emails are sent, when they are sent, and to whom they are sent.
 
 ## Installing
@@ -21,7 +21,7 @@ Charset: UTF-8
 This plugin utilized ```Maven 3.5.3```. Set this up by navigating to *Jenkins -> Manage Jenkins -> Global Tool Configuration -> Maven*.  The following fields are required to be filled out:
 ```
 Name: <anything> (I recommend just naming it Maven 3.5.3)
-[x] Install automatically 
+[x] Install automatically
 Install from Apache Version: 3.5.3
 ```
 
@@ -59,5 +59,3 @@ Atanas Golev
 Grace Oparinde
 
 Joshua Ray
-
-
