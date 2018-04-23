@@ -31,10 +31,13 @@ Now that Jenkins has been configured at the global level we need to configure a 
 #### Build: Invoke top-level Maven targets
 * Maven Version: 3.5.3
 * Goals: clean install
+
 <p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/maven.png"></p>
+
 #### Post-build Actions: Publish JUnit test result report
 * Test report XMLs: **/target/surefire-reports/*.xml
 * Health report amplification indicator: 1.0
+
 <p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/junit.png"></p>
 
 #### Post-build Actions: Record JaCoCo coverage report
