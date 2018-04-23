@@ -29,14 +29,15 @@ Setting up Maven within Jenkins is relatively straightforward, and can be done b
 ### Build Specific Configurations
 Now that Jenkins has been configured at the global level we need to configure a specific build within Jenkins to use our plugin.  This boils down to setting up build actions to create all the necessary report files that our plugin is looking for.  Each time a build is initiatied, these actions will be run automatically by Jenkins.
 #### Build: Invoke top-level Maven targets
-* Maven Version: 3.5.3
-* Goals: clean install
+As mentioned above, Maven is used for software project management and comprehension tools.  By running Maven as a first step with a goal of 'install' it compiles the build, runs JUnit, and runs JaCoCo as well.  JUnit and JaCoCo both produce a mixture of txt, html, and xml files that will be parsed by our plugin for report analytics.  The goal of 'clean' is appended to the Maven command to clean out any old report files so old data is not mistaken for current data. You will want to configure this build option as shown below.
 
 <p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/maven.png"></p>
 
 #### Post-build Actions: Publish JUnit test result report
-* Test report XMLs: **/target/surefire-reports/*.xml
-* Health report amplification indicator: 1.0
+After the build has run, Jenkins has the ability to initiatiate post build actions.  One of these actions is to publish the results of the JUnit tests. You will want to configure this build option as shown below.
+
+*Note: Our plugin opens JUnit report files on its own on the backend, so this step is not strictly required.  However, it helps visualize JUnit in the Jenkins browser, and it helpful to have. *
+
 
 <p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/junit.png"></p>
 
