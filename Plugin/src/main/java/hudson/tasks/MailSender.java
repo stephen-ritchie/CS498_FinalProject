@@ -459,7 +459,7 @@ public class MailSender {
                     listener.getLogger().println("No such project exist: "+projectName);
                     continue;
                 }
-                messageBuilder.add(getCulpritsOfEmailList(up, build, listener));
+                messageBuilder.addRecipients(getCulpritsOfEmailList(up, build, listener));
             } else {
                 // ordinary address
                 messageBuilder.addRecipients(address);
