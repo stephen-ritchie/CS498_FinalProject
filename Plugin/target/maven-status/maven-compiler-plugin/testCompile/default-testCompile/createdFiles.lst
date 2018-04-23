@@ -2,13 +2,13 @@ hudson/tasks/MailSenderTest.class
 hudson/tasks/MailAddressResolverTest$UserPropertyMock.class
 hudson/tasks/MailerTest.class
 jenkins/plugins/mailer/tasks/MailAddressFilterTest$MockExtensionList.class
-META-INF/annotations/org.kohsuke.stapler.export.ExportedBean
 jenkins/plugins/mailer/tasks/MailAddressFilterTest.class
-hudson/tasks/MailerTest$CleanJenkinsLocationConfiguration.class
+META-INF/annotations/org.kohsuke.stapler.export.ExportedBean
 hudson/tasks/MailAddressResolverTest.class
+hudson/tasks/MailerTest$CleanJenkinsLocationConfiguration.class
 hudson/tasks/MailerTest$TestBuild.class
-hudson/tasks/MailerTest$1.class
 hudson/tasks/MailAddressResolverTest$MockExtensionList.class
+hudson/tasks/MailerTest$1.class
 InjectedTest.class
 jenkins/plugins/mailer/tasks/MimeMessageBuilderTest.class
 hudson/tasks/MailerTest$TestProject.class

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Built-By: Stephen
+Built-By: Excelsior
 Created-By: Apache Maven
-Build-Jdk: 1.8.0_162
+Build-Jdk: 1.8.0_161
 Extension-Name: CS498_Group3
 Specification-Title: This plugin is an extension of the mailer plugin 
  that allows for more extensive email configuration options.

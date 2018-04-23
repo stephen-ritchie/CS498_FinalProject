@@ -159,6 +159,7 @@ public class MimeMessageBuilder {
 
     public MimeMessageBuilder addRecipients(@Nonnull String recipients) throws UnsupportedEncodingException {
         addRecipients(recipients, Message.RecipientType.TO);
+	
         return this;
     }
 

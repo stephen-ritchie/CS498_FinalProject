@@ -445,7 +445,7 @@ public class MailSender {
         
         while (tokens.hasMoreTokens()) {
             String address = tokens.nextToken();
-            if (build != null && address.startsWith("upstream-individuals:")) {
+            if (build != null && address.startsWith("upstream-individuals:") && !relevantOnly) {
                 // people who made a change in the upstream
                 String projectName = address.substring("upstream-individuals:".length());
                 // TODO 1.590+ Jenkins.getActiveInstance
@@ -459,7 +459,7 @@ public class MailSender {
                     listener.getLogger().println("No such project exist: "+projectName);
                     continue;
                 }
-                messageBuilder.add(getCulpritsOfEmailList(up, build, listener));
+                messageBuilder.addRecipients(getCulpritsOfEmailList(up, build, listener));
             } else {
                 // ordinary address
                 messageBuilder.addRecipients(address);
@@ -480,9 +480,9 @@ public class MailSender {
             @Override
             public Set<InternetAddress> apply(Set<InternetAddress> recipients) {
                  // ** ------------ Aton code start ------------ **
-                 if(relevantOnly){
-                     return MailAddressFilter.filterRecipients(run, listener, relevantDevelopers);
-                  }
+                 //if(relevantOnly){
+                 //    return MailAddressFilter.filterRecipients(run, listener, relevantDevelopers);
+                 // }
                  // ** ------------ Aton code end ------------ **
                 return MailAddressFilter.filterRecipients(run, listener, recipients);
             }

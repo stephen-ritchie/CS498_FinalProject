@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="hudson.tasks.MailAddressResolverTest" time="11.248" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="hudson.tasks.MailAddressResolverTest" time="20.357" tests="6" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib"/>
-    <property name="java.vm.version" value="25.162-b12"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="25.161-b12"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/Excelsior/Desktop/Mailer3/CS498_FinalProject/Plugin"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,57 +16,57 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/Stephen/Documents/GitHub/CS498_FinalProject/Plugin"/>
-    <property name="java.runtime.version" value="1.8.0_162-b12"/>
+    <property name="user.dir" value="/Users/Excelsior/Desktop/Mailer3/CS498_FinalProject/Plugin"/>
+    <property name="java.runtime.version" value="1.8.0_161-b12"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/endorsed"/>
     <property name="os.arch" value="x86_64"/>
-    <property name="java.io.tmpdir" value="/var/folders/zj/zp0_dv8933g7qd7d3ggrrnj40000gn/T/"/>
+    <property name="java.io.tmpdir" value="/var/folders/w1/8s0shk5n24jb2575v4_cb6280000gp/T/"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/Stephen/apache-maven-3.5.3/bin/m2.conf"/>
+    <property name="classworlds.conf" value="/Users/Excelsior/Desktop/apache-maven-3.5.3/bin/m2.conf"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.library.path" value="/Users/Stephen/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
-    <property name="maven.conf" value="/Users/Stephen/apache-maven-3.5.3/conf"/>
+    <property name="java.library.path" value="/Users/Excelsior/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="maven.conf" value="/Users/Excelsior/Desktop/apache-maven-3.5.3/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="10.13.3"/>
-    <property name="library.jansi.path" value="/Users/Stephen/apache-maven-3.5.3/lib/jansi-native"/>
-    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="user.home" value="/Users/Stephen"/>
+    <property name="os.version" value="10.12.5"/>
+    <property name="library.jansi.path" value="/Users/Excelsior/Desktop/apache-maven-3.5.3/lib/jansi-native"/>
+    <property name="http.nonProxyHosts" value="local|*.local|localhost|*.localhost|127.0.0.1"/>
+    <property name="user.home" value="/Users/Excelsior"/>
     <property name="user.timezone" value="America/New_York"/>
     <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="Stephen"/>
-    <property name="java.class.path" value="/Users/Stephen/apache-maven-3.5.3/boot/plexus-classworlds-2.5.2.jar"/>
+    <property name="user.name" value="Excelsior"/>
+    <property name="java.class.path" value="/Users/Excelsior/Desktop/apache-maven-3.5.3/boot/plexus-classworlds-2.5.2.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_162"/>
-    <property name="java.ext.dirs" value="/Users/Stephen/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
-    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_162.jdk/Contents/Home/jre/classes"/>
+    <property name="java.version" value="1.8.0_161"/>
+    <property name="java.ext.dirs" value="/Users/Excelsior/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/jre/classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="maven.home" value="/Users/Stephen/apache-maven-3.5.3"/>
+    <property name="maven.home" value="/Users/Excelsior/Desktop/apache-maven-3.5.3"/>
     <property name="file.separator" value="/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
-    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
-    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="socksNonProxyHosts" value="local|*.local|localhost|*.localhost|127.0.0.1"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|localhost|*.localhost|127.0.0.1"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="doNotResolveWhenUsingFastResolution" classname="hudson.tasks.MailAddressResolverTest" time="5.838"/>
-  <testcase name="nameContainsAddress" classname="hudson.tasks.MailAddressResolverTest" time="0.337"/>
-  <testcase name="test5164" classname="hudson.tasks.MailAddressResolverTest" time="0.012"/>
-  <testcase name="nameAlreadyIsAnAddress" classname="hudson.tasks.MailAddressResolverTest" time="0.062"/>
-  <testcase name="doResolveWhenNotUsingFastResolution" classname="hudson.tasks.MailAddressResolverTest" time="0.019"/>
-  <testcase name="doResolveWhenUsingExplicitlUserEmail" classname="hudson.tasks.MailAddressResolverTest" time="0.004"/>
+  <testcase name="nameContainsAddress" classname="hudson.tasks.MailAddressResolverTest" time="10.128"/>
+  <testcase name="test5164" classname="hudson.tasks.MailAddressResolverTest" time="0.162"/>
+  <testcase name="doResolveWhenNotUsingFastResolution" classname="hudson.tasks.MailAddressResolverTest" time="0.671"/>
+  <testcase name="doResolveWhenUsingExplicitlUserEmail" classname="hudson.tasks.MailAddressResolverTest" time="0.006"/>
+  <testcase name="doNotResolveWhenUsingFastResolution" classname="hudson.tasks.MailAddressResolverTest" time="0.04"/>
+  <testcase name="nameAlreadyIsAnAddress" classname="hudson.tasks.MailAddressResolverTest" time="0.012"/>
 </testsuite>

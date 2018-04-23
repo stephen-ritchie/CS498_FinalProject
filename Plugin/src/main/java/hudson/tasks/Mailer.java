@@ -128,8 +128,8 @@ public class Mailer extends Notifier implements SimpleBuildStep {
         this.recipients = recipients;
         this.dontNotifyEveryUnstableBuild = !notifyEveryUnstableBuild;
         this.sendToIndividuals = sendToIndividuals;
-	this.relevantOnly = relevantOnly;
 	this.relevantDevelopers = relevantDevelopers;
+	this.relevantOnly = relevantOnly;
     }
 
     @Override
@@ -146,7 +146,7 @@ public class Mailer extends Notifier implements SimpleBuildStep {
         	String recip = env.expand(recipients);
 	//}
 
-        new MailSender(recip, dontNotifyEveryUnstableBuild, sendToIndividuals, descriptor().getCharset()) {
+        new MailSender(recip, dontNotifyEveryUnstableBuild, sendToIndividuals, relevantDevelopers, relevantOnly, descriptor().getCharset()) {
             /** Check whether a path (/-separated) will be archived. */
             @Override
             public boolean artifactMatches(String path, AbstractBuild<?,?> build) {
