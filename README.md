@@ -36,7 +36,7 @@ As mentioned above, Maven is used for software project management and comprehens
 #### Post-build Actions: Publish JUnit test result report
 After the build has run, Jenkins has the ability to initiatiate post build actions.  One of these actions is to publish the results of the JUnit tests. You will want to configure this build option as shown below.
 
-*Note: Our plugin opens JUnit report files on its own on the backend, so this step is not strictly required.  However, it helps visualize JUnit in the Jenkins browser, and it helpful to have. *
+_Note: Our plugin opens JUnit report files on its own on the backend, so this step is not strictly required.  However, it helps visualize JUnit in the Jenkins browser, and it helpful to have._
 
 
 <p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/junit.png"></p>
