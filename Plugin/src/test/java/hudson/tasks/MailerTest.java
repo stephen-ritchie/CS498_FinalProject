@@ -84,7 +84,7 @@ public class MailerTest {
     }
 
     private TestProject create(boolean notifyEveryUnstableBuild, boolean sendToIndividuals) throws Exception {
-        Mailer m = new Mailer(RECIPIENT, notifyEveryUnstableBuild, sendToIndividuals);
+        Mailer m = new Mailer(RECIPIENT, notifyEveryUnstableBuild, sendToIndividuals, "", false);
         return new TestProject(m);
     }
 
@@ -107,10 +107,10 @@ public class MailerTest {
     @Email("http://www.nabble.com/email-recipients-disappear-from-freestyle-job-config-on-save-to25479293.html")
     @Test
     public void testConfigRoundtrip() throws Exception {
-        Mailer m = new Mailer("kk@kohsuke.org", false, true);
+        Mailer m = new Mailer("kk@kohsuke.org", false, true, "", false);
         verifyRoundtrip(m);
 
-        m = new Mailer("", true, false);
+        m = new Mailer("", true, false, "", false);
         verifyRoundtrip(m);
     }
 
@@ -172,7 +172,7 @@ public class MailerTest {
         // not configured.
         assertNull(new CleanJenkinsLocationConfiguration().getUrl());
         
-        Mailer m = new Mailer("", true, false);
+        Mailer m = new Mailer("", true, false, "", false);
         FreeStyleProject p = rule.createFreeStyleProject();
         p.getPublishersList().add(m);
         WebClient wc = rule.createWebClient();

@@ -105,7 +105,7 @@ public class MailSenderTest {
 
         Collection<AbstractProject> upstreamProjects = Collections.singleton(upstreamProject);
 
-        MailSender sender = new MailSender("", false, false, "UTF-8", upstreamProjects);
+        MailSender sender = new MailSender("", false, false, "", false, "UTF-8", upstreamProjects);
         String emailList = sender.getCulpritsOfEmailList(upstreamProject, build, listener);
 
         assertFalse(emailList.contains("this.one.should.not.be.included@example.com"));
@@ -158,7 +158,7 @@ public class MailSenderTest {
         when(build.getFullDisplayName()).thenReturn("prj #1");
         StringWriter sw = new StringWriter();
         TaskListener listener = new StreamTaskListener(sw);
-        assertEquals("authorized@mycorp", new MailSender("", false, true).getUserEmailList(listener, build));
+        assertEquals("authorized@mycorp", new MailSender("", false, true, "", false).getUserEmailList(listener, build));
         listener.getLogger().flush();
         assertThat(sw.toString(), containsString(Messages.MailSender_user_without_read("unauthorized@mycorp", "prj #1")));
         assertThat(sw.toString(), containsString(Messages.MailSender_unknown_user("someone@nowhere.net")));
@@ -166,7 +166,7 @@ public class MailSenderTest {
         try {
             sw = new StringWriter();
             listener = new StreamTaskListener(sw);
-            assertEquals("authorized@mycorp,unauthorized@mycorp", new MailSender("", false, true).getUserEmailList(listener, build));
+            assertEquals("authorized@mycorp,unauthorized@mycorp", new MailSender("", false, true, "", false).getUserEmailList(listener, build));
             listener.getLogger().flush();
             assertThat(sw.toString(), containsString(Messages.MailSender_warning_user_without_read("unauthorized@mycorp", "prj #1")));
             assertThat(sw.toString(), containsString(Messages.MailSender_unknown_user("someone@nowhere.net")));
@@ -174,7 +174,7 @@ public class MailSenderTest {
             try {
                 sw = new StringWriter();
                 listener = new StreamTaskListener(sw);
-                assertEquals("authorized@mycorp,unauthorized@mycorp,someone@nowhere.net", new MailSender("", false, true).getUserEmailList(listener, build));
+                assertEquals("authorized@mycorp,unauthorized@mycorp,someone@nowhere.net", new MailSender("", false, true, "", false).getUserEmailList(listener, build));
                 listener.getLogger().flush();
                 assertThat(sw.toString(), containsString(Messages.MailSender_warning_user_without_read("unauthorized@mycorp", "prj #1")));
                 assertThat(sw.toString(), containsString(Messages.MailSender_warning_unknown_user("someone@nowhere.net")));

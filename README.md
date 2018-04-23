@@ -2,7 +2,6 @@
 
 ## Basic Overview
 A plugin for Jenkins to extend the capabilities of the built-in email service so that a customer will have more control over what types of emails are sent, when they are sent, and to whom they are sent.
-
 ## Installing
 To install this plugin upload the ```CS498_Group3.hpi``` file.  Documentation on installing a plugin in this way can be found [here](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Packaging-up-a-plugin).  There are a few configuration settings that need to be made before the plugin can properly operated, and they are outlined below.
 ### Global Jenkins Configurations

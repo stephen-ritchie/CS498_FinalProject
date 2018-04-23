@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: hudson.tasks.MailAddressResolverTest
--------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.429 sec - in hudson.tasks.MailAddressResolverTest

@@ -82,26 +82,42 @@ public class MailSender {
     // -------------------------------------------------------------------------
     // Declaring some initial variables...
     // -------------------------------------------------------------------------
-    private String recipients; // Whitespace-separated list of e-mail addresses that represent recipients.
+    private String recipients; // Whitespace-separated list of e-mail addresses that represent recipients
     private List<AbstractProject> includeUpstreamCommitters = new ArrayList<AbstractProject>();
     private boolean dontNotifyEveryUnstableBuild; // If true, only the first unstable build will be reported.
     private boolean sendToIndividuals; //If true, individuals will receive e-mails regarding who broke the build.
     private String charset; // The charset to use for the text and subject.
-
-
+    
+    // ** ------------ Aton code start ------------ **
+    private String relevantDevelopers;
+    private boolean relevantOnly;
+    //public boolean notify50Percent;
+    //public boolean showFailureLine;
+    //public boolean notifyLineChange;
+    //public boolean notifyCoverageChange
+    //public boolean congratulateTeam;
+    //public boolean weeklyProgressReport;
+    // ** ------------ Aton code end ------------ **
+    
     // -------------------------------------------------------------------------
     // A few different constructors?
     // -------------------------------------------------------------------------
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals) {
-    	this(recipients, dontNotifyEveryUnstableBuild, sendToIndividuals, "UTF-8");
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly) {
+    	this(recipients, dontNotifyEveryUnstableBuild, sendToIndividuals, relevantDevelopers, relevantOnly, "UTF-8");
     }
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String charset) {
-        this(recipients,dontNotifyEveryUnstableBuild,sendToIndividuals,charset, Collections.<AbstractProject>emptyList());
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, String charset) {
+        this(recipients,dontNotifyEveryUnstableBuild,sendToIndividuals, relevantDevelopers, relevantOnly, charset, Collections.<AbstractProject>emptyList());
     }
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String charset, Collection<AbstractProject> includeUpstreamCommitters) {
+    
+    //------------------
+    //This constructor used exclusively if the notify upstream commiters option is selected
+    //------------------
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, String charset, Collection<AbstractProject> includeUpstreamCommitters) {
         this.recipients = Util.fixNull(recipients);
         this.dontNotifyEveryUnstableBuild = dontNotifyEveryUnstableBuild;
         this.sendToIndividuals = sendToIndividuals;
+        this.relevantDevelopers = Util.fixNull(relevantDevelopers);
+        this.relevantOnly = relevantOnly;
         this.charset = charset;
         this.includeUpstreamCommitters.addAll(includeUpstreamCommitters);
     }
@@ -189,6 +205,7 @@ public class MailSender {
 
         // ** Stephen Code - START *********************************************
         createWeeklyReport(build, listener); // updating weekly report regardless of how the build did.  This way it is always updated
+
         // ** Stephen Code - END ***********************************************
 
         // ---------------------------------------------------------------------
@@ -225,7 +242,7 @@ public class MailSender {
         return null;
     }
 
-    // ** Stephen Code - START *****************************************************
+    // ** Stephen Code - START ****************************************************
     // -------------------------------------------------------------------------
     // Creating/Updating HTML Weekly Report File
     // -------------------------------------------------------------------------
@@ -594,10 +611,18 @@ public class MailSender {
 
         final AbstractBuild<?, ?> build = run instanceof AbstractBuild ? ((AbstractBuild<?, ?>)run) : null;
 
+        // ** ------------ Aton code begin ------------ **
         StringTokenizer tokens = new StringTokenizer(recipients);
+
+        if(relevantOnly){
+            tokens = new StringTokenizer(relevantDevelopers);
+        }
+
+         // ** ------------ Aton code end ------------ **
+        
         while (tokens.hasMoreTokens()) {
             String address = tokens.nextToken();
-            if (build != null && address.startsWith("upstream-individuals:")) {
+            if (build != null && address.startsWith("upstream-individuals:") && !relevantOnly) {
                 // people who made a change in the upstream
                 String projectName = address.substring("upstream-individuals:".length());
                 // TODO 1.590+ Jenkins.getActiveInstance
@@ -631,6 +656,11 @@ public class MailSender {
         messageBuilder.setRecipientFilter(new MimeMessageBuilder.AddressFilter() {
             @Override
             public Set<InternetAddress> apply(Set<InternetAddress> recipients) {
+                 // ** ------------ Aton code start ------------ **
+                 //if(relevantOnly){
+                 //    return MailAddressFilter.filterRecipients(run, listener, relevantDevelopers);
+                 // }
+                 // ** ------------ Aton code end ------------ **
                 return MailAddressFilter.filterRecipients(run, listener, recipients);
             }
         });
