@@ -1,7 +1,7 @@
 <p align="center"><img width=12.5% src="https://wiki.jenkins.io/download/attachments/2916393/logo.png?version=1&modificationDate=1302753947000&api=v2"></p>
 
 # CS 498 Email Notification Plugin
-
+###### Written by Stephen Ritchie
 ## Basic Overview
 Jenkin is an open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.  This plugin is designed to allow configuration and customization of email notifications that can be triggered automatically via the build status of a specific job running within Jenkins.
 
@@ -27,7 +27,6 @@ To send an email via Jenkins authorized access to a valid SMTP server is require
 * Password: <your email password>
 * Use SSL: [x] Checked (at least for Gmail)
 * Charset: UTF-8
-
 #### Maven
 Maven is a software project management and comprehension tool.  Official documentation on Maven can be found [here](https://maven.apache.org).  Because this plugin is designed to be used with Java development, Maven can be integrated into the project to assist with building, testing, and packaging source code.  This plugin was tested using Maven 3.5.3 and steps for setting this up in Jenkins are outlined below.  Alternative versions of Maven *may* be used, but plugin behavior cannot be guaranteed if another version of Maven is used.
 
@@ -35,7 +34,6 @@ Setting up Maven within Jenkins is relatively straightforward, and can be done b
 * Name: <anything> (I recommend just naming it Maven 3.5.3)
 * Install automatically: [x] Checked
 * Install from Apache Version: 3.5.3
-  
 ### Build Specific Configurations
 Now that Jenkins has been configured at the global level we need to configure a specific build within Jenkins to use our plugin.  This boils down to setting up build actions to create all the necessary report files that our plugin is looking for.  Each time a build is initiatied, these actions will be run automatically by Jenkins.
 #### Build: Invoke top-level Maven targets
@@ -57,6 +55,10 @@ The final report that our plugin analyzes is code coverage via JaCoCo.  The JaCo
 This is the UI of our actual plugin.  It is built off the UI of the default Mailer Plugin, but has been extended with extra inputs and options.  As shown below, some additonal UI elements are a text input for Relevant Developers and additional checkbox options for emails.  This pane can be configured as you wish, but an example is shown below.
 
 <p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email.png"></p>
+
+## Usage
+
+## Testing
 
 ## Known Bugs
 Jenkins has proven to be a difficult animal to tame.  Being open-source but not widely used has lead to a relatively small niche community maintaining it.  Working through this project we have found that there are many bugs and legacy support issues, many which still have not been resolved.  For example, in reading through comments in the Mailer Plugin from a contributor I found this.
