@@ -77,6 +77,8 @@ When an email is sent, the top contains information about the project that can b
 ### What A Weekly Report Looks Like
 A URL to the Weekly Report is appended to the bottom of every email sent.  Due to a known bugged security feature within Jenkins the HTML file can only be processed as plain text, which strips away the stylesheet and JavaScript from the file from loading.  This is problematic since the report graphs are made with JS.  There is not currently a known fix for this issue, but a workaround is that the file can be downloaed directly onto a system and then opened with a web browser.  This will allow for the stylesheet to be applied and for JavaScript to run.  An example of what this report currently looks like is below.
 
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/weeklyReport.png"></p>
+
 ## Testing
 
 ## Known Bugs
