@@ -39,22 +39,22 @@ Now that Jenkins has been configured at the global level we need to configure a 
 #### Build: Invoke top-level Maven targets
 As mentioned above, Maven is used for software project management and comprehension tools.  By running Maven as a first step with a goal of 'install' it compiles the build, runs JUnit, and runs JaCoCo as well.  JUnit and JaCoCo both produce a mixture of txt, html, and xml files that will be parsed by our plugin for report analytics.  The goal of 'clean' is appended to the Maven command to clean out any old report files so old data is not mistaken for current data. You will want to configure this build option as shown below.
 
-<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/maven.png"></p>
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/master/img/maven.png"></p>
 
 #### Post-build Actions: Publish JUnit test result report
 After the build has run, Jenkins has the ability to initiatiate post build actions.  One of these actions is to publish the results of the JUnit tests. You will want to configure this build option as shown below.
 
-<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/junit.png"></p>
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/master/img/junit.png"></p>
 
 #### Post-build Actions: Record JaCoCo coverage report
 The final report that our plugin analyzes is code coverage via JaCoCo.  The JaCoCo plugin runs code coverage on a build, and publishes the results as a set of navigatable HTML files.  You will want to configure this build option as shown below.
 
-<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/jacoco.png"></p>
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/master/img/jacoco.png"></p>
 
 #### Post-build Actions: CS498 | Email Notification
 This is the UI of our actual plugin.  It is built off the UI of the default Mailer Plugin, but has been extended with extra inputs and options.  As shown below, some additonal UI elements are a text input for Relevant Developers and additional checkbox options for emails.  This pane can be configured as you wish, but an example is shown below.
 
-<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email.png"></p>
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/master/img/email.png"></p>
 
 ## Usage
 After everything has been configured, development can begin on the project.  Each time a build is triggerd there are three different scenarios that can ocurr for an email to be sent.  In each of the following scenarios an email is sent to the determined recipients and report analysis is performed.
@@ -68,16 +68,16 @@ After everything has been configured, development can begin on the project.  Eac
 ### What An Email Looks Like
 When an email is sent, the top contains information about the project that can be looked at quickly.  This is called the "PROJECT AT A GLANCE" section.  It contains percentage of failed JUnit test (with a warning if applicable) as well as a URL to the JaCoCo code coverage reports and a URL to the specific build space within Jenkins.  An example of a failure email is shown below.
 
-<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email1.png"></p>
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/master/img/email1.png"></p>
 
-<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email2.png"></p>
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/master/img/email2.png"></p>
 
-<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email3.png"></p>
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/master/img/email3.png"></p>
 
 ### What A Weekly Report Looks Like
 A URL to the Weekly Report is appended to the bottom of every email sent.  Due to a known bugged security feature within Jenkins the HTML file can only be processed as plain text, which strips away the stylesheet and JavaScript from the file from loading.  This is problematic since the report graphs are made with JS.  There is not currently a known fix for this issue, but a workaround is that the file can be downloaed directly onto a system and then opened with a web browser.  This will allow for the stylesheet to be applied and for JavaScript to run.  An example of what this report currently looks like is below.
 
-<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/weeklyReport.png"></p>
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/master/img/weeklyReport.png"></p>
 
 ## Testing
 Since this plugin was built off an existing plugin there were already a number of JUnit tests in place that we could leverage for our own testing.  A few had to be edited to allow our additonal features to not trigger failures, but having the existing tests greatly helped us know if we had broken a build or not.
