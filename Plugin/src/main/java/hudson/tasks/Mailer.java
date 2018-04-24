@@ -106,11 +106,10 @@ public class Mailer extends Notifier implements SimpleBuildStep {
     // ** ------------ Aton code start ------------ **
     public boolean relevantOnly;
     public String relevantDevelopers;
-    // ** ------------ Aton code end ------------ **
-    // ** Stephen Code - START *************************************************
-    //private boolean notify50Percent;
-    // ** Stephen Code - END ***************************************************
-
+    public boolean notify50Percent;
+    public boolean notifyCoverageChange;
+    public boolean weeklyProgressReport;
+ 
     /**
      * Default Constructor.
      *
@@ -125,16 +124,20 @@ public class Mailer extends Notifier implements SimpleBuildStep {
      * @param sendToIndividuals
      * @param relevantDevelopers
      * @param relevantOnly
-  
+     * @param notify50Percent
+     * @param notifyCoverageChange
+     * @param weeklyProgressReport 
      */
     @DataBoundConstructor
-    public Mailer(String recipients, boolean notifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly) {
+    public Mailer(String recipients, boolean notifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, boolean notify50Percent, boolean notifyCoverageChange, boolean WeeklyProgressReport) {
         this.recipients = recipients;
         this.dontNotifyEveryUnstableBuild = !notifyEveryUnstableBuild;
         this.sendToIndividuals = sendToIndividuals;
-	      this.relevantDevelopers = relevantDevelopers;
-	      this.relevantOnly = relevantOnly;
-        //this. notify50Percent= notify50Percent;
+	this.relevantDevelopers = relevantDevelopers;
+	this.relevantOnly = relevantOnly;
+        this.notify50Percent = notify50Percent;
+	this.notifyCoverageChange = notifyCoverageChange;
+	this.weeklyProgressReport = weeklyProgressReport;
     }
 
     @Override
@@ -151,7 +154,7 @@ public class Mailer extends Notifier implements SimpleBuildStep {
         	String recip = env.expand(recipients);
 	//}
 
-        new MailSender(recip, dontNotifyEveryUnstableBuild, sendToIndividuals, relevantDevelopers, relevantOnly, descriptor().getCharset()) {
+        new MailSender(recip, dontNotifyEveryUnstableBuild, sendToIndividuals, relevantDevelopers, relevantOnly, notify50Percent, notifyCoverageChange, weeklyProgressReport, descriptor().getCharset()) {
             /** Check whether a path (/-separated) will be archived. */
             @Override
             public boolean artifactMatches(String path, AbstractBuild<?,?> build) {
