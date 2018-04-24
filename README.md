@@ -90,6 +90,8 @@ Jenkins has proven to be a difficult animal to tame.  Being open-source but not 
 
 This has lead to us having a few bugs in our plugin.  Some are the result of us personally not having enough knowledge of Jenkins, but other bugs are a result of limitations or features of the Jenkins source code.  These bugs are being tracked via our [Issues Page](https://github.com/stephen-ritchie/CS498_FinalProject/issues).  Please refer to it for currently known bugs.
 
+## Some Final Thoughts...
+
 ## Contributors
 Stephen Ritchie
 
