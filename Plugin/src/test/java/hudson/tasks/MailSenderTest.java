@@ -32,9 +32,9 @@ import org.powermock.modules.junit4.PowerMockRunner;
 
 /**
  * Test case for the {@link MailSender}
- * 
+ *
  * See also {@link MailerTest} for more tests for the mailer.
- * 
+ *
  * @author Christoph Kutzinski
  */
 @RunWith(PowerMockRunner.class)
@@ -42,7 +42,7 @@ import org.powermock.modules.junit4.PowerMockRunner;
 @PowerMockIgnore("javax.security.auth.Subject") // otherwise as in https://groups.google.com/d/msg/jenkinsci-dev/n5sdCxrccSk/7K4yTTc7XG4J mock(ACL.class) in Java 8 fails with: java.lang.LinkageError: loader constraint violation in interface itable initialization: when resolving method "org.acegisecurity.Authentication$$EnhancerByMockitoWithCGLIB$$31bf4863.implies(Ljavax/security/auth/Subject;)Z" the class loader (instance of org/powermock/core/classloader/MockClassLoader) of the current class, org/acegisecurity/Authentication$$EnhancerByMockitoWithCGLIB$$31bf4863, and the class loader (instance of <bootloader>) for interface java/security/Principal have different Class objects for the type javax/security/auth/Subject used in the signature
 @SuppressWarnings("rawtypes")
 public class MailSenderTest {
-    
+
     /**
      * Tests that all culprits from the previous builds upstream build (exclusive)
      * until the current builds upstream build (inclusive) are contained in the recipients
@@ -105,26 +105,26 @@ public class MailSenderTest {
 
         Collection<AbstractProject> upstreamProjects = Collections.singleton(upstreamProject);
 
-        MailSender sender = new MailSender("", false, false, "UTF-8", upstreamProjects);
+        MailSender sender = new MailSender("", false, false, "", false, "UTF-8", upstreamProjects);
         String emailList = sender.getCulpritsOfEmailList(upstreamProject, build, listener);
 
         assertFalse(emailList.contains("this.one.should.not.be.included@example.com"));
         assertTrue(emailList.contains("this.one.must.be.included@example.com"));
         assertTrue(emailList.contains("this.one.must.be.included.too@example.com"));
     }
-    
+
     /**
      * Creates a previous/next relationship between the builds in the given order.
      */
     private static void createPreviousNextRelationShip(AbstractBuild... builds) {
         int max = builds.length - 1;
-        
+
         for (int i = 0; i < builds.length; i++) {
             if (i < max) {
                 when(builds[i].getNextBuild()).thenReturn(builds[i+1]);
             }
         }
-        
+
         for (int i = builds.length - 1; i >= 0; i--) {
             if (i >= 1) {
                 when(builds[i].getPreviousBuild()).thenReturn(builds[i-1]);
@@ -158,7 +158,7 @@ public class MailSenderTest {
         when(build.getFullDisplayName()).thenReturn("prj #1");
         StringWriter sw = new StringWriter();
         TaskListener listener = new StreamTaskListener(sw);
-        assertEquals("authorized@mycorp", new MailSender("", false, true).getUserEmailList(listener, build));
+        assertEquals("authorized@mycorp", new MailSender("", false, true, "", false).getUserEmailList(listener, build));
         listener.getLogger().flush();
         assertThat(sw.toString(), containsString(Messages.MailSender_user_without_read("unauthorized@mycorp", "prj #1")));
         assertThat(sw.toString(), containsString(Messages.MailSender_unknown_user("someone@nowhere.net")));
@@ -166,7 +166,7 @@ public class MailSenderTest {
         try {
             sw = new StringWriter();
             listener = new StreamTaskListener(sw);
-            assertEquals("authorized@mycorp,unauthorized@mycorp", new MailSender("", false, true).getUserEmailList(listener, build));
+            assertEquals("authorized@mycorp,unauthorized@mycorp", new MailSender("", false, true, "", false).getUserEmailList(listener, build));
             listener.getLogger().flush();
             assertThat(sw.toString(), containsString(Messages.MailSender_warning_user_without_read("unauthorized@mycorp", "prj #1")));
             assertThat(sw.toString(), containsString(Messages.MailSender_unknown_user("someone@nowhere.net")));
@@ -174,7 +174,7 @@ public class MailSenderTest {
             try {
                 sw = new StringWriter();
                 listener = new StreamTaskListener(sw);
-                assertEquals("authorized@mycorp,unauthorized@mycorp,someone@nowhere.net", new MailSender("", false, true).getUserEmailList(listener, build));
+                assertEquals("authorized@mycorp,unauthorized@mycorp,someone@nowhere.net", new MailSender("", false, true, "", false).getUserEmailList(listener, build));
                 listener.getLogger().flush();
                 assertThat(sw.toString(), containsString(Messages.MailSender_warning_user_without_read("unauthorized@mycorp", "prj #1")));
                 assertThat(sw.toString(), containsString(Messages.MailSender_warning_unknown_user("someone@nowhere.net")));

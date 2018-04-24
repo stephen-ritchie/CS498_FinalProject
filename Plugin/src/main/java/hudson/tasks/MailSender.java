@@ -24,6 +24,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
 package hudson.tasks;
 
 // -----------------------------------------------------------------------------
@@ -63,6 +64,11 @@ import org.acegisecurity.userdetails.UsernameNotFoundException;
 
 // ** Stephen Code - Start *****************************************************
 import java.util.Calendar;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Arrays;
+import java.net.*;
+import java.io.*;
 // ** Stephen Code - END *******************************************************
 
 
@@ -81,21 +87,34 @@ public class MailSender {
     private boolean dontNotifyEveryUnstableBuild; // If true, only the first unstable build will be reported.
     private boolean sendToIndividuals; //If true, individuals will receive e-mails regarding who broke the build.
     private String charset; // The charset to use for the text and subject.
+    // ** ------------ Aton code start ------------ **
+    private String relevantDevelopers;
+    private boolean relevantOnly;
+    // ** ------------ Aton code end ------------ **
+    // ** Stephen Code - START *************************************************
+    //private boolean notify50Percent;
+    // ** Stephen Code - END ***************************************************
 
 
     // -------------------------------------------------------------------------
     // A few different constructors?
     // -------------------------------------------------------------------------
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals) {
-    	this(recipients, dontNotifyEveryUnstableBuild, sendToIndividuals, "UTF-8");
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly) {
+    	this(recipients, dontNotifyEveryUnstableBuild, sendToIndividuals, relevantDevelopers, relevantOnly, "UTF-8");
     }
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String charset) {
-        this(recipients,dontNotifyEveryUnstableBuild,sendToIndividuals,charset, Collections.<AbstractProject>emptyList());
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, String charset) {
+        this(recipients,dontNotifyEveryUnstableBuild,sendToIndividuals, relevantDevelopers, relevantOnly, charset, Collections.<AbstractProject>emptyList());
     }
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String charset, Collection<AbstractProject> includeUpstreamCommitters) {
+
+    //------------------
+    //This constructor used exclusively if the notify upstream commiters option is selected
+    //------------------
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, String charset, Collection<AbstractProject> includeUpstreamCommitters) {
         this.recipients = Util.fixNull(recipients);
         this.dontNotifyEveryUnstableBuild = dontNotifyEveryUnstableBuild;
         this.sendToIndividuals = sendToIndividuals;
+        this.relevantDevelopers = Util.fixNull(relevantDevelopers);
+        this.relevantOnly = relevantOnly;
         this.charset = charset;
         this.includeUpstreamCommitters.addAll(includeUpstreamCommitters);
     }
@@ -182,19 +201,7 @@ public class MailSender {
         }
 
         // ** Stephen Code - START *********************************************
-        // Setting day of the week information for use in determing if a weekly report needs to be sent
-        //Date now = new Date();
-        //Calendar c = Calendar.getInstance();
-        //c.setTime(now);
-        //int dayOfWeek = c.get(Calendar.DAY_OF_WEEK);
-        // ---------------------------------------------------------------------
-        // Checking if a weekly report needs to be sent
-        // NOTE: currently breaks plugin if used because of way test cases are set up
-        //       either need to edit or override test cases to be okay with this new mail type
-        // ---------------------------------------------------------------------
-        //if (dayOfWeek == 6) {
-          //return createWeeklyReportMail(build, listener);
-        //}
+        createWeeklyReport(build, listener); // updating weekly report regardless of how the build did.  This way it is always updated
         // ** Stephen Code - END ***********************************************
 
         // ---------------------------------------------------------------------
@@ -226,20 +233,157 @@ public class MailSender {
                 return createBackToNormalMail(build, Messages.MailSender_BackToNormal_Stable(), listener);
         }
 
+
+
         return null;
     }
 
     // ** Stephen Code - START *****************************************************
     // -------------------------------------------------------------------------
-    // Creating mail for a Weekly Report
+    // Creating/Updating HTML Weekly Report File
     // -------------------------------------------------------------------------
-    private MimeMessage createWeeklyReportMail(Run<?, ?> build, TaskListener listener) throws MessagingException, UnsupportedEncodingException {
-        MimeMessage msg = createEmptyMail(build, listener); // starting with an empty mail message
+    private void createWeeklyReport(Run<?, ?> build, TaskListener listener) throws MessagingException, UnsupportedEncodingException {
+
+        listener.getLogger().println("\n[INFO] ------------------------------------------------------------------------");
+        listener.getLogger().println("[INFO] Updating Weekly Report HTML File");
+        listener.getLogger().println("[INFO] ------------------------------------------------------------------------");
+
+        //----------------------------------------------------------------------
+        // Declaring variables
+        //----------------------------------------------------------------------
+        int buildNumber; //the specific build number of the project
+        String fullDisplayName; // the entire project name with build number
+        ArrayList<String> weekJunit = new ArrayList<String>(10);
+        ArrayList<String> weekJacoco = new ArrayList<String>(10);
+        String filename; //path and name of HTML file to be created
         StringBuilder buf = new StringBuilder();
-        appendBuildUrl(build, buf);
-        buf.append("IT IS FRIDAY\n");
-        msg.setText(buf.toString(), charset);
-        return msg;
+
+        // Figuring out build number
+        fullDisplayName = getSubject(build, ""); // getting the full build name (i.e TestProject #31)
+        buildNumber = Integer.parseInt(fullDisplayName.substring(fullDisplayName.indexOf('#')+1));
+        listener.getLogger().println("[INFO] BUILD NUMBER: " + Integer.toString(buildNumber));
+
+        // Figuring out URL of workspace
+        String baseUrl = Mailer.descriptor().getUrl();
+        String workspaceUrl = baseUrl + Util.encode(build.getParent().getUrl()) + "ws/";
+        //filename = "/Users/Shared/Jenkins/Home/workspace/TestProject/report.html";
+        filename = Messages.MailSender_reportFilePath();
+        listener.getLogger().println("[INFO] FILE PATH: " + filename);
+
+        // Prepping the data
+        buf.append("data: [");
+
+        //----------------------------------------------------------------------
+        // Getting past week of JUnit test reports
+        //----------------------------------------------------------------------
+        for (int x=1; x<=7; x++) {
+          weekJunit.add(Integer.toString(x));
+          //filename = "/Users/Shared/Jenkins/Home/jobs/TestProject/builds/"+Integer.toString(buildNumber-x)+"/build.xml";
+          filename = Messages.MailSender_pathToBuilds()+Integer.toString(buildNumber-x)+"/build.xml";
+          listener.getLogger().println("[INFO] " + filename);
+          try {
+              File f = new File(filename);
+          		BufferedReader b = new BufferedReader(new FileReader(f));
+              String readLine = "";
+              while ((readLine = b.readLine()) != null) {
+              		int targetLine = readLine.indexOf("<failCount>");
+              		if (targetLine != -1) {
+              			//System.out.println(readLine);
+              			CharSequence chr = readLine.subSequence(17,readLine.length()-12);
+              			//System.out.println(chr.toString());
+                    weekJunit.add(chr.toString());
+                    listener.getLogger().println("[INFO] Build " + Integer.toString(buildNumber - x) + " had " + chr.toString() + " failures.");
+                    buf.append(chr.toString());
+                    buf.append(",");
+              		}
+              }
+              b.close();
+          } catch (IOException e) {
+              //e.printStackTrace();
+              listener.getLogger().println("[ERROR] Co8uld not find file: " + filename + ":" + e);
+          }
+        }
+        buf.append("]");
+        //----------------------------------------------------------------------
+        // Getting past week of JaCoCo test reports
+        //----------------------------------------------------------------------
+        /*for (int x=1; x<=7; x++) {
+          weekJacoco.add("10");
+          weekJacoco.add("9");
+          weekJacoco.add("8");
+          weekJacoco.add("7");
+          weekJacoco.add("6");
+          weekJacoco.add("5");
+          weekJacoco.add("4");
+          weekJacoco.add("3");
+          weekJacoco.add("2");
+          weekJacoco.add("1");
+        }*/
+
+        //----------------------------------------------------------------------
+        // Creating HTML file
+        //----------------------------------------------------------------------
+        //listener.getLogger().println(weekJunit);
+        //filename = "/Users/Shared/Jenkins/Home/workspace/TestProject/report.html";
+        filename = Messages.MailSender_reportFilePath();
+        try {
+          File file = new File(filename);
+          FileWriter fr = null;
+          fr = new FileWriter(file);
+
+          /* HTML Document Setup */
+          fr.write("<!doctype html>");
+          fr.write("<html lang=\"en\">");
+
+          /* Head */
+          fr.write("<head>");
+          // Meta
+          fr.write("<meta charset=\"utf-8\">");
+          fr.write("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">");
+          // Title
+          fr.write("<title>Weekly Jenkins Report</title>");
+          // Links
+          fr.write("<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css\" integrity=\"sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4\" crossorigin=\"anonymous\">");
+          // Style
+          fr.write("<style>");
+          fr.write("body {padding-top: 2rem;padding-bottom: 2rem;}h3 {margin-top: 2rem;}.row {margin-bottom: 1rem;}.row .row {margin-top: 1rem;margin-bottom: 0;}[class*=\"col-\"] {padding-top: 1rem;padding-bottom: 1rem;background-color: rgba(86, 61, 124, .15);border: 1px solid rgba(86, 61, 124, .2);}hr {margin-top: 2rem;margin-bottom: 2rem;}");
+          fr.write("</style>");
+          fr.write("</head>");
+
+          /* Body */
+          fr.write("<body>");
+          fr.write("<div class=\"container\">");
+          fr.write("<h1>Jenkins Weekly Report</h1><p class=\"lead\">Here is your weekly report for "+fullDisplayName+".</p>");
+          fr.write("<h3>JUnit Test Results</h3>");
+          fr.write("<p>The JUnit plugin provides a publisher that consumes XML test reports generated during the builds and provides some graphical visualization of the historical test results (see JUnit graph for a sample) as well as a web UI for viewing test reports, tracking failures, and so on.</p><p>Below are the failure results of the past seven builds.</p>");
+          fr.write("<canvas id=\"junit\"></canvas>");
+          //fr.write("<h3>JaCoCo Code Coverage Results</h3><p>This plugin allows you to capture code coverage report from JaCoCo. Jenkins will generate the trend report of coverage.</p>");
+          //fr.write("<canvas id=\"jacoco\"></canvas>");
+          fr.write("</div>");
+          // Javascript
+          fr.write("<script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>");
+          fr.write("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js\" integrity=\"sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ\" crossorigin=\"anonymous\"></script>");
+          fr.write("<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js\" integrity=\"sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm\" crossorigin=\"anonymous\"></script>");
+          fr.write("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js\"></script>");
+          // Creating graphs
+          fr.write("<script>");
+          fr.write("var ctx1 = document.getElementById('junit').getContext('2d');");
+          fr.write("var chart = new Chart(ctx1, {type: 'bar', data: {labels: [\"" + Integer.toString(buildNumber-6) + "\", \"" + Integer.toString(buildNumber-5) + "\", \"" + Integer.toString(buildNumber-4) + "\", \"" + Integer.toString(buildNumber-3) + "\", \"" + Integer.toString(buildNumber-2) + "\", \"" + Integer.toString(buildNumber-1) + "\", \"" + Integer.toString(buildNumber) + "\"], datasets: [{label: \"Test Failures\",backgroundColor: 'rgb(255, 99, 132)',borderColor: 'rgb(255, 99, 132)',"+buf.toString()+",}]},});");
+
+          fr.write("var ctx2 = document.getElementById('jacoco').getContext('2d');");
+          fr.write("var chart = new Chart(ctx2, {type: 'bar',data: {labels: [\"98\", \"99\", \"100\", \"101\", \"102\", \"103\", \"104\"],datasets: [{label: \"Test Failures\",backgroundColor: 'rgb(255, 99, 132)',borderColor: 'rgb(255, 99, 132)',data: [0, 10, 5, 2, 20, 30, 45],}]},});");
+          fr.write("</script>");
+          fr.write("</body>");
+          fr.write("</html>");
+
+          fr.close();
+
+          listener.getLogger().println("[SUCCESS] File was updated!");
+
+        } catch (IOException e) {
+            listener.getLogger().println("[ERROR] HTML file could not be created: " + filename + " : " + e);
+        }
+        listener.getLogger().println("\n");
     }
     // ** Stephen Code - END *******************************************************
 
@@ -304,12 +448,25 @@ public class MailSender {
         }
     }
 
+    // ** Stephen Code - START *************************************************
+    //--------------------------------------------------------------------------
+    // Append header to the buffer
+    //--------------------------------------------------------------------------
+    private void appendHeader(Run<?, ?> build, StringBuilder buf, TaskListener listener) {
+        buf.append("============================================================\n");
+        buf.append("CS 498 Email Notification for ");
+        buf.append(getSubject(build, " "));
+        buf.append("\n============================================================\n");
+        buf.append("PROJECT AT A GLANCE\n\n");
+        listener.getLogger().println("[WEEKLY REPORT]" + Messages.MailSender_reportFilePath());
+        buf.append('\n');
+    }
+    // ** Stephen Code - END ***************************************************
+
     private void appendUrl(String url, StringBuilder buf) {
-        buf.append("============================================================\n");
-        buf.append("CS 498 Email Notification\n");
-        buf.append("============================================================\n");
         buf.append(Messages.MailSender_Link(url)).append("\n\n");
     }
+
 
     // -------------------------------------------------------------------------
     // Creating mail message for a FAILED build
@@ -320,6 +477,67 @@ public class MailSender {
         msg.setSubject(getSubject(build, Messages.MailSender_FailureMail_Subject()),charset); // setting the subject
 
         StringBuilder buf = new StringBuilder();
+
+        // ** Stephen Code - START *********************************************
+        appendHeader(build, buf, listener);
+
+        //----------------------------------------------------------------------
+        // Figuring out the percentage of JUnit tests that failed
+        //----------------------------------------------------------------------
+        buf.append("* JUnit Fail Percentage: ");
+        try {
+          // Building URL to directory that contains JUnit report
+          String baseUrl = Mailer.descriptor().getUrl();
+          String workspaceUrl = baseUrl + Util.encode(build.getParent().getUrl()) + "ws/";
+          String filename = workspaceUrl + "/target/surefire-reports/uky.cs498.AppTest.txt";
+
+          // Opening URL into stream...replicating behavior as if it's being opened as a file
+          URL oracle = new URL(filename);
+          BufferedReader b = new BufferedReader(new InputStreamReader(oracle.openStream()));
+          String readLine = "";
+
+          // Reading through file line by line.
+          while ((readLine = b.readLine()) != null) {
+
+              // Looking for the specific line of the report file we want
+              int targetLine = readLine.indexOf("Tests run:"); // using indexOf to see if the current line is the one wanted
+          		if (targetLine != -1) {
+          			String[] data = readLine.split(","); // breaking up line into array - it will always be comma delimited for each category
+          			int testsRun = Integer.parseInt(data[0].substring(11)); // parsing string to get the integer value of the number of tests run
+          			int testsFailed = Integer.parseInt(data[1].substring(11)); // parsing string to get the integer value of the number of tests that failed
+          			float failurePercentage = ((float)testsFailed/testsRun) * 100; // determing percentage of tests failed
+
+                buf.append(failurePercentage); // adding failure percentage to email
+
+
+                  if (failurePercentage > Integer.parseInt(Messages.MailSender_failurePercentage())){
+                    buf.append("    WARNING! Over ");
+                    buf.append(Messages.MailSender_failurePercentage());
+                    buf.append(" percent of JUnit tests failed!");
+                  }
+                
+          		}
+          }
+        } catch (IOException e) {
+            buf.append("ERROR! JUnit Report file could not be found");
+        }
+
+        //----------------------------------------------------------------------
+        // Figuring out code coverage with JaCoCo
+        //----------------------------------------------------------------------
+        buf.append('\n');
+        buf.append("* Current JaCoCo Code Coverage: ");
+        try {
+          String baseUrl = Mailer.descriptor().getUrl();
+          String workspaceUrl = baseUrl + Util.encode(build.getParent().getUrl()) + "ws/";
+          buf.append(workspaceUrl + "target/site/jacoco/index.html");
+        } catch (Exception e) {
+          buf.append("ERROR! JaCoCo Report files could not be found");
+        }
+
+        buf.append("\n\n");
+        // ** Stephen Code - END ***********************************************
+
         appendBuildUrl(build, buf);
 
         boolean firstChange = true;
@@ -343,8 +561,7 @@ public class MailSender {
         }
 
 
-        buf.append(getSubject(build, "Build Name: "));
-        buf.append("\n----------------------------------------------------------\n");
+        buf.append("----------------------------------------------------------\n");
 
         try {
             // Restrict max log size to avoid sending enormous logs over email.
@@ -398,9 +615,14 @@ public class MailSender {
         }
 
         buf.append('\n');
+
+        // ** Stephen Code - START *********************************************
         buf.append("Disclaimer: This email message sent with the help of the Jenkins Mailer plugin.");
+        // ** Stephen Code - END ***********************************************
 
         msg.setText(buf.toString(),charset);
+
+
 
         return msg;
     }
@@ -418,10 +640,19 @@ public class MailSender {
 
         final AbstractBuild<?, ?> build = run instanceof AbstractBuild ? ((AbstractBuild<?, ?>)run) : null;
 
+        // ** ------------ Aton code begin ------------ **
         StringTokenizer tokens = new StringTokenizer(recipients);
+
+        if(relevantOnly){
+            tokens = new StringTokenizer(relevantDevelopers);
+        }
+
+         // ** ------------ Aton code end ------------ **
+
+        //StringTokenizer tokens = new StringTokenizer(recipients);
         while (tokens.hasMoreTokens()) {
             String address = tokens.nextToken();
-            if (build != null && address.startsWith("upstream-individuals:")) {
+            if (build != null && address.startsWith("upstream-individuals:") && !relevantOnly) {
                 // people who made a change in the upstream
                 String projectName = address.substring("upstream-individuals:".length());
                 // TODO 1.590+ Jenkins.getActiveInstance
