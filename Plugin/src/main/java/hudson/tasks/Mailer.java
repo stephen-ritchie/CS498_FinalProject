@@ -101,6 +101,7 @@ public class Mailer extends Notifier implements SimpleBuildStep {
     public boolean isNotifyEveryUnstableBuild() {
         return !dontNotifyEveryUnstableBuild;
     }
+
     public boolean sendToIndividuals; // If true, individuals will receive e-mails regarding who broke the build.
 
     // ** ------------ Aton code start ------------ **
@@ -129,7 +130,7 @@ public class Mailer extends Notifier implements SimpleBuildStep {
      * @param weeklyProgressReport 
      */
     @DataBoundConstructor
-    public Mailer(String recipients, boolean notifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, boolean notify50Percent, boolean notifyCoverageChange, boolean WeeklyProgressReport) {
+    public Mailer(String recipients, boolean notifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, boolean notify50Percent, boolean notifyCoverageChange, boolean weeklyProgressReport) {
         this.recipients = recipients;
         this.dontNotifyEveryUnstableBuild = !notifyEveryUnstableBuild;
         this.sendToIndividuals = sendToIndividuals;

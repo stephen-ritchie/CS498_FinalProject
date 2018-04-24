@@ -94,18 +94,15 @@ public class MailSender {
     private boolean notifyCoverageChange;
     private boolean weeklyProgressReport;
     // ** ------------ Aton code end ------------ **
-    // ** Stephen Code - START *************************************************
-    //private boolean notify50Percent;
-    // ** Stephen Code - END ***************************************************
 
 
     // -------------------------------------------------------------------------
     // A few different constructors?
     // -------------------------------------------------------------------------
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, boolean notify50percent, boolean notifyCoverageChange, boolean weeklyProgressReport) {
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, boolean notify50Percent, boolean notifyCoverageChange, boolean weeklyProgressReport) {
     	this(recipients, dontNotifyEveryUnstableBuild, sendToIndividuals, relevantDevelopers, relevantOnly, notify50Percent, notifyCoverageChange, weeklyProgressReport, "UTF-8");
     }
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, boolean notify50percent, boolean notifyCoverageChange, boolean weeklyProgressReport, String charset) {
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, boolean notify50Percent, boolean notifyCoverageChange, boolean weeklyProgressReport, String charset) {
         this(recipients,dontNotifyEveryUnstableBuild,sendToIndividuals, relevantDevelopers, relevantOnly, notify50Percent, notifyCoverageChange, weeklyProgressReport, charset, Collections.<AbstractProject>emptyList());
     }
 
@@ -118,10 +115,10 @@ public class MailSender {
         this.sendToIndividuals = sendToIndividuals;
         this.relevantDevelopers = Util.fixNull(relevantDevelopers);
         this.relevantOnly = relevantOnly;
-        this.charset = charset;
         this.notify50Percent = notify50Percent;
         this.notifyCoverageChange = notifyCoverageChange;
         this.weeklyProgressReport = weeklyProgressReport;
+        this.charset = charset;
         this.includeUpstreamCommitters.addAll(includeUpstreamCommitters);
     }
 
