@@ -91,6 +91,9 @@ Jenkins has proven to be a difficult animal to tame.  Being open-source but not 
 This has lead to us having a few bugs in our plugin.  Some are the result of us personally not having enough knowledge of Jenkins, but other bugs are a result of limitations or features of the Jenkins source code.  These bugs are being tracked via our [Issues Page](https://github.com/stephen-ritchie/CS498_FinalProject/issues).  Please refer to it for currently known bugs.
 
 ## Some Final Thoughts...
+This was an extremely difficult project to undertake.  We found that Jenkins is frankly an extremely buggy and tempermental piece of software.  The fact that is it open source is nice, but it seems to only be maintained and used by a small niche community.  Searching the Internet for answers to questions often came up empty-handed, or took us to threads that were last updated five years ago.  In many of the Jenkins forum posts the conclusion was that most posts were bugs within Jenkins itself, but had not yet been resovled.
+
+We all that being said, I believe we did a good job in implementing our plugin.  We had a lofty goal of implementing twelve user stories, and even though they don't all work I believe we have accomplished a great deal given our experience level and knowledge base.
 
 ## Contributors
 Stephen Ritchie
