@@ -90,31 +90,34 @@ public class MailSender {
     // ** ------------ Aton code start ------------ **
     private String relevantDevelopers;
     private boolean relevantOnly;
+    private boolean notify50Percent;
+    private boolean notifyCoverageChange;
+    private boolean weeklyProgressReport;
     // ** ------------ Aton code end ------------ **
-    // ** Stephen Code - START *************************************************
-    //private boolean notify50Percent;
-    // ** Stephen Code - END ***************************************************
 
 
     // -------------------------------------------------------------------------
     // A few different constructors?
     // -------------------------------------------------------------------------
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly) {
-    	this(recipients, dontNotifyEveryUnstableBuild, sendToIndividuals, relevantDevelopers, relevantOnly, "UTF-8");
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, boolean notify50Percent, boolean notifyCoverageChange, boolean weeklyProgressReport) {
+    	this(recipients, dontNotifyEveryUnstableBuild, sendToIndividuals, relevantDevelopers, relevantOnly, notify50Percent, notifyCoverageChange, weeklyProgressReport, "UTF-8");
     }
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, String charset) {
-        this(recipients,dontNotifyEveryUnstableBuild,sendToIndividuals, relevantDevelopers, relevantOnly, charset, Collections.<AbstractProject>emptyList());
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, boolean notify50Percent, boolean notifyCoverageChange, boolean weeklyProgressReport, String charset) {
+        this(recipients,dontNotifyEveryUnstableBuild,sendToIndividuals, relevantDevelopers, relevantOnly, notify50Percent, notifyCoverageChange, weeklyProgressReport, charset, Collections.<AbstractProject>emptyList());
     }
 
     //------------------
     //This constructor used exclusively if the notify upstream commiters option is selected
     //------------------
-    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, String charset, Collection<AbstractProject> includeUpstreamCommitters) {
+    public MailSender(String recipients, boolean dontNotifyEveryUnstableBuild, boolean sendToIndividuals, String relevantDevelopers, boolean relevantOnly, boolean notify50Percent, boolean notifyCoverageChange, boolean weeklyProgressReport, String charset, Collection<AbstractProject> includeUpstreamCommitters) {
         this.recipients = Util.fixNull(recipients);
         this.dontNotifyEveryUnstableBuild = dontNotifyEveryUnstableBuild;
         this.sendToIndividuals = sendToIndividuals;
         this.relevantDevelopers = Util.fixNull(relevantDevelopers);
         this.relevantOnly = relevantOnly;
+        this.notify50Percent = notify50Percent;
+        this.notifyCoverageChange = notifyCoverageChange;
+        this.weeklyProgressReport = weeklyProgressReport;
         this.charset = charset;
         this.includeUpstreamCommitters.addAll(includeUpstreamCommitters);
     }
