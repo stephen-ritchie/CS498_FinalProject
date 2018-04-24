@@ -80,6 +80,9 @@ A URL to the Weekly Report is appended to the bottom of every email sent.  Due t
 <p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/weeklyReport.png"></p>
 
 ## Testing
+Since this plugin was built off an existing plugin there were already a number of JUnit tests in place that we could leverage for our own testing.  A few had to be edited to allow our additonal features to not trigger failures, but having the existing tests greatly helped us know if we had broken a build or not.
+
+A lot of testing was done by hand.  This is obviously not an ideal means of testing, but in a scenario where we didn't really know what we were doing it was difficult to program test cases to automate things.  Some of the biggest testing done was making sure files were being read and created correctly.  We did implement try...except logic in all Java I/O scenarios so that if something did go wrong it could be caught and properly annunciated to the user.  Because of this, the plugin should theoretically work even if for some reason JUnit or JaCoCo report file are not created.  Instead of breaking, there will be an error message in the email report saying the files could not be found.
 
 ## Known Bugs
 Jenkins has proven to be a difficult animal to tame.  Being open-source but not widely used has lead to a relatively small niche community maintaining it.  Working through this project we have found that there are many bugs and legacy support issues, many which still have not been resolved.  For example, in reading through comments in the Mailer Plugin from a contributor I found this.
