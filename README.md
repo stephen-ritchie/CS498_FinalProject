@@ -57,6 +57,25 @@ This is the UI of our actual plugin.  It is built off the UI of the default Mail
 <p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email.png"></p>
 
 ## Usage
+After everything has been configured, development can begin on the project.  Each time a build is triggerd there are three different scenarios that can ocurr for an email to be sent.  In each of the following scenarios an email is sent to the determined recipients and report analysis is performed.
+
+| Type           | Description   | 
+| -------------  | ------------- | 
+| Failed         | A build is broken if it failed during building. That is, it is not successful.  | 
+| Unstable       | A build is unstable if it was built successfully and one or more publishers report it unstable. For example if the JUnit publisher is configured and a test fails then the build will be marked unstable.      |   
+| Back to Normal | A build is back to normal when the compilation reported no errors, and the past build did.      |   
+
+### What An Email Looks Like
+When an email is sent, the top contains information about the project that can be looked at quickly.  This is called the "PROJECT AT A GLANCE" section.  It contains percentage of failed JUnit test (with a warning if applicable) as well as a URL to the JaCoCo code coverage reports and a URL to the specific build space within Jenkins.  An example of a failure email is shown below.
+
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email1.png"></p>
+
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email2.png"></p>
+
+<p align="center"><img src="https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/img/email3.png"></p>
+
+### What A Weekly Report Looks Like
+A URL to the Weekly Report is appended to the bottom of every email sent.  Due to a known bugged security feature within Jenkins the HTML file can only be processed as plain text, which strips away the stylesheet and JavaScript from the file from loading.  This is problematic since the report graphs are made with JS.  There is not currently a known fix for this issue, but a workaround is that the file can be downloaed directly onto a system and then opened with a web browser.  This will allow for the stylesheet to be applied and for JavaScript to run.  An example of what this report currently looks like is below.
 
 ## Testing
 
