@@ -1,5 +1,7 @@
 <p align="center"><img width=12.5% src="https://wiki.jenkins.io/download/attachments/2916393/logo.png?version=1&modificationDate=1302753947000&api=v2"></p>
 
+# CS 498 Email Notification Plugin
+
 ## Basic Overview
 Jenkin is an open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.  This plugin is designed to allow configuration and customization of email notifications that can be triggered automatically based upon the build status of a specific job running within Jenkins.
 
