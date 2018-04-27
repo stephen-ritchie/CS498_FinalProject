@@ -23,12 +23,14 @@ The remainder of this document contains relevant information and documentation t
 This plugin was developed and tested with the software listed below.  Using untested software with this plugin may lead to unexpected or incorrect behavior.
 ```
 Jenkins ver. 2.89.3
+JUnit Plugin v1.12
+JaCoCo Plugin v3.0.1
 Maven 3.5.3
 Java 1.8.0_162
 ```
 
 ## Installing
-This plugin will need to be manually installed into your Jenkins server via an .hpi file.  This file can be found at ```/Plugin/target/CS498_Group3.hpi```.  Documentation on installing a plugin in this way can be found [here](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Packaging-up-a-plugin).  There are a few configuration settings that need to be made before the plugin can properly operated, and they are outlined below.
+This plugin will need to be manually installed on your Jenkins server via an .hpi file.  This file can be found at ```/Plugin/target/CS498_Group3.hpi```.  Documentation on installing a plugin in this way can be found [here](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Packaging-up-a-plugin).  There are a few configuration settings that need to be made before the plugin can properly operated, and they are outlined below.
 ### Global Configurations
 The two items outlined below are Jenkins systems settings that are set at the global level, and are required for this plugin to operate correctly.  The first item to be configured is giving Jenkins access to an SMTP server, and the second item is defining a specific version of Maven to be used by Jenkins.
 #### SMTP Email
