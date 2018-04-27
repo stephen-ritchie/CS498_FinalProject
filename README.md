@@ -30,14 +30,14 @@ Java 1.8.0_162
 ```
 
 ## Installing
-This plugin will need to be manually installed on your Jenkins server via an .hpi file.  This file can be found at ```/Plugin/target/CS498_Group3.hpi```.  Documentation on installing a plugin in this way can be found [here](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Packaging-up-a-plugin).  There are a few configuration settings that need to be made before the plugin can properly operated, and they are outlined below.
+This plugin will need to be manually installed on your Jenkins server via an .hpi file.  This file can be found [here](https://github.com/stephen-ritchie/CS498_FinalProject/blob/Stephen/Plugin/target/CS498_Group3.hpi).  Documentation on installing a plugin in this way can be found [here](https://github.com/stephen-ritchie/CS498_FinalProject/wiki/Packaging-up-a-plugin).  There are a few configuration settings that need to be made before the plugin can be properly operated, and they are outlined below.
 ### Global Configurations
-The two items outlined below are Jenkins systems settings that are set at the global level, and are required for this plugin to operate correctly.  The first item to be configured is giving Jenkins access to an SMTP server, and the second item is defining a specific version of Maven to be used by Jenkins.
+The two items outlined below are Jenkins system settings that are set at the global level, and are required for this plugin to operate correctly.  The first item to be configured is giving Jenkins access to an SMTP server, and the second item is defining a specific version of Maven to be used by Jenkins.
 #### SMTP Email
-To send an email via Jenkins authorized access to a valid SMTP server is required.  Set this up by navigating to *Jenkins -> Manage Jenkins -> Configure System -> CS 498 | Email Notifications*.  For testing of this plugin a Google gmail account was used as the SMTP server, and the specific configuration used is outlined below.
+To send an email via Jenkins authorized access to a valid SMTP server is required.  Set this up by navigating to *Jenkins -> Manage Jenkins -> Configure System -> CS 498 | Email Notifications*.  During testing, a Google gmail account was used as the SMTP server, and the specific configuration used is outlined below.
 * STMP server: <your email's server> (ex. Google's is smtp.gmail.com)
 * Use SMTP Authentication: [x] Checked
-* User Name: <youremail@whatever.com>
+* User Name: <your email@whatever.com>
 * Password: <your email password>
 * Use SSL: [x] Checked (at least for Gmail)
 * Charset: UTF-8
