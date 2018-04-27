@@ -8,13 +8,14 @@ Jenkin is an open source automation server which can be used to automate all sor
 The remainder of this document contains relevant information and documentation to get this plugin installe, configured, and working within an exisiting Jenkins server.  This plugin is designed to be used in tandem with the [JUnit Plugin](https://wiki.jenkins.io/display/JENKINS/JUnit+Plugin) for test case reporting, and the [JaCoCo Plugin](https://wiki.jenkins.io/display/JENKINS/JaCoCo+Plugin) for code coverage reporting.  While not within the scope of this project, documentation for installing and setting up these plugins is included for proper testing purposes.
 
 ## Table of Contents
-[Requirements](#requirements)
-[Installing](#installing)
-* [Global Configurations](#Global Configurations)
+* [Requirements](#requirements)
+* [Installing](#installing)
+* [Global Configurations](#global-configurations)
 * [SMTP Email](#smtp-email)
 * [Maven](#maven)
-
-[Contributors](#contributors)
+* [Known Bugs](#known-bugs)
+* [Contributors](#contributors)
+* [Some Final Thoughts](#some-final-thoughts)
 
 ## Requirements
 This plugin was developed and tested with the software listed below.  Using untested software with this plugin may lead to unexpected or incorrect behavior.
@@ -100,7 +101,7 @@ Jenkins has proven to be a difficult animal to tame.  Being open-source but not 
 
 This has lead to us having a few bugs in our plugin.  Some are the result of us personally not having enough knowledge of Jenkins, but other bugs are a result of limitations or features of the Jenkins source code.  These bugs are being tracked via our [Issues Page](https://github.com/stephen-ritchie/CS498_FinalProject/issues).  Please refer to it for currently known bugs.
 
-## Some Final Thoughts...
+## Some Final Thoughts
 This was an extremely difficult project to undertake.  We found that Jenkins is frankly an extremely buggy and tempermental piece of software.  The fact that is it open source is nice, but it seems to only be maintained and used by a small niche community.  Searching the Internet for answers to questions often came up empty-handed, or took us to threads that were last updated five years ago.  In many of the Jenkins forum posts the conclusion was that most posts were bugs within Jenkins itself, but had not yet been resovled.
 
 We all that being said, I believe we did a good job in implementing our plugin.  We had a lofty goal of implementing twelve user stories, and even though they don't all work I believe we have accomplished a great deal given our experience level and knowledge base.
