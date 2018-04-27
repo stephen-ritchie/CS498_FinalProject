@@ -12,6 +12,7 @@ The remainder of this document contains relevant information and documentation t
 - [Installing](#installing)
 - [Usage](#usage)
     * [What An Email Looks Like](#what-an-email-looks-like)
+    * [What A Weekly Report Looks Like](#what-a-weekly-report-looks-like)
 - [Testing](#testing)
 - [Known Bugs](#known-bugs)
 - [Some Final Thoughts](#some-final-thoughts)
