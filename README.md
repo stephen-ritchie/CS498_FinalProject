@@ -7,6 +7,13 @@ Jenkins is an open source automation server which can be used to automate all so
 
 The remainder of this document contains relevant information and documentation to get this plugin installed, configured, and working within an exisiting Jenkins server.  This plugin is designed to be used in tandem with the [JUnit Plugin](https://wiki.jenkins.io/display/JENKINS/JUnit+Plugin) for test case reporting, and the [JaCoCo Plugin](https://wiki.jenkins.io/display/JENKINS/JaCoCo+Plugin) for code coverage reporting.  While not within the scope of this project, documentation for installing and setting up these plugins is included for proper testing purposes.
 
+## Repository Contents
+- **Plugin:** This directory contains all the code for our plugin.
+- **TestProject:** This is a directory for a 'dummy' Java project we used to test our plugin.  It's a JUnit java project based off of an in-class lab assignment.  It contains ten JUnit test cases that are manually set to pass/fail. This way we could quickly simulate differing amount of failed tests to see how our plugin responds.
+- **img:** Directory hosting images shown in this README
+- **README.md**
+- **fileStructure.md**
+
 ## Table of Contents
 - [Requirements](#requirements)
 - [Installing](#installing)
