@@ -11,8 +11,9 @@ The remainder of this document contains relevant information and documentation t
 [Requirements](#requirements)
 [Installing](#installing)
 * [Global Configurations](#Global Configurations)
-* [SMTP Email](#SMTP Email)
-* [Maven](#Maven)
+* [SMTP Email](#smtp-email)
+* [Maven](#maven)
+
 [Contributors](#contributors)
 
 ## Requirements
