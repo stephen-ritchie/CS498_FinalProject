@@ -11,6 +11,7 @@ The remainder of this document contains relevant information and documentation t
 - [Requirements](#requirements)
 - [Installing](#installing)
 - [Usage](#usage)
+    * [What An Email Looks Like](#what-an-email-looks-like)
 - [Testing](#testing)
 - [Known Bugs](#known-bugs)
 - [Some Final Thoughts](#some-final-thoughts)
