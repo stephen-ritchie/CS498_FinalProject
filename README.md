@@ -8,7 +8,12 @@ Jenkin is an open source automation server which can be used to automate all sor
 The remainder of this document contains relevant information and documentation to get this plugin installe, configured, and working within an exisiting Jenkins server.  This plugin is designed to be used in tandem with the [JUnit Plugin](https://wiki.jenkins.io/display/JENKINS/JUnit+Plugin) for test case reporting, and the [JaCoCo Plugin](https://wiki.jenkins.io/display/JENKINS/JaCoCo+Plugin) for code coverage reporting.  While not within the scope of this project, documentation for installing and setting up these plugins is included for proper testing purposes.
 
 ## Table of Contents
-[Contributors](#contributors)
+[Requirements](#requirements)
+[Installing](#installing)
+* [Global Configurations](#Global Configurations)
+* [SMTP Email](#SMTP Email)
+* [Maven](Maven)
+[Contributors](#Contributors)
 
 ## Requirements
 This plugin was developed and tested with the software listed below.  Using untested software with this plugin may lead to unexpected or incorrect behavior.
@@ -30,6 +35,7 @@ To send an email via Jenkins authorized access to a valid SMTP server is require
 * Password: <your email password>
 * Use SSL: [x] Checked (at least for Gmail)
 * Charset: UTF-8
+  
 #### Maven
 Maven is a software project management and comprehension tool.  Official documentation on Maven can be found [here](https://maven.apache.org).  Because this plugin is designed to be used with Java development, Maven can be integrated into the project to assist with building, testing, and packaging source code.  This plugin was tested using Maven 3.5.3 and steps for setting this up in Jenkins are outlined below.  Alternative versions of Maven *may* be used, but plugin behavior cannot be guaranteed if another version of Maven is used.
 
