@@ -8,14 +8,14 @@ Jenkin is an open source automation server which can be used to automate all sor
 The remainder of this document contains relevant information and documentation to get this plugin installe, configured, and working within an exisiting Jenkins server.  This plugin is designed to be used in tandem with the [JUnit Plugin](https://wiki.jenkins.io/display/JENKINS/JUnit+Plugin) for test case reporting, and the [JaCoCo Plugin](https://wiki.jenkins.io/display/JENKINS/JaCoCo+Plugin) for code coverage reporting.  While not within the scope of this project, documentation for installing and setting up these plugins is included for proper testing purposes.
 
 ## Table of Contents
-* [Requirements](#requirements)
-* [Installing](#installing)
-* [Global Configurations](#global-configurations)
-* [SMTP Email](#smtp-email)
-* [Maven](#maven)
-* [Known Bugs](#known-bugs)
-* [Contributors](#contributors)
-* [Some Final Thoughts](#some-final-thoughts)
+- [Requirements](#requirements)
+- [Installing](#installing)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Known Bugs](#known-bugs)
+- [Some Final Thoughts](#some-final-thoughts)
+- [Contributors](#contributors)
+
 
 ## Requirements
 This plugin was developed and tested with the software listed below.  Using untested software with this plugin may lead to unexpected or incorrect behavior.
