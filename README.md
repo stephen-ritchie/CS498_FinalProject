@@ -12,8 +12,8 @@ The remainder of this document contains relevant information and documentation t
 [Installing](#installing)
 * [Global Configurations](#Global Configurations)
 * [SMTP Email](#SMTP Email)
-* [Maven](Maven)
-[Contributors](#Contributors)
+* [Maven](#Maven)
+[Contributors](#contributors)
 
 ## Requirements
 This plugin was developed and tested with the software listed below.  Using untested software with this plugin may lead to unexpected or incorrect behavior.
